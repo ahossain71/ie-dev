@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="MLMSABVendorCompletion" targetNamespace="http://cms.cciio.mlms.gov/MLMSABVendorCompletion/" xmlns:req="http://cms.cciio.mlms.gov/ExternalVendorRequestType" xmlns:rsp="http://cms.cciio.mlms.gov/ExternalVendorResponseType" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://cms.cciio.mlms.gov/MLMSABVendorCompletion/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    
+    <xsd:schema>
+    	<xsd:import namespace="http://cms.cciio.mlms.gov/ExternalVendorRequestType" schemaLocation="../schema/ExternalVendorRequestType.xsd">
+    	</xsd:import>
+    	<xsd:import namespace="http://cms.cciio.mlms.gov/ExternalVendorResponseType" schemaLocation="../schema/ExternalVendorResponseType.xsd">
+    	</xsd:import>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ExternalVendorRequestMessage">
+    <wsdl:part element="req:ExternalVendorRequest" name="CompletionRecord"/>
+  </wsdl:message>
+  <wsdl:message name="ExternalVendorResponseMessage">
+    <wsdl:part element="rsp:ExternalVendorResponse" name="Status"/>
+  </wsdl:message>
+  <wsdl:portType name="MLMSABVendorCompletion">
+    <wsdl:operation name="ReceiveABVendorCompletion">
+      <wsdl:input message="tns:ExternalVendorRequestMessage"/>
+      <wsdl:output message="tns:ExternalVendorResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MLMSABVendorCompletionSOAP" type="tns:MLMSABVendorCompletion">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ReceiveABVendorCompletion">
+      <soap:operation soapAction="http://cms.cciio.mlms.gov/MLMSABVendorCompletion/ReceiveABVendorCompletion"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MLMSABVendorCompletion">
+    <wsdl:port binding="tns:MLMSABVendorCompletionSOAP" name="MLMSABVendorCompletionSOAP">
+      <soap:address location="http://cms.cciio.mlms.gov/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

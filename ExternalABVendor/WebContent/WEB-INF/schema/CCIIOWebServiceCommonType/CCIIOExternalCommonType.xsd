@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://cms.cciio.mlms.gov/CCIIOExternalCommonType" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:common="http://cms.cciio.mlms.gov/CCIIOExternalCommonType">
+
+    <element name="StatusCode" type="common:ExternalStatusCodeType"></element>
+    
+    <complexType name="ExternalStatusCodeType">
+    	<sequence>
+    		<element name="StatusCode">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="WS200"></enumeration>
+    					<enumeration value="WS500"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="StatusDescription">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="Success"></enumeration>
+    					<enumeration value="Failure"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    	</sequence>
+    </complexType>
+</schema>

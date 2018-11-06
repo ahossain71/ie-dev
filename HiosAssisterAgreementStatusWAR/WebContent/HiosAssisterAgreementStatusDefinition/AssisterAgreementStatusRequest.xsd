@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><schema elementFormDefault="qualified" targetNamespace="http://cms.cciio.mlms.hios.gov/AssisterAgreementStatusRequest" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:tns="http://cms.cciio.mlms.hios.gov/AssisterAgreementStatusRequest">
+
+	<element ibmSchExtn:docRoot="true" name="acquiredDatetime">
+		<complexType>
+			<simpleContent>
+				<extension base="string"/>
+			</simpleContent>
+		</complexType>
+	</element>	
+
+</schema>

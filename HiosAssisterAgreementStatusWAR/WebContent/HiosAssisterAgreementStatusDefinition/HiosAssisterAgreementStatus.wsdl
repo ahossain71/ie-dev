@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="HiosAssisterAgreementStatus"
+	targetNamespace="http://cms.cciio.mlms.hios.gov/HiosAssisterAgreementStatus/"
+	xmlns:rqs="http://cms.cciio.mlms.hios.gov/AssisterAgreementStatusRequest"
+	xmlns:rsp="http://cms.cciio.mlms.hios.gov/AssisterAgreementStatusResponse"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://cms.cciio.mlms.hios.gov/HiosAssisterAgreementStatus/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:types>
+		<xsd:schema>
+			<xsd:import
+				namespace="http://cms.cciio.mlms.hios.gov/AssisterAgreementStatusRequest"
+				schemaLocation="AssisterAgreementStatusRequest.xsd" />
+			<xsd:import
+				namespace="http://cms.cciio.mlms.hios.gov/AssisterAgreementStatusResponse"
+				schemaLocation="AssisterAgreementStatusResponse.xsd" />
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="AssisterAgreementStatusRequest">
+		<wsdl:part element="rqs:acquiredDatetime" name="certificationDateTime" />
+	</wsdl:message>
+	<wsdl:message name="AssisterAgreementStatusResponse">
+		<wsdl:part element="rsp:assisterAgreementStatusResponse"
+			name="assisterAgreementStatusInfo" />
+	</wsdl:message>
+	<wsdl:portType name="HiosAssisterAgreementStatus">
+		<wsdl:operation name="RetrieveAssisterAgreementStatus">
+			<wsdl:input message="tns:AssisterAgreementStatusRequest" />
+			<wsdl:output message="tns:AssisterAgreementStatusResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="HiosAssisterAgreementStatusSOAP" type="tns:HiosAssisterAgreementStatus">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="RetrieveAssisterAgreementStatus">
+			<soap:operation
+				soapAction="http://cms.cciio.mlms.hios.gov/HiosAssisterAgreementStatus/RetrieveAssisterAgreementStatus" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="HiosAssisterAgreementStatus">
+		<wsdl:port binding="tns:HiosAssisterAgreementStatusSOAP"
+			name="HiosAssisterAgreementStatusSOAP">
+			<soap:address
+				location="http://localhost:9082/HiosAssisterAgreementStatus/HiosAssisterAgreementStatus" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

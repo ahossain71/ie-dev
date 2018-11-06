@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://cms.cciio.mlms.gov/MLMSShopIncrementalFileType" xmlns:Q1="http://cms.cciio.mlms.gov/MLMSShopIncrementalFileType">
+  <xsd:element name="shopAgreementAcquiredDate" type="xsd:string"/>
+  <xsd:element name="fileDescriptionType">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="Q1:FileIdentifier"/>
+        <xsd:element ref="Q1:FileDateTime"/>
+        <xsd:element ref="Q1:FileRecordCount"/>
+        <xsd:element ref="Q1:FileTypeInfo"/>
+        <xsd:element ref="Q1:IncrementalRecord"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="FileIdentifier" type="xsd:string"/>
+  <xsd:element name="shopAgreementName" type="xsd:string"/>
+  <xsd:element name="FileRecordCount" type="xsd:string"/>
+  <xsd:element name="shopAgreementExpirationDate" type="xsd:string"/>
+  <xsd:element name="IncrementalRecord">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="Q1:UserInfo"/>
+        <xsd:element ref="Q1:AddressInfo"/>
+        <xsd:element ref="Q1:PreferenceInfo"/>
+        <xsd:element ref="Q1:CompletionInfo"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="FileTypeInfo">
+    <xsd:complexType>
+      <xsd:attribute name="FileType" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="PreferenceInfo">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:any maxOccurs="unbounded" namespace="##other" processContents="lax"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="FileDateTime" type="xsd:string"/>
+  <xsd:element name="UserInfo">
+    <xsd:complexType>
+      <xsd:attribute name="ActiveStatus" type="xsd:string"/>
+      <xsd:attribute name="UserID" type="xsd:string"/>
+      <xsd:attribute name="FirstName" type="xsd:string"/>
+      <xsd:attribute name="npn" type="xsd:string"/>
+      <xsd:attribute name="LastName" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="shopAgreementStatus" type="xsd:string"/>
+  <xsd:element name="CompletionInfo">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="Q1:shopAgreementName"/>
+        <xsd:element ref="Q1:shopAgreementStatus"/>
+        <xsd:element ref="Q1:shopAgreementExpirationDate"/>
+        <xsd:element ref="Q1:shopAgreementAcquiredDate"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="AddressInfo">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:any maxOccurs="unbounded" namespace="##other" processContents="lax"/>
+      </xsd:sequence>
+      <xsd:attribute name="EmailAddress" type="xsd:string"/>
+      <xsd:attribute name="PhoneNumber" type="xsd:string"/>
+      <xsd:attribute name="ZipCode" type="xsd:string"/>
+      <xsd:attribute name="StreetAddress" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rational.test.lt.models.wscore.configuration:WSDLInformationContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rational.test.lt.models.wscore.configuration="http:///com/ibm/rational/test/lt/models/wscore/configuration.ecore">
+  <securityOperationConfiguration>
+    <SecurityPortConfiguration aliasName="DEFAULTCONFIGURATION"/>
+  </securityOperationConfiguration>
+  <keyStore/>
+  <wsdl name="HiosAssisterAgreementStatus" key="HiosAssisterAgreementStatus">
+    <SimpleProperty value="http://cms.cciio.mlms.hios.gov/HiosAssisterAgreementStatus/" name="WSDLPROPERTY_TARGETNAMESPACE"/>
+    <SimpleProperty value="73b7bc963e7caf84f3925d3061adf4295fbadc6f73b7bc963e7caf84f3925d3061adf4295fbadc6fbd569e6f56994010e49b391f86d16904db2f2261749ad929767f88ec18b51f65d121f87f71b00ea9292dcc445eb8ba6046971dae36766697a3c590b5" name="WSDLPROPERTY_HASH"/>
+    <SimpleProperty value="1435348118000" name="WSDLPROPERTY_SYNCHROSTAMP"/>
+    <ResourceProxy portablePath="/HiosAssisterAgreementStatus/WebContent/HiosAssisterAgreementStatusDefinition/HiosAssisterAgreementStatus.wsdl" timeStamp="1435348118000"/>
+    <WsdlInformationContainer versionContainer="8.3"/>
+    <WsdlBinding name="http://cms.cciio.mlms.hios.gov/HiosAssisterAgreementStatus/:HiosAssisterAgreementStatusSOAP">
+      <SimpleProperty value="SoapDocumentBinding" name="WSDLBINDINGPROPERTY_TYPE"/>
+      <SimpleProperty value="http://schemas.xmlsoap.org/soap/http" name="WSDLBINDINGPROPERTY_TRANSPORT_TYPE"/>
+      <SimpleProperty value="false" name="Soap12Binding"/>
+      <SimpleProperty value="{http://cms.cciio.mlms.hios.gov/HiosAssisterAgreementStatus/}HiosAssisterAgreementStatus" name="WSDLBINDING_SERVICE_NAME"/>
+      <WsdlOperation name="RetrieveAssisterAgreementStatus" key="RetrieveAssisterAgreementStatus">
+        <WsdlPort name="HiosAssisterAgreementStatusSOAP" uniqueID="1617258907SEPARATOR463a50b4-4c3a-439d-a50e-c932d0f69bc8">
+          <SimpleProperty value="http://localhost:9082/HiosAssisterAgreementStatus/HiosAssisterAgreementStatus" name="WSDLPORTPROPERTY_HTTP_URL"/>
+          <in>
+            <SimpleProperty value="DEFAULTCONFIGURATION" name="operation_security_information"/>
+          </in>
+          <out>
+            <SimpleProperty value="DEFAULTCONFIGURATION" name="operation_security_information"/>
+          </out>
+        </WsdlPort>
+        <in>
+          <SimpleProperty value="literal" name="WSDLOPERATIONPROPERTY_ENCODING_STYLE"/>
+          <WsdlPart element="true" nameSpaceURI="http://cms.cciio.mlms.hios.gov/AssisterAgreementStatusRequest" localPart="acquiredDatetime" partName="certificationDateTime"/>
+        </in>
+        <SimpleProperty value="true" name="WSDLOPERATIONPROPERTY_SOAP_ACTION_REQUIRED"/>
+        <SimpleProperty value="http://cms.cciio.mlms.hios.gov/HiosAssisterAgreementStatus/RetrieveAssisterAgreementStatus" name="WSDLOPERATIONPROPERTY_SOAP_ACTION_URI"/>
+        <out>
+          <SimpleProperty value="literal" name="WSDLOPERATIONPROPERTY_ENCODING_STYLE"/>
+          <SimpleProperty name="MESSAGENAME"/>
+          <WsdlPart element="true" nameSpaceURI="http://cms.cciio.mlms.hios.gov/AssisterAgreementStatusResponse" localPart="assisterAgreementStatusResponse" partName="assisterAgreementStatusInfo"/>
+        </out>
+      </WsdlOperation>
+    </WsdlBinding>
+  </wsdl>
+</com.ibm.rational.test.lt.models.wscore.configuration:WSDLInformationContainer>

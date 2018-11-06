@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions targetNamespace="urn:waasaplicationinfov6.api.waas.ws.eidm.cms.hhs.gov"
+             xmlns:wai="urn:waasaplicationinfov6.api.waas.ws.eidm.cms.hhs.gov"
+             xmlns:waityps="http://types.waasaplicationinfov6.api.waas.ws.eidm.cms.hhs.gov"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+             xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+    <types>
+        <xsd:schema targetNamespace="urn:WaaSApplicationInfoV6/types"
+                    elementFormDefault="qualified"/>
+        <xsd:schema>
+            <xsd:import schemaLocation="../schema/WaaSApplicationInfoV6.xsd"
+                        namespace="http://types.waasaplicationinfov6.api.waas.ws.eidm.cms.hhs.gov"/>
+        </xsd:schema>
+    </types>
+    <portType name="WaaSApplicationInfoV6">
+        <operation name="RetrieveAppDetails">
+            <input name="RetrieveAppDetailsRequestInput"
+                   message="wai:RetrieveAppDetailsInputMessage"/>
+            <output name="RetrieveAppDetailsRequestOutput"
+                    message="wai:RetrieveAppDetailsOutputMessage"/>
+            <fault name="userInformationError"
+                   message="wai:RetrieveAppDetailsFault"/>
+        </operation>
+    </portType>
+    
+    <message name="RetrieveAppDetailsInputMessage">
+        <part name="appDtlsInfoReq" element="waityps:RetrieveAppDetailsRequest"/>
+    </message>
+    <message name="RetrieveAppDetailsOutputMessage">
+        <part name="appDtlsInfoRes" element="waityps:RetrieveAppDetailsResponse"/>
+    </message>
+    <message name="RetrieveAppDetailsFault">
+        <part name="appDtlsInfoFault" element="waityps:RetrieveAppDetailsFault"/>
+    </message>
+    
+    <binding name="WaaSApplicationInfoV6SOAP12Binding"
+             type="wai:WaaSApplicationInfoV6">
+        <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="RetrieveAppDetails">
+            <soap12:operation style="document" soapAction="wai:WaaSApplicationInfo/RetrieveAppDetails"/>
+            <input>
+                <soap12:body use="literal" parts="appDtlsInfoReq"/>
+            </input>
+            <output>
+                <soap12:body use="literal" parts="appDtlsInfoRes"/>
+            </output>
+            <fault name="userInformationError">
+                <soap12:fault name="userInformationError" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="WaaSApplicationInfoServiceV6">
+        <port name="WaaSApplicationInfoServiceV6" binding="wai:WaaSApplicationInfoV6SOAP12Binding">
+            <soap12:address location="http://waasaplicationinfov6.api.waas.ws.eidm.cms.hhs.gov"/>
+        </port>
+    </service>
+</definitions>

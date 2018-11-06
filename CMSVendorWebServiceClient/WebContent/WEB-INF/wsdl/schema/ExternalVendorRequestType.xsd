@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://cms.cciio.mlms.gov/ExternalVendorRequestType" xmlns:req="http://cms.cciio.mlms.gov/ExternalVendorRequestType">
+
+    <element name="ExternalVendorRequest" type="req:ExternalVendorRequestType">
+    </element>
+    
+    <complexType name="ExternalVendorRequestType">
+        <annotation>
+        	<documentation>The MLMS will use the MLMS server time to record the time the request is received.</documentation>
+        </annotation>
+        <sequence>
+    		<element maxOccurs="1" minOccurs="1" name="VendorName">
+    			<simpleType>
+    				<restriction base="string">
+    					<minLength value="1"/>
+    					<maxLength value="10"/>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="LearnerID">
+    			<simpleType>
+    				<restriction base="string">
+    					<minLength value="1"/>
+    					<maxLength value="30"/>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="CurriculumCode" type="req:CurriculumCodeType">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="CurriculumYear" type="req:CurriculumYearType">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="CurriculumLanguage" type="req:CurriculumLanguageType">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="CurriculumCodeType">
+    	<sequence>
+    		<element name="CurriculumCode">
+                <annotation>
+                	<documentation>I = Individual Marketplace
+J =Individual Marketplace refresher
+S = SHOP Marketplace
+</documentation>
+                </annotation>
+                <simpleType>
+                	<restriction base="string">
+                		<enumeration value="I"/>
+                		<enumeration value="J"/>
+                		<enumeration value="S"/>
+                	</restriction>
+                </simpleType>
+    		</element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="CurriculumYearType">
+    	<attribute name="CurriculumYear">
+    		<simpleType>
+    			<restriction base="string">
+    				<pattern value="^[2][0][1-2][0-9]"/>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    </complexType>
+
+    <complexType name="CurriculumLanguageType">
+    	<attribute name="CurriculumLanguage">
+    		<simpleType>
+    			<restriction base="string">
+    				<enumeration value="English"/>
+    				<enumeration value="Spanish"/>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    </complexType>
+</schema>

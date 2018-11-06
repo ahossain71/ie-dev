@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://cms.cciio.mlms.gov/ShopUserProfileRequestType" xmlns:tns="http://cms.cciio.mlms.gov/ShopUserProfileRequestType" elementFormDefault="qualified">
+
+    <element name="UserId" type="tns:UserIdType"></element>
+    
+    <simpleType name="UserIdType">
+    	<restriction base="string">
+    		<minLength value="1"></minLength>
+    		<maxLength value="36"></maxLength>
+    	</restriction>
+    </simpleType>
+</schema>

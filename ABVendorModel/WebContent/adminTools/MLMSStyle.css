@@ -1,0 +1,159 @@
+BODY {
+        font-family:Verdana, Arial, Helvetica, sans-serif;
+        font-size: 8pt;
+        color: Black;
+        background-color:white;
+}
+
+.button {
+        background-color: #FFFF00;
+        color: #000000;
+        border: 2px outset #EF9C00;
+}
+
+.button:Hover { color: #444444; }
+
+.normal {
+        font-family:Verdana, Arial, Helvetica, sans-serif;
+        font-size: 7pt;
+        color: #FFF5E8;
+}
+
+.header {
+        font-family:Verdana, Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+        color: White;
+}
+
+table.filelist {
+        background-color:#8d8d8d; color:#000000;
+        width:100%;
+        border:3px solid White;
+}
+
+th {
+        background-color:#003312;
+        font-size: 10pt;
+        color:white;
+}
+
+tr.mouseout {
+        background-color:White;
+        font-family:Verdana, Arial, Helvetica, sans-serif;
+        font-size: 8pt;
+}
+
+tr.mouseout td {
+        border:1px solid White;
+}
+
+tr.mousein {
+        background-color:#e6e6e1;
+}
+
+tr.mousein td {
+        border-top:1px solid #3399ff;
+        border-bottom:1px solid #3399FF;
+        border-left:1px solid #3399FF;
+        border-right:1px solid #3399FF;
+}
+
+tr.checked  { background-color:#e6e6e1; }
+tr.checked td {border:1px solid #e6e6e1;}
+
+tr.mousechecked { background-color:#e6e6e1; }
+
+tr.mousechecked td {border:1px solid #e6e6e1;}
+
+td.message {
+        background-color:Red;
+        color:#000000;
+        text-align:center;
+        font-weight:bold;
+}
+
+td.error {
+        background-color:Red;
+        color:#000000;
+        text-align:center;
+        font-weight:bold;
+}
+
+A { text-decoration: underline; color:#000000;}
+
+A:Hover {text-decoration : underline;font-weight:bold; }
+
+.toplinkDiv {
+        float:right;
+        height:40px;
+}
+
+.contentDiv {
+        position:absolute;
+        top:40px;
+        left:0;
+}
+
+/* Top Links */
+ul.toplink, ul.toplink li, ul.toplink ul { list-style: none; margin: 0; padding: 2px; border: 0px solid #fff; text-align:right;}
+ul.toplink {position: relative; float: right; }
+ul.toplink a { font-weight:normal;}
+ul.toplink a:hover { background-color:#ddd;}
+ul.toplink li { float: left; }
+ul.toplink li.hover, ul.toplink li:hover { position: relative; z-index: 103; }
+ul.toplink ul { visibility: hidden; border: 1px solid #fff; background: #fff}
+ul.toplink ul li { float: none; }
+ul.toplink ul ul { top: -2px; left: 100%; }
+ul.toplink li:hover > ul { visibility: visible; z-index: 100; }
+
+/* Hover Menu */
+
+.hoverMenu {
+        margin:0;
+        padding:0;
+}
+
+.hoverMenu li {
+        list-style:none;
+}
+
+.hoverMenu li a:link
+/*, .hoverMenu li a:visited */
+{
+        display:block;
+        text-decoration:none;
+/*      background-color:#09F; */
+        padding: 0.5em 2em;
+        margin:0;
+/*      border-right: 1px solid #fff;
+ *              color:#111;*/
+}
+
+.hoverMenu li a:hover {
+        background-color:#0CF;
+}
+
+/*style the sub menu*/
+.hoverMenu li ul {
+        position:absolute;
+        visibility:hidden;
+/*      border-top:1px solid #fff;*/
+        margin:0;
+        padding:0;
+}
+
+.hoverMenu li ul li {
+        display:inline;
+        float:none;
+}
+
+.hoverMenu li ul li a:link
+/*, .hoverMenu li ul li a:visited */
+{
+        background-color:#09F;
+        width:auto;
+}
+
+.hoverMenu li ul li a:hover {
+        background-color:#0CF;
+}

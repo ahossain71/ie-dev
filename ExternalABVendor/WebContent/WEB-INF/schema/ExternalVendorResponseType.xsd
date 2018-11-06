@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://cms.cciio.mlms.gov/ExternalVendorResponseType" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:rsp="http://cms.cciio.mlms.gov/ExternalVendorResponseType" xmlns:common="http://cms.cciio.mlms.gov/CCIIOWebServiceCommonType">
+
+    <import schemaLocation="CCIIOWebServiceCommonType/CCIIOWebServiceCommonType.xsd" namespace="http://cms.cciio.mlms.gov/CCIIOWebServiceCommonType"></import>
+    <element name="ExternalVendorResponse"
+    	type="rsp:ExternalVendorResponseType">
+    </element>
+    
+    <complexType name="ExternalVendorResponseType">
+    	<sequence>
+    		<element name="StatusCode" type="common:StatusType">
+    		</element>
+    	</sequence>
+    </complexType>
+</schema>

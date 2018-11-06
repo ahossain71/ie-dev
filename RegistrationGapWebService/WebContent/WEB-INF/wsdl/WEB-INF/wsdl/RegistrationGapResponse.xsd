@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://cms.cciio.mlms.gov/RegistrationGapResponse" xmlns:common="http://cms.cciio.mlms.gov/CCIIOWebServiceCommonType" xmlns:rsp="http://cms.cciio.mlms.gov/AgentBrokerTrainingCompletionStatus" xmlns:tns="http://cms.cciio.mlms.gov/RegistrationGapResponse">
+
+    <import namespace="http://cms.cciio.mlms.gov/CCIIOWebServiceCommonType" schemaLocation="../../CCIIOWebServiceCommonType/CCIIOWebServiceCommonType.xsd"/>
+    <import namespace="http://cms.cciio.mlms.gov/AgentBrokerTrainingCompletionStatus" schemaLocation="AgentBrokerTrainingCompletionStatus.xsd"/>
+    <complexType name="RegistrationGapResponseType">
+    	<sequence>
+    		<element maxOccurs="unbounded" minOccurs="1" name="RegistrationGapUserType" type="rsp:UserTrainingRecordResponseType">
+    		</element>
+    		<element name="StatusCode" type="common:statusCodeType"/>
+    		<element name="ErrorCode" type="common:errorCodeType"/>
+    	</sequence>
+    </complexType>
+
+    <element name="RegistrationGapResponseElement" type="tns:RegistrationGapResponseType">
+    </element>
+</schema>

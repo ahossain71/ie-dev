@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:FileDescriptionType xmlns:ns2="http://cms.cciio.mlms.gov/MLMSShopUserProfileCommonType" xmlns:ns3="http://cms.cciio.mlms.gov/MLMSShopIncrementalFileType">
+    <FileIdentifier>MLMSSHOPXML20160706014900</FileIdentifier>
+    <FileDateTime>2016/07/06 01:49:00</FileDateTime>
+    <FileRecordCount>0</FileRecordCount>
+    <FileTypeInfo FileType="DailyIncremental"/>
+    <IncrementalRecord>
+        <UserInfo UserID="TESTAGENT4" FirstName="fname" ActiveStatus="active" LastName="lname" npn="NPN"/>
+        <AddressInfo StreetAddress="20 Tomahawk Trail" ZipCode="80477" EmailAddress="mlmstestagent22@yopmail.com" PhoneNumber="3334445555">
+            <ns2:State>CO</ns2:State>
+            <ns2:City>Steamboat Springs</ns2:City>
+        </AddressInfo>
+        <PreferenceInfo>
+            <ns2:WorkingHours>
+                <ns2:from>
+                    <ns2:Time>08:00 AM</ns2:Time>
+                </ns2:from>
+                <ns2:to>
+                    <ns2:Time>05:00 PM</ns2:Time>
+                </ns2:to>
+            </ns2:WorkingHours>
+            <ns2:WorkingDays>
+                <ns2:Monday>available</ns2:Monday>
+                <ns2:Tuesday>unavailable</ns2:Tuesday>
+                <ns2:Wednesday>available</ns2:Wednesday>
+                <ns2:Thursday>available</ns2:Thursday>
+                <ns2:Friday>available</ns2:Friday>
+                <ns2:Saturday>unavailable</ns2:Saturday>
+                <ns2:Sunday>unavailable</ns2:Sunday>
+            </ns2:WorkingDays>
+            <ns2:PreferredLanguage>English</ns2:PreferredLanguage>
+            <ns2:PreferredContactMethod>Mailing address</ns2:PreferredContactMethod>
+            <ns2:SearchIndicator>yes</ns2:SearchIndicator>
+            <ns2:AgencyInfo>
+                <ns2:AgencyName>Indiana SHOP</ns2:AgencyName>
+                <ns2:AgencyUrl>www.in.shop.com</ns2:AgencyUrl>
+            </ns2:AgencyInfo>
+        </PreferenceInfo>
+        <CompletionInfo>
+            <shopAgreementName>SHOP Marketplace</shopAgreementName>
+            <shopAgreementStatus>100</shopAgreementStatus>
+            <shopAgreementExpirationDate>31/10/2017</shopAgreementExpirationDate>
+            <shopAgreementAcquiredDate>06/07/2016</shopAgreementAcquiredDate>
+        </CompletionInfo>
+    </IncrementalRecord>
+</ns3:FileDescriptionType>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://mlms.cciio.cms.gov/VendorTransferSchemaV2" xmlns:tns="http://mlms.cciio.cms.gov/VendorTransferSchemaV2" elementFormDefault="qualified">
+
+    <complexType name="VendorTransferFileDetail">
+    	<sequence maxOccurs="1" minOccurs="1">
+    		<element name="VendorName" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="FileIdentifer" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="FileDate" maxOccurs="1" minOccurs="1">
+    			<simpleType>
+    				<restriction base="date">
+    					<pattern
+    						value="^[2][0-9][1-9][0-9]/[0-1][0-9]/[0-3][0-9]$">
+    					</pattern>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="FileTime" maxOccurs="1" minOccurs="1">
+    			<simpleType>
+    				<restriction base="time">
+    					<pattern value="^[0-2][0-3]:[0-5][0-9]:[0-5][0-9]$"></pattern>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="FileRecordCount" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="Record" type="string" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="CCIIOVendorTransferFile"
+    	type="tns:VendorTransferFileDetail">
+    </element>
+</schema>

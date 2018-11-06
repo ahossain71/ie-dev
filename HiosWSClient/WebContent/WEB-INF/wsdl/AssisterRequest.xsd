@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://cms.gov/hios" xmlns:commonTypes="http://cms.gov/hios-api-types" xmlns:hios="http://cms.gov/hios" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://cms.gov/hios-api-types" schemaLocation="hios-api-types.xsd"/>
+  <xs:element name="AssisterRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="60" minOccurs="1" name="AssisterID" nillable="false" type="commonTypes:AssisterIDType"/>
+        <xs:element name="Consumer" type="commonTypes:ConsumerType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

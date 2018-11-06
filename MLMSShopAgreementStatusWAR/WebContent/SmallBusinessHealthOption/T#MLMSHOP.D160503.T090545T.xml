@@ -1,0 +1,1920 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:FileDescription xmlns:tns="http://cms.cciio.mlms.gov/MLMSShopIncrementalFileType" xmlns:common="http://cms.cciio.mlms.gov/MLMSShopUserProfileCommonType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cms.cciio.mlms.gov/MLMSShopIncrementalFileType MLMSShopFileTransferType.xsd ">
+	<tns:FileIdentifier>MLMSSHOP201605030951</tns:FileIdentifier>
+	<tns:FileDateTime>2016/05/03 23:51:45</tns:FileDateTime>
+	<tns:FileRecordCount>49</tns:FileRecordCount>
+	<tns:FileTypeInfo FileType="DailyIncremental"/>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="agent" LastName="tse" UserID="AGENT728" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="728a@g.com" PhoneNumber="9239999999" StreetAddress="100 main street" ZipCode="92311">
+			<common:State>CA</common:State>
+			<common:City>bus city2</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			 <common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>hello</common:AgencyName>
+				<common:AgencyUrl>www.google.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>27/08/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="fname" LastName="lname" UserID="KPGG" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="123@mail.com" PhoneNumber="1231231231" StreetAddress="stresdddddd martch 11" ZipCode="12312">
+			<common:State>DC</common:State>
+			<common:City>cityddddd</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				<common:to>
+          <common:Time>06:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>unavailable</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>unavailable</common:Wednesday>
+				<common:Thursday>unavailable</common:Thursday>
+				<common:Friday>unavailable</common:Friday>
+				<common:Saturday>available</common:Saturday>
+				<common:Sunday>available</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>Spanish</common:PreferredLanguage>
+			<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>Navigator Curriculum</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>14/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="DEV" LastName="User" UserID="DEVUSER1" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mphoff@us.ibm.com" PhoneNumber="7735787742" StreetAddress="1800 DevUserOne Lane" ZipCode="60201">
+			<common:State>AK</common:State>
+			<common:City>DevUserOne City</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+		
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				 <common:to>
+          <common:Time>06:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>unavailable</common:Wednesday>
+				<common:Thursday>unavailable</common:Thursday>
+				<common:Friday>unavailable</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>Yadda</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>24/03/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Dev" LastName="UserTwo" UserID="DEVUSER2" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mphoff@us.ibm.com" PhoneNumber="5555555555" StreetAddress="1800 DevUserTwo" ZipCode="55522">
+			<common:State>IL</common:State>
+			<common:City>DevTwo</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				 <common:to>
+          <common:Time>09:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>unavailable</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>unavailable</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>unavailable</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Email address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>24/03/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>22/04/2016</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Dev" LastName="UserTwo" UserID="DEVUSER2" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mphoff@us.ibm.com" PhoneNumber="5555555555" StreetAddress="1800 DevUserTwo" ZipCode="55522">
+			<common:State>IL</common:State>
+			<common:City>DevTwo</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				 <common:to>
+          <common:Time>09:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>unavailable</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>unavailable</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>unavailable</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Email address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>24/03/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="DevUser" LastName="Three" UserID="DEVUSER3" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mphoff@us.com" PhoneNumber="7735787742" StreetAddress="1800 Mousekiteer" ZipCode="65020">
+			<common:State>IL</common:State>
+			<common:City>Drive</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				 <common:to>
+          <common:Time>06:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>available</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Email address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>24/03/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Dev" LastName="Userseven" UserID="DEVUSER7" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="MPHOFF@US.IBM.COM" PhoneNumber="7738578772" StreetAddress="1900" ZipCode="69820">
+			<common:State>IL</common:State>
+			<common:City>Evanston</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				 <common:to>
+          <common:Time>06:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>unavailable</common:Monday>
+				<common:Tuesday>available</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Email address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>24/03/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>22/04/2016</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="DevUser" LastName="Three" UserID="DEVUSER3" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mphoff@us.com" PhoneNumber="7735787742" StreetAddress="1800 Mousekiteer" ZipCode="65020">
+			<common:State>IL</common:State>
+			<common:City>Drive</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				 <common:to>
+          <common:Time>06:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>available</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Email address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>24/03/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>22/04/2016</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="DEV" LastName="User" UserID="DEVUSER1" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mphoff@us.ibm.com" PhoneNumber="7735787742" StreetAddress="1800 DevUserOne Lane" ZipCode="60201">
+			<common:State>AK</common:State>
+			<common:City>DevUserOne City</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				 <common:to>
+          <common:Time>06:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>unavailable</common:Wednesday>
+				<common:Thursday>unavailable</common:Thursday>
+				<common:Friday>unavailable</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Email address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>Yadda</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>24/03/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>22/04/2016</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="fname" LastName="lname" UserID="AB11324" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="test@gmail.com" PhoneNumber="6789876098" StreetAddress="add" ZipCode="12312">
+			<common:State>DC</common:State>
+			<common:City>city</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Dev" LastName="Userseven" UserID="DEVUSER7" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="MPHOFF@US.IBM.COM" PhoneNumber="7738578772" StreetAddress="1900" ZipCode="69820">
+			<common:State>IL</common:State>
+			<common:City>Evanston</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				 <common:to>
+          <common:Time>06:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>unavailable</common:Monday>
+				<common:Tuesday>available</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Email address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>24/03/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="TestingPerson" LastName="Personish" UserID="DEVAGENT1" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mphoff@us.ibm.com" PhoneNumber="7777777777" StreetAddress="705 Ingleside St" ZipCode="60201">
+			<common:State>IL</common:State>
+			<common:City>Evanston</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>Entity Plus</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="fname" LastName="lname" UserID="KPags" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="123@mail.com" PhoneNumber="1231231231" StreetAddress="stresdddddd martch 11" ZipCode="12312">
+			<common:State>DC</common:State>
+			<common:City>cityddddd</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				<common:to>
+          <common:Time>06:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>unavailable</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>unavailable</common:Wednesday>
+				<common:Thursday>unavailable</common:Thursday>
+				<common:Friday>unavailable</common:Friday>
+				<common:Saturday>available</common:Saturday>
+				<common:Sunday>available</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>Spanish</common:PreferredLanguage>
+			<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="DEV" LastName="User" UserID="DEVUSER1" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mphoff@us.ibm.com" PhoneNumber="7735787742" StreetAddress="1800 DevUserOne Lane" ZipCode="60201">
+			<common:State>AK</common:State>
+			<common:City>DevUserOne City</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				 <common:to>
+          <common:Time>06:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>unavailable</common:Wednesday>
+				<common:Thursday>unavailable</common:Thursday>
+				<common:Friday>unavailable</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Email address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>Yadda</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>24/03/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Dev" LastName="Userseven" UserID="DEVUSER7" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="MPHOFF@US.IBM.COM" PhoneNumber="7738578772" StreetAddress="1900" ZipCode="69820">
+			<common:State>IL</common:State>
+			<common:City>Evanston</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				 <common:to>
+          <common:Time>06:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>unavailable</common:Monday>
+				<common:Tuesday>available</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Email address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>24/03/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Dev" LastName="UserTwo" UserID="DEVUSER2" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mphoff@us.ibm.com" PhoneNumber="5555555555" StreetAddress="1800 DevUserTwo" ZipCode="55522">
+			<common:State>IL</common:State>
+			<common:City>DevTwo</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				 <common:to>
+          <common:Time>09:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>unavailable</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>unavailable</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>unavailable</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Email address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>24/03/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Dev" LastName="Userseven" UserID="DEVUSER7" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="MPHOFF@US.IBM.COM" PhoneNumber="7738578772" StreetAddress="1900" ZipCode="69820">
+			<common:State>IL</common:State>
+			<common:City>Evanston</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				 <common:to>
+          <common:Time>06:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>unavailable</common:Monday>
+				<common:Tuesday>available</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Email address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>24/03/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>22/04/2016</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Dev" LastName="UserTwo" UserID="DEVUSER2" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mphoff@us.ibm.com" PhoneNumber="5555555555" StreetAddress="1800 DevUserTwo" ZipCode="55522">
+			<common:State>IL</common:State>
+			<common:City>DevTwo</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				 <common:to>
+          <common:Time>09:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>unavailable</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>unavailable</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>unavailable</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Email address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>24/03/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>22/04/2016</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="DEV" LastName="User" UserID="DEVUSER1" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mphoff@us.ibm.com" PhoneNumber="7735787742" StreetAddress="1800 DevUserOne Lane" ZipCode="60201">
+			<common:State>AK</common:State>
+			<common:City>DevUserOne City</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				 <common:to>
+          <common:Time>06:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>unavailable</common:Wednesday>
+				<common:Thursday>unavailable</common:Thursday>
+				<common:Friday>unavailable</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Email address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>Yadda</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>24/03/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>22/04/2016</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="inactive" FirstName="fname" LastName="lname" UserID="AGENTS" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="syt@gmail.com" PhoneNumber="2310081211" StreetAddress="1211 main street" ZipCode="12110">
+			<common:State>CA</common:State>
+			<common:City>1211 agent city</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>bus name</common:AgencyName>
+				<common:AgencyUrl>www.agent1.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Anton" LastName="Weiss" UserID="AUTOMATIONTESTAGENT1" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="automationtestagent1@yopmail.com" PhoneNumber="4103943208" StreetAddress="106 Greenfield Rd" ZipCode="22554">
+			<common:State>VA</common:State>
+			<common:City>Stafford</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="fname" LastName="lname" UserID="KPccc" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="123@mail.com" PhoneNumber="1231231231" StreetAddress="stresdddddd martch 11" ZipCode="12312">
+			<common:State>DC</common:State>
+			<common:City>cityddddd</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				<common:to>
+          <common:Time>06:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>unavailable</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>unavailable</common:Wednesday>
+				<common:Thursday>unavailable</common:Thursday>
+				<common:Friday>unavailable</common:Friday>
+				<common:Saturday>available</common:Saturday>
+				<common:Sunday>available</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>Spanish</common:PreferredLanguage>
+			<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="John" LastName="Carson" UserID="AUTOTESTAGENT2" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="autotestagent2@yopmail.com" PhoneNumber="6018563063" StreetAddress="824 DEBORAH ST" ZipCode="39208">
+			<common:State>MS</common:State>
+			<common:City>JACKSON</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>22/02/2016</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Mattie" LastName="Boyd" UserID="AUTOTESTAGENT3" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="autotestagent3@yopmail.com" PhoneNumber="2032541500" StreetAddress="4313 CLARNO DR # 0" ZipCode="78749">
+			<common:State>TX</common:State>
+			<common:City>AUSTIN</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>22/02/2016</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Anton" LastName="Weiss" UserID="MLMSTESTAGENT0" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mlmstestagent0@yopmail.com" PhoneNumber="3334445555" StreetAddress="106 Greenfield Rd" ZipCode="22554">
+			<common:State>VA</common:State>
+			<common:City>Stafford</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>17/02/2016</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Keith" LastName="barrett" UserID="KBARRETTCCRTEST" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="kbarrettccrtest@yopmail.com" PhoneNumber="2344343443" StreetAddress="106 Greenfield Rd" ZipCode="22554">
+			<common:State>VA</common:State>
+			<common:City>Stafford</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>06/01/2016</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Anton" LastName="Weiss" UserID="MLMSTESTAGENT48" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mlmstestagent48@yomail.com" PhoneNumber="3334445555" StreetAddress="106 Greenfield Rd" ZipCode="22554">
+			<common:State>VA</common:State>
+			<common:City>Stafford</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Anton" LastName="Weiss" UserID="SHOPAGENT1" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="SHOPAgent1@yopmail.com" PhoneNumber="3334445555" StreetAddress="106 Greenfield Rd" ZipCode="22554">
+			<common:State>VA</common:State>
+			<common:City>Stafford</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>18/02/2016</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Anton" LastName="Weiss" UserID="TEST1CCR1" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="test1ccr1@yopmail.com" PhoneNumber="3334445555" StreetAddress="106 Greenfield Rd" ZipCode="22554">
+			<common:State>VA</common:State>
+			<common:City>Stafford</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>17/02/2016</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="fname" LastName="lname" UserID="AB1aaa" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="test@gmail.com" PhoneNumber="6789876098" StreetAddress="add" ZipCode="12312">
+			<common:State>DC</common:State>
+			<common:City>city</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Earl" LastName="Parker" UserID="AUTOTESTAGENT4" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="autotestagent4@yopmail.com" PhoneNumber="6186282537" StreetAddress="6321 WASHINGTON ST" ZipCode="80216">
+			<common:State>CO</common:State>
+			<common:City>DENVER</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>22/02/2016</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Colinda" LastName="Piyapant" UserID="AUTOTESTAGENT5" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="autotestagent5@yopmail.com" PhoneNumber="6088681368" StreetAddress="26 HOMESTEAD RD" ZipCode="53563">
+			<common:State>WI</common:State>
+			<common:City>MILTON</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>22/02/2016</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Anton" LastName="Weiss" UserID="AUTOTESTAGENT1" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="autotestagent1@yopmail.com" PhoneNumber="4103943208" StreetAddress="106 Greenfield Rd" ZipCode="22554">
+			<common:State>VA</common:State>
+			<common:City>Stafford</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>22/02/2016</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Anton" LastName="Weiss" UserID="MLMSTESTGENT55" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mlmstestgent55@yopmail.com" PhoneNumber="6443643643" StreetAddress="106 Grrenfield Rd" ZipCode="22554">
+			<common:State>VA</common:State>
+			<common:City>Stafford</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>06/01/2016</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Anton" LastName="Weiss" UserID="SMR2RTESTAGENT" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="smr2rtestagent@yopmail.com" PhoneNumber="4103943208" StreetAddress="106 Greenfield Rd" ZipCode="22554">
+			<common:State>VA</common:State>
+			<common:City>Stafford</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>08/12/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Anton" LastName="Weiss" UserID="MLMSTESTAGENT50" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mlmstestagent50@yopmail.com" PhoneNumber="3334445555" StreetAddress="106 Greenfield Rd" ZipCode="22554">
+			<common:State>VA</common:State>
+			<common:City>Stafford</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>04/12/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Anton" LastName="Weiss" UserID="MLMSTESTAGENT46" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mlmstestagent46@yopmail.com" PhoneNumber="3334445555" StreetAddress="106 Greenfield Rd" ZipCode="22554">
+			<common:State>VA</common:State>
+			<common:City>Stafford</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="TestingPerson" LastName="Personish" UserID="DEVAGENT1" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mphoff@us.ibm.com" PhoneNumber="7777777777" StreetAddress="705 Ingleside St" ZipCode="60201">
+			<common:State>IL</common:State>
+			<common:City>Evanston</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>Entity Plus</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="fname" LastName="lname" UserID="KP2222" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="test@us.ibm.com" PhoneNumber="1231231231" StreetAddress="123 asfdsadfas" ZipCode="12312">
+			<common:State>AL</common:State>
+			<common:City>asdfasdf</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				<common:to>
+          <common:Time>06:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>unavailable</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>unavailable</common:Wednesday>
+				<common:Thursday>unavailable</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Email address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="fname" LastName="tse" UserID="AGENT" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="syt@gmail.com" PhoneNumber="1234567890" StreetAddress="603 main street" ZipCode="12345">
+			<common:State>AL</common:State>
+			<common:City>City 528</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>www.agent1.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="agent" LastName="tse" UserID="AGENT728" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="728a@g.com" PhoneNumber="9239999999" StreetAddress="100 main street" ZipCode="92311">
+			<common:State>CA</common:State>
+			<common:City>bus city2</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>www.google.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>05/10/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="fname" LastName="lname" UserID="KP2121" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="123@mail.com" PhoneNumber="1231231231" StreetAddress="stresdddddd martch 11" ZipCode="12312">
+			<common:State>DC</common:State>
+			<common:City>cityddddd</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				<common:to>
+          <common:Time>06:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>unavailable</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>unavailable</common:Wednesday>
+				<common:Thursday>unavailable</common:Thursday>
+				<common:Friday>unavailable</common:Friday>
+				<common:Saturday>available</common:Saturday>
+				<common:Sunday>available</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>Spanish</common:PreferredLanguage>
+			<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>14/05/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="fname" LastName="lname" UserID="KP33333" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="teat@gmail.com" PhoneNumber="7897897897" StreetAddress="jjb" ZipCode="79879">
+			<common:State>AL</common:State>
+			<common:City>kjlj</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				<common:from>
+          <common:Time>10:00 AM</common:Time>
+        </common:from>
+				  <common:to>
+          <common:Time>10:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+				<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>31/08/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Dev" LastName="UserTwo" UserID="DEVUSER2" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mphoff@us.ibm.com" PhoneNumber="5555555555" StreetAddress="1800 DevUserTwo" ZipCode="55522">
+			<common:State>IL</common:State>
+			<common:City>DevTwo</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				 <common:to>
+          <common:Time>09:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>unavailable</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>unavailable</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>unavailable</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>24/03/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Dev" LastName="UserTwo" UserID="DEVUSER2" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mphoff@us.ibm.com" PhoneNumber="5555555555" StreetAddress="1800 DevUserTwo" ZipCode="55522">
+			<common:State>IL</common:State>
+			<common:City>DevTwo</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				 <common:to>
+          <common:Time>09:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>unavailable</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>unavailable</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>unavailable</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Email address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>24/03/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>25/04/2016</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="DevUser" LastName="Three" UserID="DEVUSER3" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mphoff@us.com" PhoneNumber="7735787742" StreetAddress="1800 Mousekiteer" ZipCode="65020">
+			<common:State>IL</common:State>
+			<common:City>Drive</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				 <common:to>
+          <common:Time>06:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>available</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>24/03/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="DevUser" LastName="Three" UserID="DEVUSER3" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mphoff@us.com" PhoneNumber="7735787742" StreetAddress="1800 Mousekiteer" ZipCode="65020">
+			<common:State>IL</common:State>
+			<common:City>Drive</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				 <common:to>
+          <common:Time>06:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>available</common:Monday>
+				<common:Tuesday>available</common:Tuesday>
+				<common:Wednesday>available</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>available</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Email address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>24/03/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>25/04/2016</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Dev" LastName="UserTwo" UserID="DEVUSER2" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mphoff@us.ibm.com" PhoneNumber="5555555555" StreetAddress="1800 DevUserTwo" ZipCode="55522">
+			<common:State>IL</common:State>
+			<common:City>DevTwo</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				 <common:to>
+          <common:Time>09:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>unavailable</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>unavailable</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>unavailable</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Mailing address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>24/03/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>25/04/2016</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	<tns:IncrementalRecord>
+		<tns:UserInfo ActiveStatus="active" FirstName="Dev" LastName="UserTwo" UserID="DEVUSER2" npn="0123456789"/>
+		<tns:AddressInfo EmailAddress="mphoff@us.ibm.com" PhoneNumber="5555555555" StreetAddress="1800 DevUserTwo" ZipCode="55522">
+			<common:State>IL</common:State>
+			<common:City>DevTwo</common:City>
+		</tns:AddressInfo>
+		<tns:PreferenceInfo>
+			<common:WorkingHours>
+				 <common:from>
+          <common:Time>08:00 AM</common:Time>
+        </common:from>
+				 <common:to>
+          <common:Time>09:00 PM</common:Time>
+        </common:to>
+			</common:WorkingHours>
+			<common:WorkingDays>
+				<common:Monday>unavailable</common:Monday>
+				<common:Tuesday>unavailable</common:Tuesday>
+				<common:Wednesday>unavailable</common:Wednesday>
+				<common:Thursday>available</common:Thursday>
+				<common:Friday>unavailable</common:Friday>
+				<common:Saturday>unavailable</common:Saturday>
+				<common:Sunday>unavailable</common:Sunday>
+			</common:WorkingDays>
+			<common:PreferredLanguage>English</common:PreferredLanguage>
+			<common:PreferredContactMethod>Email address</common:PreferredContactMethod>
+			<common:SearchIndicator>yes</common:SearchIndicator>
+			<common:AgencyInfo>
+				<common:AgencyName>AName</common:AgencyName>
+				<common:AgencyUrl>aname.url.com</common:AgencyUrl>
+			</common:AgencyInfo>
+		</tns:PreferenceInfo>
+		<tns:CompletionInfo>
+			<tns:shopAgreementName>SHOP Marketplace</tns:shopAgreementName>
+			<tns:shopAgreementStatus>100</tns:shopAgreementStatus>
+			<tns:shopAgreementExpirationDate>24/03/2016</tns:shopAgreementExpirationDate>
+			<tns:shopAgreementAcquiredDate>03/09/2015</tns:shopAgreementAcquiredDate>
+		</tns:CompletionInfo>
+	</tns:IncrementalRecord>
+	
+</tns:FileDescription>

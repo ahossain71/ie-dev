@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="MLMSRegistrationGap" targetNamespace="http://cms.cciio.mlms.gov/MLMSRegistrationGap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://cms.cciio.mlms.gov/MLMSRegistrationGap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:req="http://cms.cciio.mlms.gov/RegistrationGapRequest" xmlns:rsp="http://cms.cciio.mlms.gov/RegistrationGapResponse">
+  <wsdl:types>
+    
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://cms.cciio.mlms.gov/RegistrationGapResponse"
+    		schemaLocation="RegistrationGapResponse.xsd">
+    	</xsd:import>
+    	<xsd:import
+    		namespace="http://cms.cciio.mlms.gov/RegistrationGapRequest"
+    		schemaLocation="RegistrationGapRequest.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
+ 
+  <wsdl:message name="RegistrationGapRequestMessage">
+  	<wsdl:part name="RegistrationGapRequest" element="req:RegistrationGapRequestElement"/>
+  </wsdl:message>
+  <wsdl:message name="RegistrationGapResponseMessage">
+  	<wsdl:part name="RegistrationGapResponse" element="rsp:RegistrationGapResponseElement"/>
+  </wsdl:message>
+  <wsdl:portType name="MLMSRegistrationGap">
+    <wsdl:operation name="RetrieveMLMSRegistrationGAP">
+      <wsdl:input message="tns:RegistrationGapRequestMessage"/>
+      <wsdl:output message="tns:RegistrationGapResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MLMSRegistrationGapSOAP" type="tns:MLMSRegistrationGap">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="RetrieveMLMSRegistrationGAP">
+      <soap:operation soapAction="http://cms.cciio.mlms.gov/MLMSRegistrationGap/RetrieveRegistrationGAP"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MLMSRegistrationGap">
+    <wsdl:port binding="tns:MLMSRegistrationGapSOAP" name="MLMSRegistrationGapSOAP">
+      <soap:address location="http://cms.cciio.mlms.gov/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

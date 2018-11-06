@@ -1,0 +1,108 @@
+<project name="hiosBuild" basedir="." default="main">
+    <property file="eidmRegistrationGapClientProp.properties"/>
+	
+	<path id="master-classpath">
+			<fileset dir="${saba.lib.dir}">
+			   <include name="saba.jar"/>
+			   <include name="sabares.jar"/>
+			   <include name="sabasecurity.jar"/>
+			   <include name="SabaSecurityProviders.jar"/>
+			   <include name="sabaspring.jar"/>
+			  
+            </fileset>
+			<fileset dir="${was.lib.dir}">
+			   <include name="j2ee.jar"/>
+			</fileset>
+			<fileset dir="${msLog.lib.dir}">
+				<include name="mlmswslogging.jar"/>
+			</fileset>
+			<fileset dir="${jaxb.lib.dir}">
+			   <include name="javax.j2ee.annotation.jar"/>
+			   <include name="jaxb-api.jar"/>
+			   <include name="jaxws-api.jar"/>
+			</fileset>
+  	</path>
+
+   	<target name="clean">
+		<delete dir="${build.dir}"/>
+		<delete dir="${classes.dir}"/>
+ 		<delete dir="${sabasite.index.j2eesecurity.dir}"/>
+    		   
+   	</target>
+
+   	<tstamp>
+		<format property="timestamp" pattern="dd.MMM.yyyy-HH.mm.ss" />
+  	</tstamp>
+  	
+	
+  	<target name="compile">
+		  <mkdir dir="${build.dir}"/>
+ 		
+
+		  <javac fork="yes" executable="${compiler.path}/javac" target="1.8" source="1.8" includeantruntime="false"  				
+		  destdir="${gapEar.classes.dir}" classpathref="master-classpath" debug="on" > 
+			<!-- compilerarg value="-Xlint"/ -->
+			
+			<src path="${src.dir}"/>
+                       
+				<include name="gov/**"/>
+				
+			
+		 </javac>
+		<echo message="target compile completed at ${timestamp}"/>	
+	</target>
+			
+	 <target name="build-war" depends="compile">
+	       
+		<war destfile="${lib.dir}/${war.filename}" webxml="${project.dir}/WebContent/WEB-INF/web.xml">
+			<!-- add presentation files -->
+		  <fileset dir="${project.dir}/WebContent/">
+	                <include name="*.jsp"/>
+	             
+		    </fileset> 
+			<!-- add compiled classes -->
+		   <classes dir="${classes.dir}" includes="**">
+	  		<exclude name="archive"/>
+	                <exclude name="home"/>
+		     </classes> 
+			<!-- add libraries -->
+		    <lib dir="${build.dir}/lib" includes="**">
+	                <exclude name="archive/**"/>
+	                 <exclude name="**.ear"/>
+	                 <exclude name="**.war"/>
+	             </lib>  
+	           <exclude name="/home/**"/>
+		</war>
+	     <!-- move failonerror="false" file="${war.filename}" tofile="${lib.dir}/${war.filename}"/ --> 
+
+	 </target>
+	  
+	<target name="build-ear" depends="build-war">
+	   <ear destfile="${lib.dir}/${ear.filename}" appxml="${ear.project.dir}/META-INF/application.xml">
+	   </ear>
+	</target>
+
+	<target name="war" depends="compile">
+	<war destfile="${lib.dir}/${CLIENT_WAR}" webxml="${webpages.dir}/WEB-INF/web.xml">
+        <fileset dir="${webpages.dir}"/>
+        <lib dir="${lib.dir}">
+	 		<exclude name="**.ear"/>
+		    <exclude name="**.war"/>
+		</lib>
+        <classes dir="${gapEar.classes.dir}"/>
+		
+    </war>
+	</target>
+
+	<target name="ear" depends="war">
+    <ear destfile="${lib.dir}/${CLIENT_EAR}" appxml="${webpages.dir}/WEB-INF/application.xml">
+	<fileset dir="${lib.dir}" includes="*.war"/>
+    </ear>
+	</target>
+
+	<target name="main" depends="clean,compile,war,ear"/>
+
+
+
+</project>
+

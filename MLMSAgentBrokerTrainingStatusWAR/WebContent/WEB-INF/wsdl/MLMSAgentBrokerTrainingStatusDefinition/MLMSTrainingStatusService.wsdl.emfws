@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rational.test.lt.models.wscore.configuration:WSDLInformationContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rational.test.lt.models.wscore.configuration="http:///com/ibm/rational/test/lt/models/wscore/configuration.ecore">
+  <securityOperationConfiguration>
+    <SecurityPortConfiguration aliasName="DEFAULTCONFIGURATION"/>
+  </securityOperationConfiguration>
+  <keyStore/>
+  <wsdl name="MLMSTrainingStatusService" key="MLMSTrainingStatusService">
+    <SimpleProperty value="http://cms.ibm.cciio.mlms.org/MLMSTrainingStatusService/" name="WSDLPROPERTY_TARGETNAMESPACE"/>
+    <SimpleProperty value="88c6e0f5d564eb39ef91218e1ddddf9e3ee43c1188c6e0f5d564eb39ef91218e1ddddf9e3ee43c1198ba4666114d2b0c48a22f7b6da66ca678134873292dcc445eb8ba6046971dae36766697a3c590b5ceb5efd63c35b5d3858e7590499c13e48754dce1" name="WSDLPROPERTY_HASH"/>
+    <SimpleProperty value="88c6e0f5d564eb39ef91218e1ddddf9e3ee43c1188c6e0f5d564eb39ef91218e1ddddf9e3ee43c1198ba4666114d2b0c48a22f7b6da66ca678134873292dcc445eb8ba6046971dae36766697a3c590b5ceb5efd63c35b5d3858e7590499c13e48754dce1" name="WSDLPROPERTY_PREVIOUSHASH"/>
+    <SimpleProperty value="1430342183000" name="WSDLPROPERTY_SYNCHROSTAMP"/>
+    <SimpleProperty name="WSDLPROPERTY_SYNCHRO"/>
+    <SimpleProperty name="WSDLPROPERTY_LASTSYNCHRO"/>
+    <SimpleProperty name="WSDLPROPERTY_URL"/>
+    <SimpleProperty name="WSDLPROPERTY_SYNCHROJOBID"/>
+    <ResourceProxy portablePath="/MLMSAgentBrokerTrainingStatus/WebContent/WEB-INF/wsdl/MLMSAgentBrokerTrainingStatusDefinition/MLMSTrainingStatusService.wsdl" timeStamp="1430342183000"/>
+    <WsdlInformationContainer versionContainer="8.3"/>
+    <WsdlBinding name="http://cms.ibm.cciio.mlms.org/MLMSTrainingStatusService/:MLMSTrainingStatusServiceSOAP">
+      <SimpleProperty value="SoapDocumentBinding" name="WSDLBINDINGPROPERTY_TYPE"/>
+      <SimpleProperty value="http://schemas.xmlsoap.org/soap/http" name="WSDLBINDINGPROPERTY_TRANSPORT_TYPE"/>
+      <SimpleProperty value="false" name="Soap12Binding"/>
+      <SimpleProperty value="{http://cms.ibm.cciio.mlms.org/MLMSTrainingStatusService/}MLMSTrainingStatusService" name="WSDLBINDING_SERVICE_NAME"/>
+      <WsdlOperation name="RetrieveTrainingCompletionStatus" key="RetrieveTrainingCompletionStatus">
+        <WsdlPort name="MLMSTrainingStatusServiceSOAP" uniqueID="1638766582SEPARATOR99bf4339-89af-4c7a-81c5-ace85509ee80">
+          <SimpleProperty value="http://localhost:9080/MLMSAgentBrokerTrainingStatus/MLMSTrainingStatusService" name="WSDLPORTPROPERTY_HTTP_URL"/>
+          <in>
+            <SimpleProperty value="DEFAULTCONFIGURATION" name="operation_security_information"/>
+          </in>
+          <out>
+            <SimpleProperty value="DEFAULTCONFIGURATION" name="operation_security_information"/>
+          </out>
+        </WsdlPort>
+        <in>
+          <SimpleProperty value="literal" name="WSDLOPERATIONPROPERTY_ENCODING_STYLE"/>
+          <WsdlPart element="true" nameSpaceURI="http://cms.ibm.cciio.mlms.org/RetrieveTrainingCompletionStatusRequest" localPart="userId" partName="userId"/>
+        </in>
+        <SimpleProperty value="true" name="WSDLOPERATIONPROPERTY_SOAP_ACTION_REQUIRED"/>
+        <SimpleProperty value="http://cms.ibm.cciio.mlms.org/MLMSTrainingStatusService/RetrieveTrainingCompletionStatus" name="WSDLOPERATIONPROPERTY_SOAP_ACTION_URI"/>
+        <out>
+          <SimpleProperty value="literal" name="WSDLOPERATIONPROPERTY_ENCODING_STYLE"/>
+          <SimpleProperty name="MESSAGENAME"/>
+          <WsdlPart element="true" nameSpaceURI="http://cms.ibm.cciio.mlms.org/RetrieveTrainingCompletionStatusType" localPart="RetrieveTrainingCompletionStatusResponse" partName="trainingCompletionStatus"/>
+        </out>
+      </WsdlOperation>
+    </WsdlBinding>
+  </wsdl>
+</com.ibm.rational.test.lt.models.wscore.configuration:WSDLInformationContainer>

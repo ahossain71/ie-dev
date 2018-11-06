@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema elementFormDefault="qualified" targetNamespace="http://cms.ibm.cciio.mlms.org/RetrieveTrainingCompletionStatusType" xmlns:common="http://cms.cciio.mlms.gov/CCIIOWebServiceCommonType" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:tns="http://cms.ibm.cciio.mlms.org/RetrieveTrainingCompletionStatusType" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<xsd:import namespace="http://cms.cciio.mlms.gov/CCIIOWebServiceCommonType" schemaLocation="../CCIIOWebServiceCommonType/CCIIOWebServiceCommonType.xsd"/>
+
+<xsd:element ibmSchExtn:docRoot="true" name="RetrieveTrainingCompletionStatusResponse">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element minOccurs="1" name="userId" type="xsd:string"/>
+			<xsd:element maxOccurs="unbounded" minOccurs="1" name="certification" type="tns:certificationType"/>
+			<xsd:element name="statusCode" type="common:statusCodeType"/>
+			<xsd:element name="statusMessage" type="xsd:string"/>
+			<xsd:element name="errorCode" type="common:errorCodeType"/>
+			<xsd:element name="errorKey" type="xsd:string"/>
+			<xsd:element name="errorMessage" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+	<xsd:complexType name="certificationType">
+		<xsd:all>
+			<xsd:element name="certificationId" type="xsd:string"/>
+			<xsd:element name="certificationName" type="xsd:string"/>
+			<xsd:element name="certificationStatus" type="xsd:string"/>
+			<xsd:element name="certificationYear" type="xsd:string"/>
+			<xsd:element name="certificationExperationDate" type="xsd:string"/>
+		</xsd:all>
+	</xsd:complexType>
+
+</xsd:schema>

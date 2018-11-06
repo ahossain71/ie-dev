@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webservices xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/javaee_web_services_1_3.xsd" version="1.3">
+	<webservice-description>
+		<webservice-description-name>MLMSRegistrationGap</webservice-description-name>
+		<wsdl-file>WEB-INF/wsdl/MLMSRegistrationGap.wsdl</wsdl-file>
+		<port-component>
+			<port-component-name>MLMSRegistrationGap</port-component-name>
+			<wsdl-service xmlns:pfx="http://cms.cciio.mlms.gov/MLMSRegistrationGap/">
+			pfx:MLMSRegistrationGap</wsdl-service>
+			<wsdl-port xmlns:pfx="http://cms.cciio.mlms.gov/MLMSRegistrationGap/">
+			pfx:MLMSRegistrationGapSOAP</wsdl-port>
+			<enable-mtom>false</enable-mtom>
+			<service-endpoint-interface>gov.mlms.cciio.cms.mlmsregistrationgap.MLMSRegistrationGap</service-endpoint-interface>
+			<service-impl-bean>
+				<servlet-link>
+				gov.mlms.cciio.cms.mlmsregistrationgap.MLMSRegistrationGapSOAPImpl</servlet-link>
+			</service-impl-bean>
+		</port-component>
+	</webservice-description>
+</webservices>

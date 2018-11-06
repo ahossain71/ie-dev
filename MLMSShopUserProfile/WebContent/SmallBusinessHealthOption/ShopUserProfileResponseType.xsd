@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://cms.cciio.mlms.gov/ShopUserProfileResponseType" xmlns:tns="http://cms.cciio.mlms.gov/ShopUserProfileResponseType" elementFormDefault="qualified" xmlns:Q1="http://cms.cciio.mlms.gov/CCIIOWebServiceCommonType" xmlns:common="http://cms.cciio.mlms.gov/MLMSShopUserProfileCommonType">
+
+    <import schemaLocation="../CCIIOWebServiceCommonType/CCIIOWebServiceCommonType.xsd" namespace="http://cms.cciio.mlms.gov/CCIIOWebServiceCommonType"></import>
+    <import schemaLocation="MLMSShopUserProfileCommonType.xsd" namespace="http://cms.cciio.mlms.gov/MLMSShopUserProfileCommonType"></import>
+    <element name="ShopUserProfile" type="tns:ShopUserProfileResponseType"></element>
+
+   
+    <complexType name="ShopUserProfileResponseType">
+    	<sequence>
+    		<element name="UserAddress" type="common:AddressType"
+    			maxOccurs="1" minOccurs="1">
+    		</element>
+    		<element name="UserInfo" type="common:UserType"
+    			maxOccurs="1" minOccurs="1">
+    		</element>
+    		<element name="UserPreferences"
+    			type="common:UserPreferencesType">
+    		</element>
+    		<element name="StatusInfo" type="Q1:StatusType"></element>
+    	</sequence>
+    </complexType>
+
+    
+    
+
+    
+
+
+
+   
+
+    
+
+</schema>

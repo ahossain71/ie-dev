@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/vendorTransferSchema" xmlns:tns="http://www.example.org/vendorTransferSchema" elementFormDefault="qualified">
+
+
+    
+
+    <element name="VendorTransferFile" type="tns:VendorTranferDetail"></element>
+
+    <complexType name="VendorTranferDetail">
+    	<sequence>
+    		<element name="VendorName" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="FileID" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="FileDate" type="date" maxOccurs="1" minOccurs="1"></element>
+    		<element name="FileTime" type="time" maxOccurs="1" minOccurs="1"></element>
+    		<element name="ContainedRecordCount" type="integer"
+    			maxOccurs="1" minOccurs="1">
+    		</element>
+    		<element name="Record" type="string"
+    			maxOccurs="unbounded" minOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
+</schema>

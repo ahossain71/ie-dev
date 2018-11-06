@@ -1,0 +1,121 @@
+<project name="mlmsWSLogBuild" default="main">
+	<!-- When basedir is not set, relative paths are based on where the build file is -->
+	
+	<!-- When basedir is not set, relative paths are based on where the build file is -->
+	
+	<!-- From Ant documentation, we want everything relative to where the build file is -->
+	<!--
+		"basedir": the base directory from which all path calculations are done. 
+		This attribute might be overridden by setting the "basedir" property beforehand. When this is done, 
+		it must be omitted in the project tag. If neither the attribute nor the property have been set, 
+		the parent directory of the buildfile will be used.
+		A relative path is resolved relative to the directory containing the build file.
+	-->
+
+	<!-- Since relative paths are based on where the build file is, project directory is the parent of "basedir" -->
+	<property name="project.dir" value="../" />
+	
+	<property name="webpages.dir" value="${project.dir}/WebContent" />
+
+	<!--<property name="build.dir" value="build/eidmClientJarBuild" />-->
+	<property name="build.dir" value="${project.dir}/build" />
+
+	<!--<property name="src.dir" value="${build.dir}/src" />-->
+	<property name="src.dir" value="${project.dir}/src" />
+
+	<!-- the dist(tribution) directory will be used to store build outputs -->
+	<property name="dist.dir" value="${project.dir}/dist" />
+
+	<property name="archive.dir" value="${dist.dir}/archive" />
+
+	<property name="classes.dir" value="${build.dir}/classes" />
+
+	<property name="was.lib.dir" value="${websphere.base}/lib" />
+
+	<property name="jaxb.lib.dir" value="${websphere.base}/endorsed_apis" />
+
+	<property name="CLIENT_JAR" value="mlmswslogging.jar"/>
+
+	<property name="CLIENT_WAR" value="MLMSWSLogging.war"/>
+
+	<property name="CLIENT_EAR" value="MLMSWSLogging.ear"/>
+	
+	<!-- Let Ant retrieve the system username -->
+	<!--<property name="user.name" value="anu"/>-->
+	
+	<property name="wslogging.project" value="mlms_ws_transaction_logging" />
+	
+	<property name="wslogging.project.dir" value="${project.dir}/../${wslogging.project}" />
+
+	<property name="mlms-wslogging-jar" value="mlmswslogging.jar" />
+
+	<path id="master-classpath">
+		<fileset dir="${was.lib.dir}">
+			<include name="j2ee.jar" />
+		</fileset>
+		<fileset dir="${jaxb.lib.dir}">
+			<include name="javax.j2ee.annotation.jar" />
+			<include name="jaxb-api.jar" />
+			<include name="jaxws-api.jar" />
+		</fileset>
+		<fileset dir="${wslogging.project.dir}/dist/">
+			<include name="${mlms-wslogging-jar}" />
+		</fileset>
+		<fileset dir="${project.dir}/">
+			<!-- The following might not exist in every project. Specify the pattern in "include" below instead of "dir" above to avoid compilation error -->
+			<!-- Just in case there are project specific resources -->
+			<include name="WebContent/WEB-INF/lib/*.jar" />
+			<!-- Project specific resources that are only needed at compile time, e.g. MLMSAgentBrokerTrainingStatusWAR, MLMSShopXML -->
+			<include name="lib/*.jar" />
+		</fileset>
+	</path>
+
+	<target name="clean">
+		<delete dir="${build.dir}"/>
+		<delete dir="${dist.dir}"/>
+	</target>
+
+	<tstamp>
+		<format property="timestamp" pattern="dd.MMM.yyyy-HH.mm.ss" />
+	</tstamp>
+  		
+	<target name="compile" depends="clean">
+		<mkdir dir="${build.dir}/classes"/>
+		<mkdir dir="${dist.dir}/lib"/>
+		<javac fork="yes" executable="${compiler.path}/javac" target="1.8" source="1.8" includeantruntime="false" destdir="${build.dir}/classes" classpathref="master-classpath" debug="on" > 
+			<!-- compilerarg value="-Xlint"/ -->
+			
+			<src path="${src.dir}"/>
+			<include name="gov/**"/>
+			<include name="cms/**"/>
+		</javac>
+		<echo message="target compile completed at ${timestamp}"/>	
+	</target>
+
+	<target name="jar" depends="compile">
+		<jar destfile="${dist.dir}/lib/${CLIENT_JAR}">
+			<fileset dir="${build.dir}/classes" includes="**"/>
+			<manifest>
+				<attribute name="Built-By" value="${user.name}"/>
+			</manifest>
+		</jar>
+		<!-- The JAR file is also a deployable unit by itself -->
+		<copy todir="${dist.dir}" file="${dist.dir}/lib/${CLIENT_JAR}" /> 
+	</target>
+	
+	<target name="war" depends="jar">
+		<war destfile="${dist.dir}/lib/${CLIENT_WAR}" webxml="${webpages.dir}/WEB-INF/web.xml">
+			<fileset dir="${webpages.dir}"/>
+			<lib dir="${dist.dir}/lib" />
+			<classes dir="${classes.dir}"/>
+		</war>
+	</target>
+
+	<target name="ear" depends="war">
+		<ear destfile="${dist.dir}/${CLIENT_EAR}" appxml="${project.dir}/EARContent/WEB-INF/application.xml">
+			<fileset dir="${dist.dir}/lib" includes="*.war"/>
+		</ear>
+	</target>
+
+	<target name="main" depends="ear"/>
+</project>

@@ -1,0 +1,32 @@
+<project name="mlmsWSLogBuild Package for Build" default="package" basedir=".">
+	<description>
+		build file for packaging the MLMS Webservices Logging code
+	</description>
+
+	<property name="workspace.dir" value="/opt/ibm/RTC-Build/workspace" />
+
+	<property name="project.folder" value="mlms_ws_transaction_logging" />
+
+	<target name="package">
+		<zip destfile="${workspace.dir}/${project.folder}.zip">
+			<zipfileset dir="${workspace.dir}/${project.folder}">
+				<!-- We don't want to include what we are going to generate!! -->
+				<!-- Compiled artifacts that were checked into RTC accidentally have been removed, the following is not needed -->
+				<!--
+				<exclude name="lib/**"/>
+				<exclude name="WebContent/WEB-INF/lib/mlmswslogging.jar"/>
+				<exclude name="*.jar"/>
+				<exclude name="*.war"/>
+				<exclude name="*.ear"/>
+				-->
+			</zipfileset>
+		</zip>
+		<!-- Need to include jsch-0.1.54.jar in <user home>/.ant/lib -->
+		<!-- sftp="true" doesn't work yet -->
+		<scp file="${workspace.dir}/${project.folder}.zip" 
+			todir="${sftp.user}:${sftp.password}@${sftp.host}:RTC-Build/${project.folder}.zip.dest" 
+			>
+		</scp>
+	</target>
+</project>
+  

@@ -1,0 +1,105 @@
+<project name="shopAgreementBuild" basedir="." default="main">
+   <!-- source code location for the sso source files -->
+   <property name="src.dir" value="C:\Users\IBM_ADMIN\IBM\rationalsdp\workspace\MLMSShopAgreementStatusWAR\src"/>
+   <!-- the files in the endorsed api's directory are needed -->
+
+   <property name="webpages.dir" value="C:\Users\IBM_ADMIN\IBM\rationalsdp\workspace\MLMSShopAgreementStatusWAR\WebContent"/>
+
+   <property name="jaxb.lib.dir" value="C:\Program Files\IBM\WebSphere\AppServer_1_2\endorsed_apis"/>
+
+   <property name="compiler.path" value="C:\Program Files\IBM\WebSphere\AppServer_1_2\java\8.0\bin"/>
+	
+   <!-- default compiler -->
+   <property name="ant.build.javac.source" value="${compiler.path}/javac"/>
+
+   <!-- build directory -->
+   <property name="build.dir" value="build"/>
+   <property name="lib.dir" value="build"/>
+    
+   <property name="shopwar.root.dir" value="C:\app\saba\CCIIO\SabaWeb\alt_src"/>
+
+   <property name="sabasite.index.j2eesecurity.dir" value="C:\app\saba\CCIIO\SabaWeb\alt_src\SabaSite\index\j2eesecurity"/>
+
+   <property name="shopwar.classes.dir" value="C:\Users\IBM_ADMIN\IBM\rationalsdp\workspace\MLMSShopAgreementStatusWAR\WebContent\WEB-INF\classes"/>
+
+   <property name="shopwar.lib.dir" value="C:\Users\IBM_ADMIN\IBM\rationalsdp\workspace\MLMSShopAgreementStatusWAR\WebContent\WEB-INF\lib"/>
+
+   <property name="msLog.lib.dir" value="C:\Users\IBM_ADMIN\IBM\rationalsdp\workspace\mlms_ws_transaction_logging\"/>
+	
+   <property name="saba.lib.dir" value="C:\app\saba\CCIIO\SabaWeb\lib"/>
+
+   <property name="was.lib.dir" value="C:\Program Files\IBM\WebSphere\AppServer_1_2\lib"/>
+
+   <property name="archive.dir" value="C:\Users\IBM_ADMIN\IBM\rationalsdp\workspace\MLMSShopAgreementStatusWAR\archive"/>
+
+   <property name="CLIENT_WAR" value="MLMSShopAgreementStatus.war"/>
+
+   <!--<property name="SOURCE_JAR" value="mlms_source.jar"/>-->
+
+   <property name="user.name" value="anu"/>
+	<path id="master-classpath">
+			<fileset dir="${saba.lib.dir}">
+			   <include name="saba.jar"/>
+			   <include name="sabares.jar"/>
+			   <include name="sabasecurity.jar"/>
+			   <include name="SabaSecurityProviders.jar"/>
+			   <include name="sabaspring.jar"/>
+			  
+            </fileset>
+			<fileset dir="${was.lib.dir}">
+			   <include name="j2ee.jar"/>
+			</fileset>
+			<fileset dir="${msLog.lib.dir}">
+				<include name="mlmswslogging.jar"/>
+			</fileset>
+			<fileset dir="${jaxb.lib.dir}">
+			   <include name="javax.j2ee.annotation.jar"/>
+			   <include name="jaxb-api.jar"/>
+			   <include name="jaxws-api.jar"/>
+			</fileset>
+  	</path>
+
+   	<target name="clean">
+		<delete dir="${build.dir}"/>
+		<delete dir="${lib.dir}"/>
+		<delete dir="${classes.dir}"/>
+ 		<delete dir="${sabasite.index.j2eesecurity.dir}"/>
+    		   
+   	</target>
+
+   	<tstamp>
+		<format property="timestamp" pattern="dd.MMM.yyyy-HH.mm.ss" />
+  	</tstamp>
+  	
+	
+  	<target name="compile">
+		  <mkdir dir="${build.dir}"/>
+ 		
+
+		  <javac fork="yes" executable="${compiler.path}/javac" target="1.8" source="1.8" includeantruntime="false"  				
+		  destdir="${build.dir}" classpathref="master-classpath" debug="on" > 
+			<!-- compilerarg value="-Xlint"/ -->
+			
+			<src path="${src.dir}"/>
+                       
+				<include name="gov/**"/>
+				
+			
+		 </javac>
+		<echo message="target compile completed at ${timestamp}"/>	
+	</target>
+
+	<target name="war" depends="compile">
+    <war destfile="${CLIENT_WAR}" webxml="${webpages.dir}/WEB-INF/web.xml">
+        <fileset dir="${webpages.dir}"/>
+        <lib dir="${shopwar.lib.dir}"/>
+        <classes dir="${shopwar.classes.dir}"/>
+    </war>
+	</target>
+
+	<target name="main" depends="clean,compile,war"/>
+
+
+
+</project>
+

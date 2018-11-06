@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"          
+            xmlns="http://types.waasaplicationinfov6.api.waas.ws.eidm.cms.hhs.gov"
+            targetNamespace="http://types.waasaplicationinfov6.api.waas.ws.eidm.cms.hhs.gov"            
+            elementFormDefault="qualified"
+            xmlns:cmn="http://common.domain.waas.ws.eidm.cms.hhs.gov"
+            xmlns:rl="http://role.domain.waas.ws.eidm.cms.hhs.gov"
+            xmlns:up="http://userprofile.domain.waas.ws.eidm.cms.hhs.gov">
+            
+    <xsd:import schemaLocation="./common/Common.xsd"
+                namespace="http://common.domain.waas.ws.eidm.cms.hhs.gov"/> 
+    <xsd:import schemaLocation="./common/RoleInfo.xsd"
+                namespace="http://role.domain.waas.ws.eidm.cms.hhs.gov"/>
+    <xsd:import schemaLocation="./common/UserProfile.xsd"
+                namespace="http://userprofile.domain.waas.ws.eidm.cms.hhs.gov"/>            
+                
+    <xsd:element name="RetrieveAppDetailsRequest"
+                 type="RetrieveAppDetailsRequestType"/>
+    <xsd:element name="RetrieveAppDetailsResponse"
+                 type="RetrieveAppDetailsResponseType"/>
+                   
+    <xsd:complexType name="RetrieveAppDetailsRequestType">
+        <xsd:sequence>
+            <xsd:element name="Credentials" type="up:WaaSApplicationInfoType" minOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+   <xsd:complexType name="RetrieveAppDetailsResponseType">
+        <xsd:sequence>
+            <xsd:element name="UserProfile" type="up:UserProfileV6Type" minOccurs="0"/>
+            <xsd:element name="BusinessInfo" type="up:BusinContInfoV6Type" minOccurs="0"/>
+            <xsd:element name="AppsInfo" type="rl:AppsInfoType" minOccurs="0"/>
+            <xsd:element name="RolesInfo" type="rl:RolesType" minOccurs="0"/>
+            <xsd:element name="Status" type="cmn:StatusType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="RetrieveAppDetailsFault" type="cmn:FaultType"/>
+    
+</xsd:schema>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://role.domain.waas.ws.eidm.cms.hhs.gov"
+            targetNamespace="http://role.domain.waas.ws.eidm.cms.hhs.gov"
+            elementFormDefault="qualified">
+   
+    <xsd:complexType name="RoleInfoType">
+        <xsd:sequence>
+            <xsd:element name="roleName" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="roleGrantDate" type="xsd:date" minOccurs="0"/>
+            <xsd:element name="roleAttributes" type="RoleAttributesType" minOccurs="0"/> 
+        </xsd:sequence>
+    </xsd:complexType>
+    
+      <xsd:complexType name="RoleInfoMultipleRoleType">
+        <xsd:sequence>
+            <xsd:element name="roleName" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+         </xsd:sequence>
+    </xsd:complexType>
+    
+    
+     <xsd:complexType name="RoleAndAttrInfoMultipleRoleType">
+        <xsd:sequence>
+            <xsd:element name="roleName" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="attrInfo" type="AttributeInfoType" minOccurs="0"/> 
+         </xsd:sequence>
+    </xsd:complexType>
+    
+     <xsd:complexType name="AttributeInfoType">
+        <xsd:sequence>
+            <xsd:element name="attr" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+             </xsd:sequence>
+    </xsd:complexType>
+    
+    
+    
+    <xsd:complexType name="AppInfoType">
+        <xsd:sequence>
+            <xsd:element name="appAttributeName" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="appAttributeText" type="xsd:string" minOccurs="0"/> 
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="RolesType">
+        <xsd:sequence>
+            <xsd:element name="roleInfo" type="RoleInfoType" minOccurs="0" maxOccurs="unbounded"/> 
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="AppsInfoType">
+        <xsd:sequence>
+            <xsd:element name="appInfo" type="AppInfoType" minOccurs="0" maxOccurs="unbounded"/> 
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="RoleAttributesType">
+        <xsd:sequence>
+            <xsd:element name="attribute" type="RoleAttributeType" minOccurs="0" maxOccurs="unbounded"/> 
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="RoleAttributeType">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="value" type="xsd:string" minOccurs="0"/> 
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

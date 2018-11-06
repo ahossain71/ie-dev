@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://cms.gov/hios-api-types" xmlns="http://cms.gov/hios-api-types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ResponseHeaderType">
+    <xs:sequence>
+      <xs:element name="ReturnCode" type="ReturnCodeType"/>
+      <xs:element minOccurs="0" name="ServiceError" type="ServiceError"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="ReturnCodeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success"/>
+      <xs:enumeration value="Error"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ServiceError">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="ErrorCode" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="ErrorMessage" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AssisterIDType">
+    <xs:annotation>
+      <xs:documentation>allow 13 digit alphanumeric format</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="13"/>
+      <xs:pattern value="[A-Za-z0-9]*"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="GranteeType">
+    <xs:annotation>
+      <xs:documentation>Grantee Type (i.e. School, Clinic, community
+				Center, For profit, etc.)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Grantee">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="GranteeOrganization" type="GranteeOrganization"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GranteeOrganization">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="Name" type="xs:string"/>
+      <xs:element minOccurs="1" name="Address" type="OrganizationAddress"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OrganizationAddress">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="AddressLine1" type="StreetType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="AddressLine2" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="City" type="CityType"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="State" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="Zip" type="ZipType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ZipPlus4" type="ZipPlus4Type"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="StreetType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ZipType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{5}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ZipPlus4Type">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\s*|[0-9]{4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CityType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ContactType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="FirstName" type="ContactNameType"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="LastName" type="ContactNameType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ContactPhone_Number" type="PhoneType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ContactExtension" type="PhoneExtType"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="ContactEmail" type="EmailType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="ContactNameType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="40"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EmailType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="256"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PhoneExtType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="6"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PhoneType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AssisterCertificationStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Certified"/>
+      <xs:enumeration value="N/A"/>
+      <xs:enumeration value="Not Certified"/>
+      <xs:enumeration value="De-Certified"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ConsumerType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Assister">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="AssisterID" type="AssisterIDType"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="Grantee" type="Grantee"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="AssisterContact" type="ContactType"/>
+      <xs:element name="CertificationStatus" type="AssisterCertificationStatusType"/>
+      <xs:element name="CertificationDate" nillable="true" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

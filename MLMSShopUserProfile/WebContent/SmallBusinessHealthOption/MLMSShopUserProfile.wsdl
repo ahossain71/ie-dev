@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="MLMSShopUserProfile" targetNamespace="http://cms.cciio.mlms.util/MLMSShopUserProfile/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://cms.cciio.mlms.util/MLMSShopUserProfile/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://cms.cciio.mlms.gov/ShopUserProfileResponseType" xmlns:xsd2="http://cms.cciio.mlms.gov/ShopUserProfileRequestType">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://cms.cciio.mlms.util/MLMSShopUserProfile/">
+      
+            <xsd:element name="ShopUserProfile" type="xsd:string"></xsd:element>
+            <xsd:element name="RetrieveShopUserProfileRequest" type="xsd:string"></xsd:element>
+        </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://cms.cciio.mlms.gov/ShopUserProfileResponseType"
+    		schemaLocation="ShopUserProfileResponseType.xsd">
+    	</xsd:import>
+    	<xsd:import
+    		namespace="http://cms.cciio.mlms.gov/ShopUserProfileRequestType"
+    		schemaLocation="ShopUserProfileRequestType.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="RetrieveShopUserProfileRequest">
+        <wsdl:part name="UserId" element="xsd2:UserId"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RetrieveShopUserProfileResponse">
+    <wsdl:part name="ShopUserProfile" element="xsd1:ShopUserProfile"/>
+  </wsdl:message>
+  <wsdl:portType name="MLMSShopUserProfile">
+    <wsdl:operation name="RetrieveShopUserProfile">
+      <wsdl:input message="tns:RetrieveShopUserProfileRequest"/>
+      <wsdl:output message="tns:RetrieveShopUserProfileResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MLMSShopUserProfileSOAP"
+  	type="tns:MLMSShopUserProfile">
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="RetrieveShopUserProfile">
+  		<soap:operation
+  			soapAction="http://cms.cciio.mlms.util/MLMSShopUserProfile/RetrieveShopUserProfile" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MLMSShopUserProfile">
+    <wsdl:port binding="tns:MLMSShopUserProfileSOAP" name="MLMSShopUserProfileSOAP">
+      <soap:address location="http://cms.cciio.mlms.gov/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

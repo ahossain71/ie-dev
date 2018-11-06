@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application id="HiosWSClient" version="6" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_6.xsd">
+	<display-name>Hios Web Service Client</display-name>
+	<module id="HiosWSClient_Web">
+ 		<web>
+ 			<web-uri>HiosWSClient.war</web-uri>
+ 			<context-root>mlmshwsc</context-root>
+	 	</web>
+ 	</module>
+</application>

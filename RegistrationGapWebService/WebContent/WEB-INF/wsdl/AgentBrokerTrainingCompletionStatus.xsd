@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://cms.cciio.mlms.gov/AgentBrokerTrainingCompletionStatus" xmlns:tns="http://cms.cciio.mlms.gov/AgentBrokerTrainingCompletionStatus" elementFormDefault="qualified" xmlns:common="http://cms.cciio.mlms.gov/CCIIOWebServiceCommonType">
+
+    <import schemaLocation="../../CCIIOWebServiceCommonType/CCIIOWebServiceCommonType.xsd" namespace="http://cms.cciio.mlms.gov/CCIIOWebServiceCommonType"></import>
+
+
+    <complexType name="UserTrainingRecordResponseType">
+    	<all>
+    		<element name="CertificationID" type="string"></element>
+    		<element name="CertificationName" type="string"></element>
+    		<element name="CertificationStatus" type="string"></element>
+    		<element name="CertificationExpirationDate" type="string"></element>
+    		<element name="CertificationYear" type="string"></element>
+    	</all>
+    </complexType>
+
+    <complexType name="UserTrainingResponseType">
+    	<sequence>
+    		<element name="username" type="string"></element>
+    		<element name="trainingRecord"
+    			type="tns:UserTrainingRecordResponseType" maxOccurs="unbounded"
+    			minOccurs="1">
+    		</element>
+    		<element name="StatusCode" type="common:statusCodeType"></element>
+    		<element name="ErrorCode" type="common:errorCodeType"></element>
+    	</sequence>
+    </complexType>
+</schema>

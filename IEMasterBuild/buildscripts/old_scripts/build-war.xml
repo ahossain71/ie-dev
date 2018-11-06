@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     Sep 4, 2015 9:30:27 AM                                                        
+
+     MLMSShopAgreementStatus     
+     Ant file to build the war file for the MLMSShopAgreementStatus.war
+                   
+     wwwiniew                                                                
+     ====================================================================== -->
+
+<!-- TODO 
+  - fix component in order to build war correctly with content
+  - package up the war.
+  
+  -->
+
+<project name="MLMSShopAgreementStatus " default="default">
+	<description>
+            Ant file to build the war file for the MLMSShopAgreementStatus.war
+    </description>
+	<property file="build.properties" />
+	<!-- need to figure out how to use build server credentials or something else where hidden -->
+	<property name="userId" value="wwwiniew" />
+	<property name="password" value="cook:SPRING:01" />
+	<!-- *** Set all properties, classpath, etc ... -->
+
+	<!-- ***  load directory will be used here to prepare for future builds from the RTC build server -->
+	<!-- ******  instead of just ${basedir} -->
+	<property environment="env" />
+	<property name="loadDir" value="${basedir}/${buildLabel}" />
+	<!-- RTC Server property 
+	<property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter" />
+	-->
+
+
+	<property name="build.debuglevel" value="lines,vars,source" />
+	<property name="build.compiler" value="modern" />
+	<property name="destdir" value="${loadDir}/build" />
+	<property name="destdir.bin" value="${loadDir}/build/bin" />
+	<property name="destdir.distro" value="${loadDir}/build/distro" />
+	<property name="destdir.distro.libs" value="${loadDir}/build/distro/libs" />
+	<property name="compilelog" value="${destdir}/compile.xml" />
+	<property name="target" value="1.6" />
+	<property name="source" value="1.6" />
+
+	<!-- define lib, was.runtime should be defined -->
+	<property name="was.runtime" value="/Users/wwwiniew/IBM/SoftwareDeliveryPlatform/runtimes" />
+	<property name="was.lib.dir" value="${was.runtime}/base_v8_stub/lib" />
+	<echo message="property is ${was.lib.dir}" />
+
+	<echo message="loadDir=${loadDir}" />
+
+	<delete dir="${destdir}" />
+	<mkdir dir="${destdir}" />
+	<mkdir dir="${destdir.bin}" />
+	<mkdir dir="${destdir.distro}" />
+	<mkdir dir="${destdir.distro.libs}" />
+
+	<!-- *** Start Classpath *** -->
+	<!-- *** if loaded from rtc this would be ${loadDir}/MLMShop...  -->
+	<!-- ******  for local build just ${loadDir} -->
+
+	<property name="MLMSShopAgreementStatus.location" value="${loadDir}/MLMSShopAgreementStatus" />
+
+
+	<path id="Websphere Libraries.libraryclasspath">
+		<fileset dir="${was.lib.dir}" includes="j2ee.jar" />
+
+	</path>
+
+	<pathconvert property="classpathProp" refid="Websphere Libraries.libraryclasspath" />
+
+	<echo>Classpath is ${classpathProp}</echo>
+
+
+
+	<path id="MLMSShopAgreementStatus.classpath">
+		<pathelement location="${destdir.bin}" />
+		<path refid="Websphere Libraries.libraryclasspath" />
+	</path>
+
+
+	<!-- ================================= 
+          target: default              
+         ================================= -->
+
+	<target name="default" depends="build-MLMSShopAgreementStatus, package-MLMSShopAgreementStatus, cleanUp" description="Ant file to build the war file for the MLMSShopAgreementStatus.war">
+
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: depends                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="build-MLMSShopAgreementStatus">
+
+		<record name="${destdir}/build-MLMSShopAgreementStatus.log" action="start" append="false" />
+
+		<!--	<javac srcdir="${MLMSShopAgreementStatus.location}" destdir="${destdir.bin}" includeantruntime="true"
+					debuglevel="${build.debuglevel}" debug="on" nowarn="on" failonerror="false" source="${source}" target="${target}">
+					<classpath refid="MLMSShopAgreementStatus.classpath"/>
+		</javac>
+	 	-->
+		<startBuildActivity activityIdProperty="build-MLMSShopAgreementStatus" label="Compiling MLMSShopAgreementStatus" autoComplete="true" buildResultUUID="${buildResultUUID}" repositoryAddress="${repositoryAddress}" userid="${build.user}" password="${build.pass}" />
+		<!-- userId="${userId}" passwordFile="${password}" /> -->
+
+
+		<delete dir="${MLMSShopAgreementStatus.location}/build/" />
+
+		<mkdir dir="${MLMSShopAgreementStatus.location}/build/" />
+
+		<mkdir dir="${MLMSShopAgreementStatus.location}/build/classes" />
+		<!-- Note this project needs to standardize and move code to the src directory -->
+
+		<javac srcdir="${MLMSShopAgreementStatus.location}" destdir="${MLMSShopAgreementStatus.location}/build/classes" debuglevel="${build.debuglevel}" debug="on" nowarn="on" failonerror="false" errorProperty="errors.found" source="${source}" target="${target}">
+			<classpath refid="MLMSShopAgreementStatus.classpath" />
+			<exclude name="**/package-info.java" />
+		</javac>
+		<record name="${destdir}/build-MLMSShopAgreementStatus.log" action="stop" append="false" />
+
+		<jdtCompileLogPublisher buildResultUUID="${buildResultUUID}" repositoryAddress="${repositoryAddress}" filePath="${destdir}/build-MLMSShopAgreementStatus.log" userid="${build.user}" password="${build.pass}" />
+
+
+		<copy todir="${MLMSShopAgreementStatus.location}/build/classes" includeemptydirs="no">
+			<!-- standardize location of source -->
+
+			<fileset dir="${MLMSShopAgreementStatus.location}">
+				<exclude name="build/**" />
+				<!-- because src is not used! -->
+				<exclude name="**/*.java" />
+			</fileset>
+
+		</copy>
+		<!-- tstamp neede for TODAY -->
+		<tstamp />
+		<jar destfile="${destdir.distro.libs}/MLMSShopAgreementStatus.jar" basedir="${MLMSShopAgreementStatus.location}/build/classes">
+			<manifest>
+				<attribute name="Codebase" value="cms.cciio.mlms.gov" />
+				<!-- Who is building this jar? -->
+				<attribute name="Built-By" value="MLMS Build Server" />
+				<attribute name="Created-By" value="IBM" />
+				<attribute name="Built-Date" value="${TODAY}" />
+				<!-- Information about the program itself -->
+				<attribute name="Implementation-Vendor" value="IBM" />
+				<attribute name="Implementation-Title" value="MLMS Shop Agreement Status" />
+				<attribute name="Implementation-Version" value="${buildLabel}" />
+				<!-- details -->
+
+			</manifest>
+		</jar>
+		<artifactPublisher repositoryAddress="${repositoryAddress}" buildResultUUID="${buildResultUUID}" verbose="true" filePath="${destdir.distro.libs}/MLMSShopAgreementStatus.jar" label="MLMSShopAgreementStatus JAR File" userid="${build.user}" password="${build.pass}" />
+
+	</target>
+
+	<target name="package-MLMSShopAgreementStatus" unless="errors.found">
+
+
+
+
+
+		<echo message="Not ready to Package as project has no webcontent" />
+
+		<!-- for demo purpose -->
+		<path id="war.classpath">
+			<fileset dir="${destdir.distro.libs}">
+				<include name="**/*.jar" />
+			</fileset>
+		</path>
+		<!-- convert classpath to a flat list/string for use in manifest task -->
+		<pathconvert property="mf.classpath" pathsep=" ">
+			<path refid="war.classpath" />
+			<flattenmapper />
+		</pathconvert>
+		<!-- needed for TODAY -->
+		<tstamp />
+
+
+		<mkdir dir="${destdir.distro}/web/WebContent" />
+		<war destfile="${destdir.distro}/MLMSShopAgreementStatus.war" needxmlfile="false">
+			<manifest>
+				<attribute name="Built-By" value="MLMS Build Server" />
+				<attribute name="Created-By" value="IBM" />
+				<attribute name="Implementation-Version" value="${buildLabel}" />
+				<attribute name="Built-Date" value="${TODAY}" />
+				<attribute name="Class-Path" value="${mf.classpath}" />
+			</manifest>
+
+			<fileset dir="${destdir.distro}/web" />
+			<lib dir="${destdir.distro.libs}" excludes="" />
+			<classes dir="${destdir.bin}" />
+		</war>
+		<artifactPublisher userId="${build.user}" password="${build.pass}" repositoryAddress="${repositoryAddress}" buildResultUUID="${buildResultUUID}" verbose="true" filePath="${destdir.distro}/MLMSShopAgreementStatus.war" label="MLMS Shop Agreement Status WAR file" />
+
+
+	</target>
+
+	<target name="cleanUp">
+		<fail if="errors.found" message="Errors occurred in Build" />
+
+
+		<!-- here we want to clean up the old builds etc -->
+
+	</target>
+	<!-- 
+		
+			These task definitions make the Jazz ant tasks available to this build file.
+		     In order to find these classnames at run time, ant must be invoked with:
+
+			     -lib <buildsystem-location>/buildtoolkit
+		 -->
+	<taskdef name="artifactPublisher" classname="com.ibm.team.build.ant.task.ArtifactFilePublisherTask" />
+
+	<taskdef name="artifactLinkPublisher" classname="com.ibm.team.build.ant.task.ArtifactLinkPublisherTask" />
+
+	<taskdef name="buildResultPublisher" classname="com.ibm.team.build.ant.task.BuildResultPublisherTask" />
+
+	<taskdef name="filePublisher" classname="com.ibm.team.build.ant.task.FilePublisherTask" />
+
+	<taskdef name="jdtCompileLogPublisher" classname="com.ibm.team.build.ant.task.JdtCompileLogPublisherTask" />
+
+	<taskdef name="junitLogPublisher" classname="com.ibm.team.build.ant.task.JUnitLogPublisherTask" />
+
+	<taskdef name="junitResultPublisher" classname="com.ibm.team.build.ant.task.JUnitLogPublisherTask" />
+
+	<taskdef name="linkPublisher" classname="com.ibm.team.build.ant.task.LinkPublisherTask" />
+
+	<taskdef name="logPublisher" classname="com.ibm.team.build.ant.task.LogPublisherTask" />
+
+	<taskdef name="teamAccept" classname="com.ibm.team.build.ant.task.TeamAcceptTask" />
+
+	<taskdef name="teamFetch" classname="com.ibm.team.build.ant.task.TeamFetchTask" />
+
+	<taskdef name="workItemPublisher" classname="com.ibm.team.build.ant.task.WorkItemPublisherTask" />
+
+	<taskdef name="startBuildActivity" classname="com.ibm.team.build.ant.task.StartBuildActivityTask" />
+
+	<taskdef name="completeBuildActivity" classname="com.ibm.team.build.ant.task.CompleteBuildActivityTask" />
+
+
+</project>

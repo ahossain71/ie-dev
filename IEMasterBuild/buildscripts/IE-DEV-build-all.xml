@@ -1,0 +1,176 @@
+<project name="Build-All" basedir="." default="main">
+	<!-- When basedir is not set, relative paths are based on where the build file is -->
+	
+	<!-- From Ant documentation, we want everything relative to where the build file is -->
+	<!--
+		"basedir": the base directory from which all path calculations are done. 
+		This attribute might be overridden by setting the "basedir" property beforehand. When this is done, 
+		it must be omitted in the project tag. If neither the attribute nor the property have been set, 
+		the parent directory of the buildfile will be used.
+		A relative path is resolved relative to the directory containing the build file.
+	-->
+
+	<!-- Since relative paths are based on where the build file is, project directory is the parent of "basedir" -->
+	<property name="buildProject.dir" value="${basedir}/../" />
+	
+	<property name="build.workspace.dir" value="${buildProject.dir}/../" />
+	
+	<!-- Save a copy of all IE outputs -->
+	<property name="output.ie.dir" value="${buildProject.dir}/output-IE" />
+
+	<!-- Save a copy of all LMS outputs -->
+	<property name="output.lms.dir" value="${buildProject.dir}/output-LMS" />
+
+	<tstamp>
+		<format property="timestamp" pattern="dd.MMM.yyyy-HH.mm.ss" />
+	</tstamp>
+  	
+	<target name="clean">
+		<delete dir="${output.ie.dir}" />
+	</target>
+
+	<target name="build-all-IE-Apps" depends="clean">
+		<mkdir dir="${output.ie.dir}"/>
+		<!-- inheritall = false so that it would not use current project directory as the basedir of the other ant call -->
+		<!-- Will need to explicitly pass on the values of the two parameters over -->
+		
+		<!-- MLMS WS Logging would be first since others depend on it -->
+		<ant antfile="${build.workspace.dir}/mlms_ws_transaction_logging/buildscripts/build.xml" dir="${build.workspace.dir}/mlms_ws_transaction_logging/buildscripts/" target="main" inheritall="false">
+			<property name="websphere.base" value="${websphere.base}"/>
+			<property name="compiler.path" value="${compiler.path}"/>
+		</ant>
+		<copy todir="${output.ie.dir}">
+			<fileset dir="${build.workspace.dir}/mlms_ws_transaction_logging/dist/">
+				<include name="*.*"/>
+			</fileset>
+		</copy>
+
+		<!-- ABVendorFileServiceWAR -->
+		<ant antfile="${build.workspace.dir}/ABVendorFileServiceWAR/buildscripts/build.xml" dir="${build.workspace.dir}/ABVendorFileServiceWAR/buildscripts/" target="ear" inheritall="false">
+			<property name="websphere.base" value="${websphere.base}"/>
+			<property name="compiler.path" value="${compiler.path}"/>
+		</ant>
+		<copy todir="${output.ie.dir}">
+			<fileset dir="${build.workspace.dir}/ABVendorFileServiceWAR/dist/">
+				<include name="*.*"/>
+			</fileset>
+		</copy>
+
+		<!-- EIDMRegistrationGapClient -->
+		<ant antfile="${build.workspace.dir}/EIDMRegistrationGapClient/buildscripts/build.xml" dir="${build.workspace.dir}/EIDMRegistrationGapClient/buildscripts/" target="ear" inheritall="false">
+			<property name="websphere.base" value="${websphere.base}"/>
+			<property name="compiler.path" value="${compiler.path}"/>
+		</ant>
+		<copy todir="${output.ie.dir}">
+			<fileset dir="${build.workspace.dir}/EIDMRegistrationGapClient/dist/">
+				<include name="*.*"/>
+			</fileset>
+		</copy>
+
+		<!-- ExternalABVendor -->
+		<ant antfile="${build.workspace.dir}/ExternalABVendor/buildscripts/build.xml" dir="${build.workspace.dir}/ExternalABVendor/buildscripts/" target="ear" inheritall="false">
+			<property name="websphere.base" value="${websphere.base}"/>
+			<property name="compiler.path" value="${compiler.path}"/>
+		</ant>
+		<copy todir="${output.ie.dir}">
+			<fileset dir="${build.workspace.dir}/ExternalABVendor/dist/">
+				<include name="*.*"/>
+			</fileset>
+		</copy>
+
+		<!-- CMSVendorWebServiceClient -->
+		<ant antfile="${build.workspace.dir}/CMSVendorWebServiceClient/buildscripts/build.xml" dir="${build.workspace.dir}/CMSVendorWebServiceClient/buildscripts/" target="ear" inheritall="false">
+			<property name="websphere.base" value="${websphere.base}"/>
+			<property name="compiler.path" value="${compiler.path}"/>
+		</ant>
+		<copy todir="${output.ie.dir}">
+			<fileset dir="${build.workspace.dir}/CMSVendorWebServiceClient/dist/">
+				<include name="*.*"/>
+			</fileset>
+		</copy>
+
+		<!-- HiosAssisterAgreementStatusWAR -->
+		<ant antfile="${build.workspace.dir}/HiosAssisterAgreementStatusWAR/buildscripts/build.xml" dir="${build.workspace.dir}/HiosAssisterAgreementStatusWAR/buildscripts/" target="ear" inheritall="false">
+			<property name="websphere.base" value="${websphere.base}"/>
+			<property name="compiler.path" value="${compiler.path}"/>
+		</ant>
+		<copy todir="${output.ie.dir}">
+			<fileset dir="${build.workspace.dir}/HiosAssisterAgreementStatusWAR/dist/">
+				<include name="*.*"/>
+			</fileset>
+		</copy>
+		
+		<!-- HiosWebServiceClient -->
+		<ant antfile="${build.workspace.dir}/HiosWSClient/buildscripts/build.xml" dir="${build.workspace.dir}/HiosWSClient/buildscripts/" target="ear" inheritall="false">
+			<property name="websphere.base" value="${websphere.base}"/>
+			<property name="compiler.path" value="${compiler.path}"/>
+		</ant>
+		<copy todir="${output.ie.dir}">
+			<fileset dir="${build.workspace.dir}/HiosWSClient/dist/">
+				<include name="*.*"/>
+			</fileset>
+		</copy>
+		
+		<!-- MLMSAgentBrokerTrainingStatusWAR -->
+		<ant antfile="${build.workspace.dir}/MLMSAgentBrokerTrainingStatusWAR/buildscripts/build.xml" dir="${build.workspace.dir}/MLMSAgentBrokerTrainingStatusWAR/buildscripts/" target="ear" inheritall="false">
+			<property name="websphere.base" value="${websphere.base}"/>
+			<property name="compiler.path" value="${compiler.path}"/>
+		</ant>
+		<copy todir="${output.ie.dir}">
+			<fileset dir="${build.workspace.dir}/MLMSAgentBrokerTrainingStatusWAR/dist/">
+				<include name="*.*"/>
+			</fileset>
+		</copy>
+
+		<!-- MLMSShopAgreementStatusWAR -->
+		<ant antfile="${build.workspace.dir}/MLMSShopAgreementStatusWAR/buildscripts/build.xml" dir="${build.workspace.dir}/MLMSShopAgreementStatusWAR/buildscripts/" target="ear" inheritall="false">
+			<property name="websphere.base" value="${websphere.base}"/>
+			<property name="compiler.path" value="${compiler.path}"/>
+		</ant>
+		<copy todir="${output.ie.dir}">
+			<fileset dir="${build.workspace.dir}/MLMSShopAgreementStatusWAR/dist/">
+				<include name="*.*"/>
+			</fileset>
+		</copy>
+
+		<!-- MLMSShopUserProfile -->
+		<ant antfile="${build.workspace.dir}/MLMSShopUserProfile/buildscripts/build.xml" dir="${build.workspace.dir}/MLMSShopUserProfile/buildscripts/" target="ear" inheritall="false">
+			<property name="websphere.base" value="${websphere.base}"/>
+			<property name="compiler.path" value="${compiler.path}"/>
+		</ant>
+		<copy todir="${output.ie.dir}">
+			<fileset dir="${build.workspace.dir}/MLMSShopUserProfile/dist/">
+				<include name="*.*"/>
+			</fileset>
+		</copy>
+
+		<!-- MLMSShopXML -->
+		<ant antfile="${build.workspace.dir}/MLMSShopXML/buildscripts/build.xml" dir="${build.workspace.dir}/MLMSShopXML/buildscripts/" target="ear" inheritall="false">
+			<property name="websphere.base" value="${websphere.base}"/>
+			<property name="compiler.path" value="${compiler.path}"/>
+		</ant>
+		<copy todir="${output.ie.dir}">
+			<fileset dir="${build.workspace.dir}/MLMSShopXML/dist/">
+				<include name="*.*"/>
+			</fileset>
+		</copy>
+
+		<!-- RegistrationGapWebService -->
+		<ant antfile="${build.workspace.dir}/RegistrationGapWebService/buildscripts/build.xml" dir="${build.workspace.dir}/RegistrationGapWebService/buildscripts/" target="ear" inheritall="false">
+			<property name="websphere.base" value="${websphere.base}"/>
+			<property name="compiler.path" value="${compiler.path}"/>
+		</ant>
+		<copy todir="${output.ie.dir}">
+			<fileset dir="${build.workspace.dir}/RegistrationGapWebService/dist/">
+				<include name="*.*"/>
+			</fileset>
+		</copy>
+		
+		<!-- Zip everything up -->
+		<zip destfile="${output.ie.dir}/output-IE.zip" basedir="${output.ie.dir}">
+		</zip>
+	</target>
+
+	<target name="main" depends="build-all-IE-Apps"/>
+</project>
+

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     Sep 4, 2015 9:30:27 AM                                                        
+
+     Build Generic War     
+     Ant file to build the war file for a generic web project. 
+     The following properties will need to be passed in to work properly
+     
+     basedir - Set by ant 
+     buildLabel - passed by build server
+     userId and password will need to find a way to encrypt
+     title - nice short description of what is being build
+     vendor - defaults to IBM for manifest, can be set
+     project.name - name of war project to built
+     war.filename - name of war file to make
+     
+     
+     
+     wwwiniew                                                                
+     ====================================================================== -->
+
+
+<project name="BuildGenericWar " default="build-war">
+	<description>
+            Ant file to build the war file for a passed in project
+    </description>
+	<property file="build.properties" />
+	
+	<!-- need to figure out how to use build server credentials or something else where hidden -->
+	<property name="userId" value="wwwiniew" />
+	
+	<!-- *** Set all properties, classpath, etc ... -->
+
+	<!-- ***  load directory will be used here to prepare for future builds from the RTC build server -->
+	<!-- ******  instead of just ${basedir} -->
+	<property environment="env" />
+	<property name="loadDir" value="${basedir}/../.."/>
+	<property name="shared.jars.dir" value="${basedir}/../../../SabaJars"/>
+	<property name="project.name" value=""/>
+	<property name="war.filename" value=""/>
+	
+	<property name="title" value=""/>
+	<property name="vendor" value="IBM"/>
+	
+	<!-- RTC Server property 
+	xxx outdated used before 1.8
+	<property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter" />
+	-->
+	<property name="build.debuglevel" value="lines,vars,source" />
+	<property name="build.compiler" value="modern" />
+	<property name="destdir" value="${loadDir}/build" />
+	<property name="destdir.bin" value="${loadDir}/build/bin" />
+	<property name="destdir.distro" value="${loadDir}/build/distro" />
+	<property name="destdir.distro.libs" value="${loadDir}/build/distro/libs" />
+	<property name="compilelog" value="${destdir}/compile.xml" />
+	<property name="target" value="1.6" />
+	<property name="source" value="1.6" />
+
+	<!-- define lib, was.runtime should be defined -->
+	<property name="was.runtime" value="/Users/wwwiniew/IBM/SoftwareDeliveryPlatform/runtimes/base_v8_stub" />
+	<property name="was.lib.dir" value="${was.runtime}/lib" />
+	<echo message="property is ${was.lib.dir}" />
+
+	<echo message="loadDir=${loadDir}" />
+
+	<delete dir="${destdir}" />
+	<mkdir dir="${destdir}" />
+	<mkdir dir="${destdir.bin}" />
+	<mkdir dir="${destdir.distro}" />
+	<mkdir dir="${destdir.distro.libs}" />
+
+	<!-- *** Start Classpath *** -->
+	<!-- *** if loaded from rtc this would be ${loadDir}/project...  -->
+	<!-- ******  for local build just ${loadDir} -->
+
+	<property name="project.location"  value="${loadDir}/${project.name}"/>
+	
+
+	<path id="Websphere Libraries.libraryclasspath">
+		<fileset dir="${was.lib.dir}" includes="j2ee.jar" />
+
+	</path>
+	
+	<path id="Logback.libraryclasspath">
+			<fileset dir="${shared.jars.dir}" includes="logback*.jar, slf4j*.jar" />
+
+	</path>
+
+	<pathconvert property="classpathProp" refid="Websphere Libraries.libraryclasspath" />
+	
+	<!-- for debugging -->
+	<echo>Classpath is ${classpathProp}</echo>
+
+
+
+	<path id="project.classpath">
+		<pathelement location="${destdir.bin}" />
+		<path refid="Websphere Libraries.libraryclasspath" />
+		<path refid="Logback.libraryclasspath" />
+		<fileset dir="${project.location}/WebContent/WEB-INF/lib" includes="*.jar" />
+
+	</path>
+
+
+	<!-- ================================= 
+          target: default              
+         ================================= -->
+
+	<target name="build-war" depends="build-generic-war, package-generic-war, cleanUp" description="Ant file to build generic war file for MMLS">
+
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: depends                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="build-generic-war">
+
+		<record name="${destdir}/build-${project.name}.log" action="start" append="false" />
+
+		<echo>startBuildActivity activityIdProperty=build-${project.name} label=Compiling ${project.name} autoComplete=true buildResultUUID=${buildResultUUID} repositoryAddress=${repositoryAddress} userid=${build.user} password=${build.pass} </echo>
+
+		<startBuildActivity activityIdProperty="build-${project.name}" label="Compiling ${project.name}" autoComplete="true" buildResultUUID="${buildResultUUID}" repositoryAddress="${repositoryAddress}" userid="${build.user}" password="${build.pass}" />
+
+
+		<delete dir="${project.location}/build/" />
+
+		<mkdir dir="${project.location}/build/" />
+
+		<mkdir dir="${project.location}/build/classes" />
+		<!-- Note this project needs to standardize and move code to the src directory -->
+
+		<javac srcdir="${project.location}/src" destdir="${project.location}/build/classes" debuglevel="${build.debuglevel}" debug="on" nowarn="on" failonerror="false" errorProperty="errors.found" source="${source}" target="${target}">
+			<classpath refid="project.classpath" />
+			<exclude name="**/package-info.java" />
+		</javac>
+		
+		<!-- Copying resources xml, properties etc -->
+		<copy todir="${project.location}/build/classes" includeemptydirs="no">
+		
+			<fileset dir="${project.location}/src">
+				<exclude name="**/*.java" />
+			</fileset>
+
+		</copy>
+		<!-- tstamp neede for TODAY -->
+		<!-- <tstamp /> -->
+	<!-- not jarring this project 
+		<jar destfile="${destdir.distro.libs}/ABVendorFileService.jar" basedir="${ABVendorFileService.location}/build/classes">
+			<manifest>
+				<attribute name="Codebase" value="gov.cms.ciio" />
+				<attribute name="Built-By" value="MLMS Build Server" />
+				<attribute name="Created-By" value="${vendor}" />
+				<attribute name="Built-Date" value="${TODAY}" />
+				<attribute name="Implementation-Vendor" value="${vendor}" />
+				<attribute name="Implementation-Title" value="${title}" />
+				<attribute name="Implementation-Version" value="${buildLabel}" />
+				
+			</manifest>
+		</jar>
+		-->
+		
+		<record name="${destdir}/build-${project.name}.log" action="stop" append="false" />
+
+		<jdtCompileLogPublisher buildResultUUID="${buildResultUUID}" repositoryAddress="${repositoryAddress}" filePath="${destdir}/build-${project.name}.log" userid="${build.user}" password="${build.pass}" />
+
+	<!--	<artifactPublisher repositoryAddress="${repositoryAddress}" buildResultUUID="${buildResultUUID}" verbose="true" filePath="${destdir.distro.libs}/ABVendorFileService.jar" label="ABVendorFileService JAR File" userid="${build.user}" password="${build.pass}" />
+-->
+	</target>
+
+	<target name="package-generic-war" unless="errors.found">
+
+		<record name="${destdir}/package-${project.name}.log" action="start" append="false" />
+		<startBuildActivity activityIdProperty="package-${project.name}" label="Packaging ${project.name}" autoComplete="true" buildResultUUID="${buildResultUUID}" repositoryAddress="${repositoryAddress}" userid="${build.user}" password="${build.pass}" />
+
+		<copy todir="${destdir.distro.libs}">
+			<fileset dir="${shared.jars.dir}" includes="logback*.jar, slf4j*.jar" />
+			<fileset dir="${project.location}/WebContent/WEB-INF/lib" includes="*.jar" />
+		</copy>
+		
+		<path id="war.classpath">
+			<fileset dir="${destdir.distro.libs}">
+				<include name="**/*.jar" />
+			</fileset>
+		</path>
+		
+		<!-- convert classpath to a flat list/string for use in manifest task -->
+		<pathconvert property="mf.classpath" pathsep=" ">
+			<path refid="war.classpath" />
+			<flattenmapper />
+		</pathconvert>
+		<!-- needed for TODAY -->
+		<tstamp />
+
+		
+		<war destfile="${destdir.distro}/${war.filename}" needxmlfile="false">
+			<manifest>
+				<attribute name="Built-By" value="MLMS Build Server" />
+				<attribute name="Created-By" value="${vendor}" />
+				<attribute name="Implementation-Version" value="${buildLabel}" />
+				<attribute name="Built-Date" value="${TODAY}" />
+				<attribute name="Class-Path" value="${mf.classpath}" />
+			</manifest>
+
+			<fileset dir="${project.location}/WebContent" />
+			<lib dir="${destdir.distro.libs}" includes="${project.jars}" />
+			<classes dir="${project.location}/build/classes" />
+		</war>
+		
+		<record name="${destdir}/package-${project.name}.log" action="stop" append="false" />
+
+		<jdtCompileLogPublisher buildResultUUID="${buildResultUUID}" repositoryAddress="${repositoryAddress}" filePath="${destdir}/package-${project.name}.log" userid="${build.user}" password="${build.pass}" />
+
+		<artifactPublisher userId="${build.user}" password="${build.pass}" repositoryAddress="${repositoryAddress}" buildResultUUID="${buildResultUUID}" verbose="true" filePath="${destdir.distro}/${war.filename}" label="${title} WAR file" />
+
+
+	</target>
+
+	<target name="cleanUp">
+		<fail if="errors.found" message="Errors occurred in Build" />
+
+
+		<!-- here we want to clean up the old builds etc -->
+
+	</target>
+	<!-- 
+		
+			These task definitions make the Jazz ant tasks available to this build file.
+		     In order to find these classnames at run time, ant must be invoked with:
+
+			     -lib <buildsystem-location>/buildtoolkit
+		 -->
+	<taskdef name="artifactPublisher" classname="com.ibm.team.build.ant.task.ArtifactFilePublisherTask" />
+
+	<taskdef name="artifactLinkPublisher" classname="com.ibm.team.build.ant.task.ArtifactLinkPublisherTask" />
+
+	<taskdef name="buildResultPublisher" classname="com.ibm.team.build.ant.task.BuildResultPublisherTask" />
+
+	<taskdef name="filePublisher" classname="com.ibm.team.build.ant.task.FilePublisherTask" />
+
+	<taskdef name="jdtCompileLogPublisher" classname="com.ibm.team.build.ant.task.JdtCompileLogPublisherTask" />
+
+	<taskdef name="junitLogPublisher" classname="com.ibm.team.build.ant.task.JUnitLogPublisherTask" />
+
+	<taskdef name="junitResultPublisher" classname="com.ibm.team.build.ant.task.JUnitLogPublisherTask" />
+
+	<taskdef name="linkPublisher" classname="com.ibm.team.build.ant.task.LinkPublisherTask" />
+
+	<taskdef name="logPublisher" classname="com.ibm.team.build.ant.task.LogPublisherTask" />
+
+	<taskdef name="teamAccept" classname="com.ibm.team.build.ant.task.TeamAcceptTask" />
+
+	<taskdef name="teamFetch" classname="com.ibm.team.build.ant.task.TeamFetchTask" />
+
+	<taskdef name="workItemPublisher" classname="com.ibm.team.build.ant.task.WorkItemPublisherTask" />
+
+	<taskdef name="startBuildActivity" classname="com.ibm.team.build.ant.task.StartBuildActivityTask" />
+
+	<taskdef name="completeBuildActivity" classname="com.ibm.team.build.ant.task.CompleteBuildActivityTask" />
+
+
+</project>

@@ -1,0 +1,46 @@
+<project name="EIDM-client Package for Build" default="package" basedir=".">
+	<description>
+		build file for packaging the EIDM client source code
+	</description>
+
+	<property name="workspace.dir" value="/opt/ibm/RTC-Build/workspace" />
+
+	<property name="project.folder" value="EIDMRegistrationGapClient" />
+	
+	<!-- 
+	This project uses/depends on the WS Logging code, 3 options
+	1. build from scratch and include in this WAR/EAR
+	2. we check in the latest compiled JAR and retrieve that JAR from repository
+	3. Set up the WS Logging JAR as a shared library and assume its location on IE app server.
+	
+	This script will take approach 1 for now. 
+	-->
+	<property name="wslogging.folder" value="mlms_ws_transaction_logging" />
+
+	<target name="package">
+		<zip destfile="${workspace.dir}/${project.folder}.zip">
+			<zipfileset dir="${workspace.dir}">
+				<!-- We don't want to include what we are going to generate!! -->
+				<!-- Compiled artifacts that were checked into RTC accidentally have been removed, the following is not needed -->
+				<!--
+				<exclude name="${project.folder}/lib/**"/>
+				<exclude name="${project.folder}/WebContent/WEB-INF/lib/EIDMRegistrationGapClient*"/>
+				<exclude name="${project.folder}/*.war"/>
+				<exclude name="${project.folder}/*.ear"/>
+				<exclude name="${wslogging.folder}/lib/**"/>
+				<exclude name="${wslogging.folder}/WebContent/WEB-INF/lib/mlmswslogging.jar"/>
+				<exclude name="${wslogging.folder}/*.jar"/>
+				<exclude name="${wslogging.folder}/*.war"/>
+				<exclude name="${wslogging.folder}/*.ear"/>
+				-->
+			</zipfileset>
+		</zip>
+		<!-- Need to include jsch-0.1.54.jar in <user home>/.ant/lib -->
+		<!-- sftp="true" doesn't work yet -->
+		<scp file="${workspace.dir}/${project.folder}.zip" 
+			todir="${sftp.user}:${sftp.password}@${sftp.host}:RTC-Build/${project.folder}.zip.dest" 
+			>
+		</scp>
+	</target>
+</project>
+  

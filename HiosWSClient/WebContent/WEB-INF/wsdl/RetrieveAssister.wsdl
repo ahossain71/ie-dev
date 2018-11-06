@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://soa.jboss.org/Assister" xmlns:esbns1="http://cms.gov/hios" xmlns:esbns2="http://cms.gov/hios" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soa.jboss.org/Assister" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://cms.gov/hios" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:include schemaLocation="AssisterRequest.xsd"/>
+    </xs:schema>
+    <xs:schema targetNamespace="http://cms.gov/hios" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:include schemaLocation="AssisterResponse.xsd"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="RetrieveAssisterReq">
+    <wsdl:part element="esbns1:AssisterRequest" name="in"/>
+  </wsdl:message>
+  <wsdl:message name="RetrieveAssisterRes">
+    <wsdl:part element="esbns1:AssisterResponse" name="out"/>
+  </wsdl:message>
+  <wsdl:portType name="RetrieveAssisterPortType">
+    <wsdl:operation name="RetrieveAssisterOp">
+      <wsdl:input message="tns:RetrieveAssisterReq" name="RetrieveAssisterReq"/>
+      <wsdl:output message="tns:RetrieveAssisterRes" name="RetrieveAssisterRes"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RetrieveAssisterBinding" type="tns:RetrieveAssisterPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="RetrieveAssisterOp">
+      <soap:operation soapAction="http://soa.jboss.org/Assister/RetrieveAssisterOpResp"/>
+      <wsdl:input name="RetrieveAssisterReq">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RetrieveAssisterRes">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RetrieveAssisterService">
+    <wsdl:port binding="tns:RetrieveAssisterBinding" name="RetrieveAssisterPortType">
+      <soap:address location="https://xx.xx.xx.xx/HIOS-SOAP/Assister/RetrieveAssister"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://cms.cciio.mlms.gov/CCIIOWebServiceCommonType" xmlns:tns="http://cms.cciio.mlms.gov/CCIIOWebServiceCommonType">
+	
+	<complexType name="StatusType">
+		<all>
+			<element name="statusCode" type="tns:statusCodeType"/>
+			<element name="statusMessage" type="string"/>
+			<element name="errorCode" type="tns:errorCodeType"/>
+			<element name="errorKey" type="string"/>
+			<element name="errorMessage" type="string"/>
+		</all>
+	</complexType>
+	
+	<simpleType name="usStateType">
+		<restriction base="string">
+			<enumeration value="AL"/>
+			<enumeration value="AK"/>
+			<enumeration value="AZ"/>
+			<enumeration value="AR"/>
+			<enumeration value="CA"/>
+			<enumeration value="CO"/>
+			<enumeration value="CT"/>
+			<enumeration value="DE"/>
+			<enumeration value="FL"/>
+			<enumeration value="GA"/>
+			<enumeration value="HI"/>
+			<enumeration value="ID"/>
+			<enumeration value="IL"/>
+			<enumeration value="IN"/>
+			<enumeration value="IA"/>
+			<enumeration value="KS"/>
+			<enumeration value="KY"/>
+			<enumeration value="LA"/>
+			<enumeration value="ME"/>
+			<enumeration value="MD"/>
+			<enumeration value="MA"/>
+			<enumeration value="MI"/>
+			<enumeration value="MN"/>
+			<enumeration value="MS"/>
+			<enumeration value="MO"/>
+			<enumeration value="MT"/>
+			<enumeration value="NE"/>
+			<enumeration value="NV"/>
+			<enumeration value="NH"/>
+			<enumeration value="NJ"/>
+			<enumeration value="NM"/>
+			<enumeration value="NY"/>
+			<enumeration value="NC"/>
+			<enumeration value="ND"/>
+			<enumeration value="OH"/>
+			<enumeration value="OK"/>
+			<enumeration value="OR"/>
+			<enumeration value="PA"/>
+			<enumeration value="RI"/>
+			<enumeration value="SC"/>
+			<enumeration value="SD"/>
+			<enumeration value="TN"/>
+			<enumeration value="TX"/>
+			<enumeration value="UT"/>
+			<enumeration value="VT"/>
+			<enumeration value="VA"/>
+			<enumeration value="WA"/>
+			<enumeration value="WV"/>
+			<enumeration value="WI"/>
+			<enumeration value="WY"/>
+			<enumeration value="DC"/>
+		</restriction>
+	</simpleType>
+	
+	<simpleType name="statusCodeType">
+		<restriction base="string">
+			<enumeration value="MS200"/>
+			<enumeration value="MS210"/>
+			<enumeration value="MS500"/>	
+		</restriction>
+	</simpleType>
+	
+	<simpleType name="errorCodeType">
+		<restriction base="string">
+			<enumeration value="ME800"/>
+			<enumeration value="ME810"/>
+			<enumeration value="ME820"/>
+			<enumeration value="ME830"/>
+			<enumeration value="ME840"/>
+			<enumeration value="ME850"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="errorMessageType">
+		<restriction base="string">
+			<enumeration value="ME800 user id does not exist in MLMS database"/>
+			<enumeration value="ME810 Query returned no data"/>
+			<enumeration value="ME820 The system encountered an unexpected error"/>
+			<enumeration value="ME830 Database unavailable"/>
+			<enumeration value="ME840 System down for planned maintenance"/>
+
+			<enumeration value="ME850 Naming Context Error"/>
+		</restriction>
+	</simpleType>
+
+</schema>

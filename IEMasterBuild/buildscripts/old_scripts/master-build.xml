@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     Sep 23, 2015 6:52:57 PM                                                        
+
+     master    
+     description
+     
+     This master file calls the generic build war script to build the cms projects.  
+     The properties could also be set directly on the build server and then used
+     by the generic-build-war antfile without the master.  The master is simply an 
+     easier way to call from the build engine without setting so many propeties.
+                   
+     wwwiniew                                                                
+     ====================================================================== -->
+<project name="master" default="all">
+	<description>
+            description
+    </description>
+
+
+	<!-- ================================= 
+          target: all
+          - not building ABVendor yet              
+         ================================= -->
+	<target name="all" depends="build-ABVendorFileService, build-CompletionClaimService, build-HiosAssisterAgreementStatus, build-MLMSAgentBrokerTrainingStatus, build-MLMSShopAgreementStatus" description="Build all projects">
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: build-ABVendorFileService                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="build-ABVendorFileService">
+
+		<echo level="info" message="executing target build-ABVendorFileService" />
+
+		<ant antfile="build-generic-war.xml" target="build-war">
+			<!-- project.name - required -->
+			<property name="project.name" value="ABVendorFileServiceWAR" />
+
+			<!-- Valid values = dev|stage|prod -->
+			<property name="project.env" value="dev" />
+
+			<!-- filename of war to generate -->
+			<property name="war.filename" value="ABVendorFileService.war" />
+
+			<!-- cleanup when done -->
+			<property name="work.clean" value="no" />
+
+			<!-- title short desc for war -->
+			<property name="title" value="ABVendor File Service War" />
+
+			<!-- jars for war -->
+			<property name="project.jars" value=" " />
+		</ant>
+
+	</target>
+	<!-- - - - - - - - - - - - - - - - - - 
+	          target: build-CompletionClaimService                      
+	         - - - - - - - - - - - - - - - - - -->
+	<target name="build-CompletionClaimService">
+
+		<echo level="info" message="executing target build-CompletionClaimService" />
+
+		<ant antfile="build-generic-war.xml" target="build-war">
+			<!-- project.name - required -->
+			<property name="project.name" value="CompletionClaimServiceWAR" />
+
+			<!-- Valid values = dev|stage|prod -->
+			<property name="project.env" value="dev" />
+
+			<!-- filename of war to generate -->
+			<property name="war.filename" value="CompletionClaimService.war" />
+
+			<!-- cleanup when done -->
+			<property name="work.clean" value="no" />
+
+			<!-- title short desc for war -->
+			<property name="title" value="Completion Claim Service War" />
+
+			<!-- jars for war -->
+			<property name="project.jars" value="logback-classic-1.1.3.jar, logback-core-1.1.3, slf4j-api-1.7.12 " />
+		</ant>
+
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+		          target: build-ABVendor                      
+		         - - - - - - - - - - - - - - - - - -->
+	<target name="build-ABVendor">
+
+		<echo level="info" message="executing target build-ABVendor" />
+
+		<ant antfile="build-generic-war.xml" target="build-war">
+			<!-- project.name - required -->
+			<property name="project.name" value="ABVendorWAR" />
+
+			<!-- Valid values = dev|stage|prod -->
+			<property name="project.env" value="dev" />
+
+			<!-- filename of war to generate -->
+			<property name="war.filename" value="ABVendor.war" />
+
+			<!-- cleanup when done -->
+			<property name="work.clean" value="no" />
+
+			<!-- title short desc for war -->
+			<property name="title" value="ABVendor War" />
+
+			<!-- jars for war -->
+			<property name="project.jars" value="logback-classic-1.1.3.jar, logback-core-1.1.3, slf4j-api-1.7.12 " />
+		</ant>
+
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+			          target: build-HiosAssisterAgreementStatus                      
+			         - - - - - - - - - - - - - - - - - -->
+	<target name="build-HiosAssisterAgreementStatus">
+
+		<echo level="info" message="executing target build-HiosAssisterAgreementStatus" />
+
+		<ant antfile="build-generic-war.xml" target="build-war">
+			<!-- project.name - required -->
+			<property name="project.name" value="HiosAssisterAgreementStatusWAR" />
+
+			<!-- Valid values = dev|stage|prod -->
+			<property name="project.env" value="dev" />
+
+			<!-- filename of war to generate -->
+			<property name="war.filename" value="HiosAssisterAgreementStatus.war" />
+
+			<!-- cleanup when done -->
+			<property name="work.clean" value="no" />
+
+			<!-- title short desc for war -->
+			<property name="title" value="HiosAssisterAgreementStatus War" />
+
+			<!-- jars for war -->
+			<property name="project.jars" value="logback-classic-1.1.3.jar, logback-core-1.1.3, slf4j-api-1.7.12 " />
+		</ant>
+
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+			          target: build-MLMSAgentBrokerTrainingStatus                      
+			         - - - - - - - - - - - - - - - - - -->
+	<target name="build-MLMSAgentBrokerTrainingStatus">
+
+		<echo level="info" message="executing target build-MLMSAgentBrokerTrainingStatus" />
+
+		<ant antfile="build-generic-war.xml" target="build-war">
+			<!-- project.name - required -->
+			<property name="project.name" value="MLMSAgentBrokerTrainingStatusWAR" />
+
+			<!-- Valid values = dev|stage|prod -->
+			<property name="project.env" value="dev" />
+
+			<!-- filename of war to generate -->
+			<property name="war.filename" value="MLMSAgentBrokerTrainingStatus.war" />
+
+			<!-- cleanup when done -->
+			<property name="work.clean" value="no" />
+
+			<!-- title short desc for war -->
+			<property name="title" value="MLMSAgentBrokerTrainingStatus War" />
+
+			<!-- jars for war -->
+			<property name="project.jars" value="logback-classic-1.1.3.jar, logback-core-1.1.3, slf4j-api-1.7.12, ojdbc6.jar" />
+		</ant>
+
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+			          target: build-MLMSShopAgreementStatus                      
+			         - - - - - - - - - - - - - - - - - -->
+	<target name="build-MLMSShopAgreementStatus">
+
+		<echo level="info" message="executing target build-MLMSShopAgreementStatus" />
+
+		<ant antfile="build-generic-war.xml" target="build-war">
+			<!-- project.name - required -->
+			<property name="project.name" value="MLMSShopAgreementStatusWAR" />
+
+			<!-- Valid values = dev|stage|prod -->
+			<property name="project.env" value="dev" />
+
+			<!-- filename of war to generate -->
+			<property name="war.filename" value="MLMSShopAgreementStatus.war" />
+
+			<!-- cleanup when done -->
+			<property name="work.clean" value="no" />
+
+			<!-- title short desc for war -->
+			<property name="title" value="MLMSShopAgreementStatus War" />
+
+			<!-- jars for war -->
+			<property name="project.jars" value="logback-classic-1.1.3.jar, logback-core-1.1.3, slf4j-api-1.7.12 " />
+		</ant>
+
+	</target>
+
+
+	<!-- - - new 9/16 - - -->
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: build-ABVendorFileService                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="build-MLMS-Common">
+
+		<echo level="info" message="executing target build-MLMS-COMMON" />
+
+		<ant antfile="build-MLMS-Common.xml" target="build-jar">
+			<!-- project.name - required -->
+			<property name="project.name" value="ABVendorModel" />
+			<!-- should be MLMSCommon -->
+
+			<!-- Valid values = dev|stage|prod -->
+			<property name="project.env" value="dev" />
+
+			<!-- filename of war to generate -->
+			<property name="jar.filename" value="ABVendorModel.jar" />
+
+			<!-- cleanup when done -->
+			<property name="work.clean" value="no" />
+
+			<!-- title short desc for war -->
+			<property name="title" value="MLMS Common Jar" />
+
+
+		</ant>
+
+	</target>
+
+	<target name="build-ExternalABVendor">
+
+		<echo level="info" message="executing target build-MLMSShopAgreementStatus" />
+
+		<ant antfile="build-generic-war.xml" target="build-war">
+			<!-- project.name - required -->
+			<property name="project.name" value="ExternalABVendor" />
+
+			<!-- Valid values = dev|stage|prod -->
+			<property name="project.env" value="dev" />
+
+			<!-- filename of war to generate -->
+			<property name="war.filename" value="ExternalABVendor.war" />
+
+			<!-- cleanup when done -->
+			<property name="work.clean" value="no" />
+
+			<!-- title short desc for war -->
+			<property name="title" value="ExternalABVendor War" />
+
+			<!-- jars for war -->
+			<property name="project.jars" value="" />
+		</ant>
+
+	</target>
+	<target name="build-MLMSShopXML-WAR">
+
+		<echo level="info" message="executing target build-MLMSShopAgreementStatus" />
+
+		<ant antfile="build-generic-war.xml" target="build-war">
+			<!-- project.name - required -->
+			<property name="project.name" value="MLMSShopXML" />
+
+			<!-- Valid values = dev|stage|prod -->
+			<property name="project.env" value="dev" />
+
+			<!-- filename of war to generate -->
+			<property name="war.filename" value="MLMSShopXML.war" />
+
+			<!-- cleanup when done -->
+			<property name="work.clean" value="no" />
+
+			<!-- title short desc for war -->
+			<property name="title" value="MLMSShopXML WAR" />
+
+			<!-- jars for war -->
+			<property name="project.jars" value="" />
+		</ant>
+
+	</target>
+	
+	
+
+</project>

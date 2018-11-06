@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rational.test.lt.models.wscore.configuration:WSDLInformationContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rational.test.lt.models.wscore.configuration="http:///com/ibm/rational/test/lt/models/wscore/configuration.ecore">
+  <securityOperationConfiguration>
+    <SecurityPortConfiguration aliasName="DEFAULTCONFIGURATION"/>
+  </securityOperationConfiguration>
+  <keyStore/>
+  <wsdl name="MLMSShopUserProfile" key="MLMSShopUserProfile">
+    <SimpleProperty value="http://cms.cciio.mlms.util/MLMSShopUserProfile/" name="WSDLPROPERTY_TARGETNAMESPACE"/>
+    <SimpleProperty value="7f189b0466868ceeb65e5edb44118c801a189ca37f189b0466868ceeb65e5edb44118c801a189ca3" name="WSDLPROPERTY_HASH"/>
+    <SimpleProperty value="0c2626592e160669091d9f946ca7a8468720dc580c2626592e160669091d9f946ca7a8468720dc58" name="WSDLPROPERTY_PREVIOUSHASH"/>
+    <SimpleProperty value="1462990716000" name="WSDLPROPERTY_SYNCHROSTAMP"/>
+    <SimpleProperty name="WSDLPROPERTY_SYNCHRO"/>
+    <SimpleProperty name="WSDLPROPERTY_LASTSYNCHRO"/>
+    <SimpleProperty name="WSDLPROPERTY_URL"/>
+    <SimpleProperty name="WSDLPROPERTY_SYNCHROJOBID"/>
+    <ResourceProxy portablePath="/MLMSShopAgreementStatus/WebContent/SmallBusinessHealthOption/MLMSShopUserProfile.wsdl" timeStamp="1462990716000"/>
+    <WsdlInformationContainer versionContainer="8.3"/>
+    <WsdlBinding name="http://cms.cciio.mlms.util/MLMSShopUserProfile/:MLMSShopUserProfileSOAP">
+      <SimpleProperty value="SoapDocumentBinding" name="WSDLBINDINGPROPERTY_TYPE"/>
+      <SimpleProperty value="http://schemas.xmlsoap.org/soap/http" name="WSDLBINDINGPROPERTY_TRANSPORT_TYPE"/>
+      <SimpleProperty value="false" name="Soap12Binding"/>
+      <SimpleProperty value="{http://cms.cciio.mlms.util/MLMSShopUserProfile/}MLMSShopUserProfile" name="WSDLBINDING_SERVICE_NAME"/>
+      <WsdlOperation name="RetrieveShopUserProfile" key="RetrieveShopUserProfile">
+        <WsdlPort name="MLMSShopUserProfileSOAP" uniqueID="-163310316SEPARATORae3f2f76-9403-43fd-bfab-189d18477322">
+          <SimpleProperty value="http://localhost:9080/SmallBusinessHealthOption/MLMSShopUserProfile" name="WSDLPORTPROPERTY_HTTP_URL"/>
+          <in>
+            <SimpleProperty value="DEFAULTCONFIGURATION" name="operation_security_information"/>
+          </in>
+          <out>
+            <SimpleProperty value="DEFAULTCONFIGURATION" name="operation_security_information"/>
+          </out>
+        </WsdlPort>
+        <in>
+          <SimpleProperty value="literal" name="WSDLOPERATIONPROPERTY_ENCODING_STYLE"/>
+          <WsdlPart element="true" nameSpaceURI="http://cms.cciio.mlms.gov/ShopUserProfileRequestType" localPart="UserId" partName="UserId"/>
+        </in>
+        <SimpleProperty value="true" name="WSDLOPERATIONPROPERTY_SOAP_ACTION_REQUIRED"/>
+        <SimpleProperty value="http://cms.cciio.mlms.util/MLMSShopUserProfile/RetrieveShopUserProfile" name="WSDLOPERATIONPROPERTY_SOAP_ACTION_URI"/>
+        <out>
+          <SimpleProperty value="literal" name="WSDLOPERATIONPROPERTY_ENCODING_STYLE"/>
+          <SimpleProperty name="MESSAGENAME"/>
+          <WsdlPart element="true" nameSpaceURI="http://cms.cciio.mlms.gov/ShopUserProfileResponseType" localPart="ShopUserProfile" partName="ShopUserProfile"/>
+        </out>
+      </WsdlOperation>
+    </WsdlBinding>
+  </wsdl>
+</com.ibm.rational.test.lt.models.wscore.configuration:WSDLInformationContainer>

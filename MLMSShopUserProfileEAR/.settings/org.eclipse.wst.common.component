@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="MLMSShopUserProfileEAR">
+        <wb-resource deploy-path="/" source-path="/" tag="defaultRootSource"/>
+        <dependent-module archiveName="MLMSShopUserProfile.war" deploy-path="/" handle="module:/resource/MLMSShopUserProfile/MLMSShopUserProfile">
+            <dependent-object>Module_1464724066188</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mlms_ws_transaction_logging.jar" deploy-path="/" handle="module:/resource/mlms_ws_transaction_logging/mlms_ws_transaction_logging">
+            <dependent-object>Module_1488224540850</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

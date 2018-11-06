@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://cms.cciio.mlms.gov/MLMSShopUserProfileCommonType"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://cms.cciio.mlms.gov/MLMSShopUserProfileCommonType" xmlns:Q1="http://cms.cciio.mlms.gov/CCIIOWebServiceCommonType">
+
+	
+	<element name="UserInfo" type="tns:UserType"></element>
+
+
+	<complexType name="UserType">
+    	<attribute name="UserID">
+    		<simpleType>
+    			<restriction base="string">
+    				<minLength value="4"></minLength>
+    				<maxLength value="36"></maxLength>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    	<attribute name="FirstName">
+    		<simpleType>
+    			<restriction base="string">
+    				<minLength value="2"></minLength>
+    				<maxLength value="20"></maxLength>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    	<attribute name="ActiveStatus">
+    		<simpleType>
+    			<restriction base="string">
+    				<enumeration value="active"></enumeration>
+    				<enumeration value="inactive"></enumeration>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    	<attribute name="LastName">
+    		<simpleType>
+    			<restriction base="string">
+    				<minLength value="2"></minLength>
+    				<maxLength value="25"></maxLength>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    	
+    	<attribute name="npn">
+    		<simpleType>
+    			<restriction base="string">
+    				<minLength value="1"></minLength>
+    				<maxLength value="10"></maxLength>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    </complexType>
+    <complexType name="AddressType">
+    	<sequence>
+    		<element name="State" type="tns:usStateType"></element>
+    		<element name="City" type="tns:CityType"></element>
+    	</sequence>
+    	<attribute name="StreetAddress">
+    		<simpleType>
+    			<restriction base="string">
+    				<minLength value="2"></minLength>
+    				<maxLength value="255"></maxLength>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    	
+    	<attribute name="ZipCode">
+    		<simpleType>
+    			<restriction base="string">
+    				<minLength value="5"></minLength>
+    				<maxLength value="5"></maxLength>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    	<attribute name="EmailAddress">
+    		<simpleType>
+    			<restriction base="string">
+    				<minLength value="6"></minLength>
+    				<maxLength value="255"></maxLength>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    	<attribute name="PhoneNumber">
+    		<simpleType>
+    			<restriction base="string">
+    				<minLength value="10"></minLength>
+    				<maxLength value="10"></maxLength>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    </complexType>
+	
+	<simpleType name="CityType">
+		<restriction base="string">
+			<minLength value="2"></minLength>
+			<maxLength value="30"></maxLength>
+		</restriction>
+	</simpleType>
+	<complexType name="UserPreferencesType">
+		<sequence>
+			<element name="WorkingHours" type="tns:WorkingHoursType"></element>
+			<element name="WorkingDays" type="tns:DaysOfWeekType"></element>
+			<element name="PreferredLanguage" type="tns:languageType"></element>
+			<element name="PreferredContactMethod">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="Email address"></enumeration>
+						<enumeration value="Mailing address"></enumeration>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="SearchIndicator"
+				type="tns:SearchIndicatorType">
+			</element>
+
+			<element name="AgencyInfo" type="tns:AgencyInfoType"></element>
+		</sequence>
+	</complexType>	
+
+	<simpleType name="languageType">
+		<restriction base="string">
+			<enumeration value="English"></enumeration>
+			<enumeration value="Spanish"></enumeration>
+			<minLength value="3"></minLength>
+			<maxLength value="24"></maxLength>
+		</restriction>
+	</simpleType>
+	
+	<complexType name="WorkingHoursType">
+		<sequence>
+			<element name="from" type="tns:TimeType"></element>
+			<element name="to" type="tns:TimeType"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="TimeType">
+		<annotation>
+			<documentation>
+				Format HH:MI AM|PM Examples 08:00 AM, 05:30 PM
+			</documentation>
+		</annotation>
+		<sequence>
+			<element name="Time">
+
+				<annotation>
+					<documentation>
+						HH:MI AM example 10:00 AM or 03:00 PM
+					</documentation>
+				</annotation>
+				<simpleType>
+                    <annotation>
+                    	<documentation>Time format HH:MI AM
+12:59 PM</documentation>
+                    </annotation>
+                    <restriction base="string">
+						<length value="8"></length>
+						<pattern
+							value="[0-1][0-9]:[0-5][0-9] [A|P][M]">
+						</pattern>
+					</restriction>
+				</simpleType>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="WorkingDaysType">
+
+
+		<choice maxOccurs="1" minOccurs="1">
+			<element name="DayofWeek" type="tns:DaysOfWeekType"
+				maxOccurs="1" minOccurs="1">
+			</element>
+		</choice>
+	</complexType>
+
+
+	<simpleType name="HttpUrlType">
+		<restriction base="anyURI"></restriction>
+	</simpleType>
+
+
+	<complexType name="DaysOfWeekType">
+		<sequence>
+			<element name="Monday"
+				type="tns:DayofWeekAvailabilityType">
+			</element>
+			<element name="Tuesday"
+				type="tns:DayofWeekAvailabilityType">
+			</element>
+			<element name="Wednesday"
+				type="tns:DayofWeekAvailabilityType">
+			</element>
+			<element name="Thursday"
+				type="tns:DayofWeekAvailabilityType">
+			</element>
+			<element name="Friday"
+				type="tns:DayofWeekAvailabilityType">
+			</element>
+			<element name="Saturday"
+				type="tns:DayofWeekAvailabilityType">
+			</element>
+			<element name="Sunday"
+				type="tns:DayofWeekAvailabilityType">
+			</element>
+		</sequence>
+	</complexType>
+
+	<simpleType name="DayofWeekAvailabilityType">
+		<restriction base="string">
+			<enumeration value="available"></enumeration>
+			<enumeration value="unavailable"></enumeration>
+		</restriction>
+	</simpleType>
+	<complexType name="AgencyInfoType">
+
+		<sequence>
+			<element name="AgencyName">
+				<simpleType>
+					<restriction base="string">
+						<minLength value="1"></minLength>
+						<maxLength value="60"></maxLength>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="AgencyUrl" type="anyURI"></element>
+		</sequence>
+	</complexType>
+	<simpleType name="SearchIndicatorType">
+		<restriction base="string">
+			<enumeration value="yes"></enumeration>
+			<enumeration value="no"></enumeration>
+		</restriction>
+	</simpleType>
+	<simpleType name="usStateType">
+		<restriction base="string">
+			<enumeration value="AL"/>
+			<enumeration value="AK"/>
+			<enumeration value="AZ"/>
+			<enumeration value="AR"/>
+			<enumeration value="CA"/>
+			<enumeration value="CO"/>
+			<enumeration value="CT"/>
+			<enumeration value="DE"/>
+			<enumeration value="FL"/>
+			<enumeration value="GA"/>
+			<enumeration value="HI"/>
+			<enumeration value="ID"/>
+			<enumeration value="IL"/>
+			<enumeration value="IN"/>
+			<enumeration value="IA"/>
+			<enumeration value="KS"/>
+			<enumeration value="KY"/>
+			<enumeration value="LA"/>
+			<enumeration value="ME"/>
+			<enumeration value="MD"/>
+			<enumeration value="MA"/>
+			<enumeration value="MI"/>
+			<enumeration value="MN"/>
+			<enumeration value="MS"/>
+			<enumeration value="MO"/>
+			<enumeration value="MT"/>
+			<enumeration value="NE"/>
+			<enumeration value="NV"/>
+			<enumeration value="NH"/>
+			<enumeration value="NJ"/>
+			<enumeration value="NM"/>
+			<enumeration value="NY"/>
+			<enumeration value="NC"/>
+			<enumeration value="ND"/>
+			<enumeration value="OH"/>
+			<enumeration value="OK"/>
+			<enumeration value="OR"/>
+			<enumeration value="PA"/>
+			<enumeration value="RI"/>
+			<enumeration value="SC"/>
+			<enumeration value="SD"/>
+			<enumeration value="TN"/>
+			<enumeration value="TX"/>
+			<enumeration value="UT"/>
+			<enumeration value="VT"/>
+			<enumeration value="VA"/>
+			<enumeration value="WA"/>
+			<enumeration value="WV"/>
+			<enumeration value="WI"/>
+			<enumeration value="WY"/>
+			<enumeration value="DC"/>
+		</restriction>
+	</simpleType>
+
+	
+</schema>

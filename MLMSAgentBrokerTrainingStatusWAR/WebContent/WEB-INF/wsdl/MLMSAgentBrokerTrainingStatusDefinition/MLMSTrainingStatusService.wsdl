@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="MLMSTrainingStatusService" targetNamespace="http://cms.ibm.cciio.mlms.org/MLMSTrainingStatusService/" xmlns:rqr="http://cms.ibm.cciio.mlms.org/RetrieveTrainingCompletionStatusRequest" xmlns:rsp="http://cms.ibm.cciio.mlms.org/RetrieveTrainingCompletionStatusType" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://cms.ibm.cciio.mlms.org/MLMSTrainingStatusService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema>
+		<xsd:import namespace="http://cms.ibm.cciio.mlms.org/RetrieveTrainingCompletionStatusType" schemaLocation="RetrieveTrainingCompletionStatusResponseType.xsd"/>
+		<xsd:import namespace="http://cms.ibm.cciio.mlms.org/RetrieveTrainingCompletionStatusRequest" schemaLocation="RetrieveTrainingCompletionStatusRequestType.xsd"/>
+    </xsd:schema>        
+  </wsdl:types>
+  <wsdl:message name="RetrieveTrainingCompletionStatusRequest">
+    <wsdl:part element="rqr:userId" name="userId"/>
+  </wsdl:message>
+  <wsdl:message name="RetrieveTrainingCompletionStatusResponse">
+    <wsdl:part element="rsp:RetrieveTrainingCompletionStatusResponse" name="trainingCompletionStatus"/>
+  </wsdl:message>
+  <wsdl:portType name="MLMSTrainingStatusService">
+    <wsdl:operation name="RetrieveTrainingCompletionStatus">
+      <wsdl:input message="tns:RetrieveTrainingCompletionStatusRequest"/>
+      <wsdl:output message="tns:RetrieveTrainingCompletionStatusResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MLMSTrainingStatusServiceSOAP" type="tns:MLMSTrainingStatusService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="RetrieveTrainingCompletionStatus">
+      <soap:operation soapAction="http://cms.ibm.cciio.mlms.org/MLMSTrainingStatusService/RetrieveTrainingCompletionStatus"/>
+      <wsdl:input>
+        <soap:body parts="userId" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MLMSTrainingStatusService">
+    <wsdl:port binding="tns:MLMSTrainingStatusServiceSOAP" name="MLMSTrainingStatusServiceSOAP">
+      <soap:address location="http://localhost:9080/MLMSAgentBrokerTrainingStatus/MLMSTrainingStatusService"/> <!-- TODO: -->
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     Sep 4, 2015 9:30:27 AM                                                        
+
+     Build ABVendorFileService War     
+     Ant file to build the war file for the ABVendorFileService.war
+                   
+     wwwiniew                                                                
+     ====================================================================== -->
+
+
+<project name="ABVendorFileServiceWAR " default="build-war">
+	<description>
+            Ant file to build the war file for the ABVendorFileService.war
+    </description>
+	<property file="build.properties" />
+	
+	<!-- need to figure out how to use build server credentials or something else where hidden -->
+	<property name="userId" value="wwwiniew" />
+	<property name="password" value="cook:SPRING:01" />
+	
+	<!-- *** Set all properties, classpath, etc ... -->
+
+	<!-- ***  load directory will be used here to prepare for future builds from the RTC build server -->
+	<!-- ******  instead of just ${basedir} -->
+	<property environment="env" />
+	<property name="loadDir" value="${basedir}/../.."/> <!-- ${basedir}/${buildLabel}" -->
+	<property name="title" value="ABVendor File Service"/>
+	<property name="vendor" value="IBM"/>
+	
+	<!-- RTC Server property 
+	xxx outdated used before 1.8
+	<property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter" />
+	-->
+	<property name="build.debuglevel" value="lines,vars,source" />
+	<property name="build.compiler" value="modern" />
+	<property name="destdir" value="${loadDir}/build" />
+	<property name="destdir.bin" value="${loadDir}/build/bin" />
+	<property name="destdir.distro" value="${loadDir}/build/distro" />
+	<property name="destdir.distro.libs" value="${loadDir}/build/distro/libs" />
+	<property name="compilelog" value="${destdir}/compile.xml" />
+	<property name="target" value="1.6" />
+	<property name="source" value="1.6" />
+
+	<!-- define lib, was.runtime should be defined -->
+	<property name="was.runtime" value="/Users/wwwiniew/IBM/SoftwareDeliveryPlatform/runtimes" />
+	<property name="was.lib.dir" value="${was.runtime}/base_v8_stub/lib" />
+	<echo message="property is ${was.lib.dir}" />
+
+	<echo message="loadDir=${loadDir}" />
+
+	<delete dir="${destdir}" />
+	<mkdir dir="${destdir}" />
+	<mkdir dir="${destdir.bin}" />
+	<mkdir dir="${destdir.distro}" />
+	<mkdir dir="${destdir.distro.libs}" />
+
+	<!-- *** Start Classpath *** -->
+	<!-- *** if loaded from rtc this would be ${loadDir}/project...  -->
+	<!-- ******  for local build just ${loadDir} -->
+
+	<property name="ABVendorFileService.location" value="${loadDir}/ABVendorFileServiceWAR" />
+
+
+	<path id="Websphere Libraries.libraryclasspath">
+		<fileset dir="${was.lib.dir}" includes="j2ee.jar" />
+
+	</path>
+
+	<pathconvert property="classpathProp" refid="Websphere Libraries.libraryclasspath" />
+	
+	<!-- for debugging -->
+	<echo>Classpath is ${classpathProp}</echo>
+
+
+
+	<path id="ABVendorFileService.classpath">
+		<pathelement location="${destdir.bin}" />
+		<path refid="Websphere Libraries.libraryclasspath" />
+	</path>
+
+
+	<!-- ================================= 
+          target: default              
+         ================================= -->
+
+	<target name="build-war" depends="build-ABVendorFileService, package-ABVendorFileService, cleanUp" description="Ant file to build the war file for the ABVendorFileService.war">
+
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: depends                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="build-ABVendorFileService">
+
+		<record name="${destdir}/build-ABVendorFileService.log" action="start" append="false" />
+
+		<!--	<javac srcdir="${ABVendorFileService.location}" destdir="${destdir.bin}" includeantruntime="true"
+					debuglevel="${build.debuglevel}" debug="on" nowarn="on" failonerror="false" source="${source}" target="${target}">
+					<classpath refid="ABVendorFileService.classpath"/>
+		</javac>
+	 	-->
+		<startBuildActivity activityIdProperty="build-ABVendorFileService" label="Compiling ABVendorFileService" autoComplete="true" buildResultUUID="${buildResultUUID}" repositoryAddress="${repositoryAddress}" userid="${build.user}" password="${build.pass}" />
+		<!-- userId="${userId}" passwordFile="${password}" /> -->
+
+
+		<delete dir="${ABVendorFileService.location}/build/" />
+
+		<mkdir dir="${ABVendorFileService.location}/build/" />
+
+		<mkdir dir="${ABVendorFileService.location}/build/classes" />
+		<!-- Note this project needs to standardize and move code to the src directory -->
+
+		<javac srcdir="${ABVendorFileService.location}/src" destdir="${ABVendorFileService.location}/build/classes" debuglevel="${build.debuglevel}" debug="on" nowarn="on" failonerror="false" errorProperty="errors.found" source="${source}" target="${target}">
+			<classpath refid="ABVendorFileService.classpath" />
+			<exclude name="**/package-info.java" />
+		</javac>
+		
+
+		<copy todir="${ABVendorFileService.location}/build/classes" includeemptydirs="no">
+			<!-- standardize location of source -->
+
+			<fileset dir="${ABVendorFileService.location}/src">
+				<exclude name="**/*.java" />
+			</fileset>
+
+		</copy>
+		<!-- tstamp neede for TODAY -->
+		<tstamp />
+	<!-- not jarring this project 
+		<jar destfile="${destdir.distro.libs}/ABVendorFileService.jar" basedir="${ABVendorFileService.location}/build/classes">
+			<manifest>
+				<attribute name="Codebase" value="gov.cms.ciio" />
+				<attribute name="Built-By" value="MLMS Build Server" />
+				<attribute name="Created-By" value="${vendor}" />
+				<attribute name="Built-Date" value="${TODAY}" />
+				<attribute name="Implementation-Vendor" value="${vendor}" />
+				<attribute name="Implementation-Title" value="${title}" />
+				<attribute name="Implementation-Version" value="${buildLabel}" />
+				
+			</manifest>
+		</jar>
+		-->
+		
+		<record name="${destdir}/build-ABVendorFileService.log" action="stop" append="false" />
+
+		<jdtCompileLogPublisher buildResultUUID="${buildResultUUID}" repositoryAddress="${repositoryAddress}" filePath="${destdir}/build-ABVendorFileService.log" userid="${build.user}" password="${build.pass}" />
+
+	<!--	<artifactPublisher repositoryAddress="${repositoryAddress}" buildResultUUID="${buildResultUUID}" verbose="true" filePath="${destdir.distro.libs}/ABVendorFileService.jar" label="ABVendorFileService JAR File" userid="${build.user}" password="${build.pass}" />
+-->
+	</target>
+
+	<target name="package-ABVendorFileService" unless="errors.found">
+
+		<record name="${destdir}/package-ABVendorFileService.log" action="start" append="false" />
+
+	
+		<!-- for demo purpose -->
+		<path id="war.classpath">
+			<fileset dir="${destdir.distro.libs}">
+				<include name="**/*.jar" />
+			</fileset>
+		</path>
+		<!-- convert classpath to a flat list/string for use in manifest task -->
+		<pathconvert property="mf.classpath" pathsep=" ">
+			<path refid="war.classpath" />
+			<flattenmapper />
+		</pathconvert>
+		<!-- needed for TODAY -->
+		<tstamp />
+
+
+		<mkdir dir="${destdir.distro}/web/WebContent" />
+		<war destfile="${destdir.distro}/ABVendorFileService.war" needxmlfile="false">
+			<manifest>
+				<attribute name="Built-By" value="MLMS Build Server" />
+				<attribute name="Created-By" value="${vendor}" />
+				<attribute name="Implementation-Version" value="${buildLabel}" />
+				<attribute name="Built-Date" value="${TODAY}" />
+				<attribute name="Class-Path" value="${mf.classpath}" />
+			</manifest>
+
+			<fileset dir="${destdir.distro}/web" />
+			<lib dir="${destdir.distro.libs}" excludes="" />
+			<classes dir="${ABVendorFileService.location}/build/classes" />
+		</war>
+		
+		<record name="${destdir}/package-ABVendorFileService.log" action="stop" append="false" />
+
+		<jdtCompileLogPublisher buildResultUUID="${buildResultUUID}" repositoryAddress="${repositoryAddress}" filePath="${destdir}/package-ABVendorFileService.log" userid="${build.user}" password="${build.pass}" />
+
+		<artifactPublisher userId="${build.user}" password="${build.pass}" repositoryAddress="${repositoryAddress}" buildResultUUID="${buildResultUUID}" verbose="true" filePath="${destdir.distro}/ABVendorFileService.war" label="ABVendor File Service WAR file" />
+
+
+	</target>
+
+	<target name="cleanUp">
+		<fail if="errors.found" message="Errors occurred in Build" />
+
+
+		<!-- here we want to clean up the old builds etc -->
+
+	</target>
+	<!-- 
+		
+			These task definitions make the Jazz ant tasks available to this build file.
+		     In order to find these classnames at run time, ant must be invoked with:
+
+			     -lib <buildsystem-location>/buildtoolkit
+		 -->
+	<taskdef name="artifactPublisher" classname="com.ibm.team.build.ant.task.ArtifactFilePublisherTask" />
+
+	<taskdef name="artifactLinkPublisher" classname="com.ibm.team.build.ant.task.ArtifactLinkPublisherTask" />
+
+	<taskdef name="buildResultPublisher" classname="com.ibm.team.build.ant.task.BuildResultPublisherTask" />
+
+	<taskdef name="filePublisher" classname="com.ibm.team.build.ant.task.FilePublisherTask" />
+
+	<taskdef name="jdtCompileLogPublisher" classname="com.ibm.team.build.ant.task.JdtCompileLogPublisherTask" />
+
+	<taskdef name="junitLogPublisher" classname="com.ibm.team.build.ant.task.JUnitLogPublisherTask" />
+
+	<taskdef name="junitResultPublisher" classname="com.ibm.team.build.ant.task.JUnitLogPublisherTask" />
+
+	<taskdef name="linkPublisher" classname="com.ibm.team.build.ant.task.LinkPublisherTask" />
+
+	<taskdef name="logPublisher" classname="com.ibm.team.build.ant.task.LogPublisherTask" />
+
+	<taskdef name="teamAccept" classname="com.ibm.team.build.ant.task.TeamAcceptTask" />
+
+	<taskdef name="teamFetch" classname="com.ibm.team.build.ant.task.TeamFetchTask" />
+
+	<taskdef name="workItemPublisher" classname="com.ibm.team.build.ant.task.WorkItemPublisherTask" />
+
+	<taskdef name="startBuildActivity" classname="com.ibm.team.build.ant.task.StartBuildActivityTask" />
+
+	<taskdef name="completeBuildActivity" classname="com.ibm.team.build.ant.task.CompleteBuildActivityTask" />
+
+
+</project>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><schema elementFormDefault="qualified" targetNamespace="http://cms.cciio.mlms.hios.gov/AssisterAgreementStatusResponse" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:common="http://cms.cciio.mlms.gov/CCIIOWebServiceCommonType" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:tns="http://cms.cciio.mlms.hios.gov/AssisterAgreementStatusResponse">
+
+<import namespace="http://cms.cciio.mlms.gov/CCIIOWebServiceCommonType" schemaLocation="../CCIIOWebServiceCommonType/CCIIOWebServiceCommonType.xsd"/>
+
+	<element ibmSchExtn:docRoot="true" name="assisterAgreementStatusResponse">
+		<complexType>
+			<sequence>
+				<element maxOccurs="unbounded" minOccurs="1" name="assisterAgreementStatus" type="tns:assisterCertificationStatusType"/>
+				<element minOccurs="1" name="operationStatus" type="common:StatusType"/>				 
+			</sequence>
+		</complexType>
+	</element>
+	
+	<complexType name="assisterCertificationStatusType">
+		<sequence>
+			<element minOccurs="1" name="assisterId" type="string"/>
+			<element name="certificationName" type="string"/>
+			<element name="certificationStatus" type="string"/>
+			<element name="certificationAcquiredDate" type="string"/>
+			<element name="requestDatetime" type="string"/>
+			<element name="queryDatetime" type="string"/>			 
+		</sequence>
+	</complexType>
+
+</schema>

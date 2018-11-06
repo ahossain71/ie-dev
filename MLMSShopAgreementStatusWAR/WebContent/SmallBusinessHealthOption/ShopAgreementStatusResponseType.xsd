@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><schema elementFormDefault="qualified" targetNamespace="http://cms.cciio.mlms.gov/ShopAgreementStatusResponseType" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:common="http://cms.cciio.mlms.gov/CCIIOWebServiceCommonType" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:tns="http://cms.cciio.mlms.gov/ShopAgreementStatusResponseType">
+	
+	<import namespace="http://cms.cciio.mlms.gov/CCIIOWebServiceCommonType" schemaLocation="../CCIIOWebServiceCommonType/CCIIOWebServiceCommonType.xsd"/>
+	
+	<element ibmSchExtn:docRoot="true" name="shopAgreementStatusResponse">
+		<complexType>
+			<sequence>
+				<element minOccurs="1" name="userId" type="string"/>
+				<element maxOccurs="3" minOccurs="1" name="shopAgreement" type="tns:shopAgreementType"/>
+				<element maxOccurs="3" minOccurs="1" name="npnEntity" type="tns:npnEntityType"/>
+				<element minOccurs="1" name="operationStatus" type="common:StatusType"/>				
+			</sequence>
+		</complexType>
+	</element>
+	
+	<complexType name="shopAgreementType">
+		<sequence>
+			<element name="shopAgreementName" type="string"/>
+			<element name="shopAgreementStatus" type="string"/>
+			<element name="shopAgreementExperationDate" type="string"/>
+      <!-- in format of "dd/MM/YYYY" -->
+			<element name="shopAgreemenAcquiredDate" type="string"/>
+      <!-- in format of "dd/MM/YYYY" -->
+		</sequence>
+	</complexType>	
+	
+	<complexType name="npnEntityType">
+		<sequence>
+			<element maxOccurs="1" minOccurs="1" name="npnId" type="string"/>
+			<element maxOccurs="1" minOccurs="1" name="npnEntityType">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="Individual NPN"/>
+						<enumeration value="Business NPN"/>
+						<enumeration value="Web-Based NPN"/>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="npnEntityName" type="string"/>
+			<element maxOccurs="51" minOccurs="0" name="npnState" type="common:usStateType"/>
+		</sequence>
+	</complexType>
+</schema>

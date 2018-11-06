@@ -1,0 +1,34 @@
+<project name="Package All Components for Build in DEV" default="package" basedir=".">
+	<description>
+		Ant build file for packaging ALL MLMS source code for build
+	</description>
+
+	<property name="workspace.dir" value="/opt/ibm/RTC-Build/workspace/IE-DEV" />
+
+	<property name="zip.file" value="IE-DEV.zip" />
+	
+	<!-- 
+	This project uses/depends on the WS Logging code, 3 options
+	1. build from scratch and include in this WAR/EAR
+	2. we check in the latest compiled JAR and retrieve that JAR from repository
+	3. Set up the WS Logging JAR as a shared library and assume its location on IE app server.
+	
+	This script will take approach 1 for now. 
+	-->
+
+	<target name="package">
+		<zip destfile="${workspace.dir}/${zip.file}">
+			<zipfileset dir="${workspace.dir}">
+			</zipfileset>
+		</zip>
+		<!-- Need to include jsch-0.1.54.jar in <user home>/.ant/lib -->
+		<!-- sftp="true" doesn't work yet -->
+		<!--
+		<scp file="${workspace.dir}/${zip.file}" 
+			todir="${sftp.user}:${sftp.password}@${sftp.host}:RTC-Build/${zip.file}" 
+			>
+		</scp>
+		-->
+	</target>
+</project>
+  

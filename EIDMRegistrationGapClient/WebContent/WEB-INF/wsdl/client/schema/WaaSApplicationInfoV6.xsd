@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://types.waasaplicationinfov6.api.waas.ws.eidm.cms.hhs.gov" xmlns="http://types.waasaplicationinfov6.api.waas.ws.eidm.cms.hhs.gov" xmlns:cmn="http://common.domain.waas.ws.eidm.cms.hhs.gov" xmlns:rl="http://role.domain.waas.ws.eidm.cms.hhs.gov" xmlns:up="http://userprofile.domain.waas.ws.eidm.cms.hhs.gov">
+            
+    <xsd:import namespace="http://common.domain.waas.ws.eidm.cms.hhs.gov" schemaLocation="./common/Common.xsd"/> 
+    <xsd:import namespace="http://role.domain.waas.ws.eidm.cms.hhs.gov" schemaLocation="./common/RoleInfo.xsd"/>
+    <xsd:import namespace="http://userprofile.domain.waas.ws.eidm.cms.hhs.gov" schemaLocation="./common/UserProfile.xsd"/>            
+                
+    <xsd:element name="RetrieveAppDetailsRequest" type="RetrieveAppDetailsRequestType"/>
+    <xsd:element name="RetrieveAppDetailsResponse" type="RetrieveAppDetailsResponseType"/>
+                   
+    <xsd:complexType name="RetrieveAppDetailsRequestType">
+        <xsd:sequence>
+            <xsd:element minOccurs="1" name="Credentials" type="up:WaaSApplicationInfoType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+   <xsd:complexType name="RetrieveAppDetailsResponseType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="UserProfile" type="up:UserProfileV6Type"/>
+            <xsd:element minOccurs="0" name="BusinessInfo" type="up:BusinContInfoV6Type"/>
+            <xsd:element minOccurs="0" name="AppsInfo" type="rl:AppsInfoType"/>
+            <xsd:element minOccurs="0" name="RolesInfo" type="rl:RolesType"/>
+            <xsd:element name="Status" type="cmn:StatusType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="RetrieveAppDetailsFault" type="cmn:FaultType"/>
+    
+</xsd:schema>

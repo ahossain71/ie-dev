@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://userprofile.domain.waas.ws.eidm.cms.hhs.gov"
+            targetNamespace="http://userprofile.domain.waas.ws.eidm.cms.hhs.gov"
+            xmlns:cmn="http://common.domain.waas.ws.eidm.cms.hhs.gov"
+            elementFormDefault="qualified">
+   
+   <xsd:import schemaLocation="./Common.xsd"
+                namespace="http://common.domain.waas.ws.eidm.cms.hhs.gov"/>
+     
+<!--Global Declaration-->
+    <xsd:element name="dateOfBirth" type="xsd:date" nillable="true" />
+    <xsd:element name="ssn" type="xsd:string"/>
+    <xsd:element name="middleName" type="xsd:string" /> 
+    <xsd:element name="loaReason" type="xsd:string"/>
+    <xsd:element name="mfa" type="xsd:string"/>
+<!--Global Declaration-->
+                
+    <xsd:complexType name="UserProfileType">
+        <xsd:sequence>
+            <xsd:element name="UserInfo" type="UserInfoType"  />
+            <xsd:element name="Address" type="AddressType" minOccurs="0"/>
+            <xsd:element name="Email" type="EmailType" minOccurs="0"/>
+            <xsd:element name="Phone" type="PhoneType" minOccurs="0"/>                   
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="UserProfileV2Type">
+        <xsd:sequence>
+            <xsd:element name="UserInfo" type="UserInfoV2Type"  />
+            <xsd:element name="Address" type="AddressType" minOccurs="0"/>
+            <xsd:element name="Email" type="EmailType" minOccurs="0"/>
+            <xsd:element name="Phone" type="PhoneType" minOccurs="0"/>                   
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="UserProfileV3Type">
+        <xsd:sequence>
+            <xsd:element name="UserInfo" type="UserInfoV3Type"  />
+            <xsd:element name="Address" type="AddressType" minOccurs="0"/>
+            <xsd:element name="Email" type="EmailType" minOccurs="0"/>
+            <xsd:element name="Phone" type="PhoneType" minOccurs="0"/>                   
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="UserProfileV4Type">
+        <xsd:sequence>
+            <xsd:element name="UserInfo" type="UserInfoV4Type"  />
+            <xsd:element name="Address" type="AddressV4Type" minOccurs="0"/>
+            <xsd:element name="Email" type="EmailType" minOccurs="0"/>
+            <xsd:element name="Phone" type="PhoneType" minOccurs="0"/>                   
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="UserProfileV5Type">
+        <xsd:sequence>
+            <xsd:element name="UserInfo" type="UserInfoV5Type"  />
+            <xsd:element name="Address" type="AddressV5Type" minOccurs="0"/>
+            <xsd:element name="Email" type="EmailType" minOccurs="0"/>
+            <xsd:element name="Phone" type="PhoneType" minOccurs="0"/>                   
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="UserProfileV6Type">
+        <xsd:sequence>
+            <xsd:element name="UserInfo" type="UserInfoV6Type"  />
+            <xsd:element name="Address" type="AddressV6Type" minOccurs="0"/>
+            <xsd:element name="Email" type="EmailType" minOccurs="0"/>
+            <xsd:element name="Phone" type="PhoneType" minOccurs="0"/>                   
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="UserProfileV7Type">
+        <xsd:sequence>
+            <xsd:element name="UserInfo" type="UserInfoV7Type"  />
+            <xsd:element name="Address" type="AddressV7Type" minOccurs="0"/>
+            <xsd:element name="Email" type="EmailType" minOccurs="0"/>
+            <xsd:element name="Phone" type="PhoneType" minOccurs="0"/>                   
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="UserInfoType">
+        <xsd:sequence>
+            <xsd:element name="userId" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="firstName" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="lastName" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="suffix" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="disableSW" type="xsd:int" minOccurs="0"/>
+            <xsd:element name="loa" type="xsd:int" minOccurs="0"/>
+            <xsd:element ref="dateOfBirth" minOccurs="0"/>
+            <xsd:element ref="ssn" minOccurs="0"/>
+            <xsd:element ref="middleName" minOccurs="0"/>
+            <xsd:element ref="loaReason" minOccurs="0"/>
+            <xsd:element ref="mfa" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="UserInfoV2Type">
+        <xsd:sequence>
+            <xsd:element name="userId" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="firstName" type="xsd:string" minOccurs="0"/>
+            <xsd:element ref="middleName" minOccurs="0"/>
+            <xsd:element name="lastName" type="xsd:string" minOccurs="0"/>
+            <xsd:element ref="dateOfBirth" minOccurs="0"/>
+            <xsd:element name="suffix" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="disableSW" type="xsd:int" minOccurs="0"/>
+            <xsd:element name="loa" type="xsd:int" minOccurs="0"/>
+            <xsd:element name="profileStatus" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="UserInfoV3Type">
+        <xsd:sequence>
+            <xsd:element name="userId" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="firstName" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="lastName" type="xsd:string" minOccurs="0"/>
+            <xsd:element ref="middleName" minOccurs="0"/>
+            <xsd:element ref="ssn" minOccurs="0"/>
+            <xsd:element ref="dateOfBirth" minOccurs="0"/>
+            <xsd:element name="suffix" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="loa" type="xsd:int" minOccurs="0"/>
+            <xsd:element name="disableStatus" type="xsd:int" minOccurs="0"/>
+            <xsd:element name="profileStatus" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="UserInfoV4Type">
+        <xsd:sequence>
+            <xsd:element name="userId" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="firstName" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="lastName" type="xsd:string" minOccurs="0"/>
+            <xsd:element ref="middleName" minOccurs="0"/>
+            <xsd:element ref="dateOfBirth" minOccurs="0"/>
+            <xsd:element name="suffix" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="loa" type="xsd:int" minOccurs="0"/>
+            <xsd:element name="disableStatus" type="xsd:int" minOccurs="0"/>
+            <xsd:element name="profileStatus" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="countryCode" type="xsd:string" minOccurs="0"/>
+          
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="UserInfoV5Type">
+        <xsd:sequence>
+            <xsd:element name="userId" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="firstName" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="lastName" type="xsd:string" minOccurs="0"/>
+            <xsd:element ref="middleName" minOccurs="0"/>
+            <xsd:element ref="dateOfBirth" minOccurs="0"/>
+            <xsd:element name="suffix" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="loa" type="xsd:int" minOccurs="0"/>
+            <xsd:element name="disableStatus" type="xsd:int" minOccurs="0"/>
+            <xsd:element name="profileStatus" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="countryCode" type="xsd:string" minOccurs="0"/>
+           
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="UserInfoV6Type">
+        <xsd:sequence>
+            <xsd:element name="userId" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="firstName" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="lastName" type="xsd:string" minOccurs="0"/>
+            <xsd:element ref="middleName" minOccurs="0"/>
+            <xsd:element ref="dateOfBirth" minOccurs="0"/>
+            <xsd:element name="suffix" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="loa" type="xsd:int" minOccurs="0"/>
+            <xsd:element name="disableStatus" type="xsd:int" minOccurs="0"/>
+            <xsd:element name="profileStatus" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="countryCode" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="guid" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="accountCreateDate" type="xsd:date" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="UserInfoV7Type">
+        <xsd:sequence>
+            <xsd:element name="userId" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="firstName" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="lastName" type="xsd:string" minOccurs="0"/>
+            <xsd:element ref="middleName" minOccurs="0"/>
+            <xsd:element ref="dateOfBirth" minOccurs="0"/>
+            <xsd:element name="suffix" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="loa" type="xsd:int" minOccurs="0"/>
+            <xsd:element name="disableStatus" type="xsd:int" minOccurs="0"/>
+            <xsd:element name="profileStatus" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="countryCode" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="guid" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="accountCreateDate" type="xsd:date" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="AppUserInfoType">
+        <xsd:sequence>
+            <xsd:element name="userId" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="firstName" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="lastName" type="xsd:string" minOccurs="0"/>
+            <xsd:element ref="middleName" minOccurs="0"/>
+            <xsd:element ref="dateOfBirth" minOccurs="0"/>
+            <xsd:element name="loa" type="xsd:int" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="BusinContInfoV5Type">
+        <xsd:sequence>
+            <xsd:element name="companyName" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="address" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="address2" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="city" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="state" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="zipCode" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="zipCodeExtn" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="companyPhoneNo" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="compPhExt" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="dayPhoneNo" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="dayPhExt" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="BusinContInfoV6Type">
+        <xsd:sequence>
+            <xsd:element name="companyName" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="address" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="address2" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="city" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="state" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="zipCode" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="zipCodeExtn" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="companyPhoneNo" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="compPhExt" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="dayPhoneNo" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="dayPhExt" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="BusinContInfoV7Type">
+        <xsd:sequence>
+            <xsd:element name="companyName" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="address" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="address2" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="city" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="state" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="zipCode" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="zipCodeExtn" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="companyPhoneNo" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="compPhExt" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="dayPhoneNo" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="dayPhExt" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+     <xsd:complexType name="ContInfoMultipleRoleType">
+        <xsd:sequence>
+            <xsd:element name="address" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="address2" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="city" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="state" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="province" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="zipcode" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="zipcodeExtension" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="country" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="primaryPhoneNo" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="primaryPhoneNoExt" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="Email" type="EmailType" minOccurs="0"/>
+         </xsd:sequence>
+    </xsd:complexType>
+    
+      
+    <xsd:complexType name="AddressType">
+        <xsd:sequence>
+            <xsd:element name="streetAddress" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="streetAddress2" type="xsd:string" minOccurs="0"/>  
+            <xsd:element name="city" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="state" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="zipcode" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="zipcodeExtension" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="AddressV4Type">
+        <xsd:sequence>
+            <xsd:element name="streetAddress" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="streetAddress2" type="xsd:string" minOccurs="0"/>  
+            <xsd:element name="city" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="state" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="province" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="zipcode" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="zipcodeExtension" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="country" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="AddressV5Type">
+        <xsd:sequence>
+            <xsd:element name="streetAddress" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="streetAddress2" type="xsd:string" minOccurs="0"/>  
+            <xsd:element name="city" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="state" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="province" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="zipcode" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="zipcodeExtension" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="country" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="AddressV6Type">
+        <xsd:sequence>
+            <xsd:element name="streetAddress" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="streetAddress2" type="xsd:string" minOccurs="0"/>  
+            <xsd:element name="city" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="state" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="province" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="zipcode" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="zipcodeExtension" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="country" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="AddressV7Type">
+        <xsd:sequence>
+            <xsd:element name="streetAddress" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="streetAddress2" type="xsd:string" minOccurs="0"/>  
+            <xsd:element name="city" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="state" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="province" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="zipcode" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="zipcodeExtension" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="country" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="PhoneType">
+        <xsd:sequence>
+            <xsd:element name="countryCode" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="primaryPhone" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="EmailType">
+        <xsd:sequence>
+            <xsd:element name="emailId" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+   
+    <xsd:complexType name="WaaSApplicationInfoType">
+         <xsd:sequence>
+            <xsd:element name="User" type="UserType"/>
+        </xsd:sequence>
+    </xsd:complexType>  
+    
+    <xsd:complexType name="UserType">
+        <xsd:sequence>
+            <xsd:element name="userid" type="userid" minOccurs="1"/>
+            <xsd:element name="extensions" type="cmn:ExtensionsType" minOccurs="0" maxOccurs="25"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+     <xsd:complexType name="UserInputType">
+        <xsd:sequence>
+            <xsd:element name="attrName" type="xsd:string" minOccurs="1" />
+            <xsd:element name="attrValue" type="xsd:string" minOccurs="1"/>
+            <xsd:element name="roleName" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="userid">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="6"/>
+            <xsd:maxLength value="74"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

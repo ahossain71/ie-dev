@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application id="Application_ID" version="6" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_6.xsd">
+ <display-name>MLMSShopUserProfileEAR</display-name>
+ <module id="Module_1464724066188">
+ 	<web>
+ 		<web-uri>MLMSShopUserProfile.war</web-uri>
+ 		<context-root>mlmsupws</context-root>
+ 	</web>
+ </module>
+ <module id="Module_1488224341193">
+ 	<java>mlms_ws_transaction_logging.jar</java>
+ </module>
+ <module id="Module_1488224540850">
+ 	<web>
+ 		<web-uri>mlms_ws_transaction_logging.war</web-uri>
+ 		<context-root>mlms_ws_transaction_logging</context-root>
+ 	</web>
+ </module> 
+ </application> 

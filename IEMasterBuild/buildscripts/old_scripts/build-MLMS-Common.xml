@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+	Sep 15, 2016 9:30:27 AM Build MLMS-Common jar Ant file to build the jar file 
+	for MLMS_Common, cannot be generic as it is built out of ABVendor, however 
+	maybe by passing parameters. basedir - Set by ant buildLabel - passed by 
+	build server userId and password will need to find a way to encrypt title 
+	- nice short description of what is being build vendor - defaults to IBM 
+	for manifest, can be set project.name - name of war project to built jar.filename 
+	- name of jar file to make wwwiniew ====================================================================== -->
+
+
+<project name="BuildGenericWar " default="build-jar">
+	<description>
+		Ant file to build the war file for a passed in project
+	</description>
+
+
+	<!-- ? -->
+	<property name="archive.dir" value="/opt/app/saba/tp2/archive" />
+
+	<!-- ? -->
+	<property name="classes.dir" value="/opt/app/saba/tp2/SabaWeb/alt_src/WEB-INF/classes" />
+	<property name="ws.src.dir" value="/home/sjmeyer/RADWorkspace/MLMSUtil/src" />
+	<property name="deployed-classes.dir" value="/opt/app/WebSphere/AppServer/profiles/AppSrv01/installedApps/localhostNode01Cell/Saba_war.ear/Saba.war/WEB-INF/classes" />
+	<property name="jar.dir" value="${build.dir}/jar" />
+	<property name="saba.lib.dir" value="/opt/app/saba/tp2/SabaWeb/lib" />
+	<property name="saba.alt.dir" value="/opt/app/saba/tp2/SabaWeb/alt_src/WEB-INF/lib" />
+	<property name="was.lib.dir" value="/opt/IBM/WebSphere/AppServer/lib" />
+	<property name="jaxb.lib.dir" value="/opt/IBM/WebSphere/AppServer/endorsed_apis" />
+	<property name="archive.dir" value="/opt/app/saba/tp2/archive" />
+	<property name="MLMS_COMMON_JAR" value="mlms_common.jar" />
+	<property name="SABA_JAR" value="saba.jar" />
+	<property name="SABASECURITY_JAR" value="sabasecurity.jar" />
+	<property name="SOURCE_JAR" value="source.jar" />
+	<property name="CLIENT_JAR" value="mlms_client.jar" />
+	<property name="user.name" value="Steve Meyer" />
+	<property file="build.properties" />
+
+	<!-- need to figure out how to use build server credentials or something 
+		else where hidden -->
+	<property name="userId" value="wwwiniew" />
+
+	<!-- *** Set all properties, classpath, etc ... -->
+
+	<!-- *** load directory will be used here to prepare for future builds from 
+		the RTC build server -->
+	<!-- ****** instead of just ${basedir} -->
+	<property environment="env" />
+	<property name="loadDir" value="${basedir}/../.." />
+	<property name="shared.jars.dir" value="${basedir}/../../SabaJars" />
+	<property name="project.name" value="" />
+	<property name="war.filename" value="" />
+
+	<property name="title" value="" />
+	<property name="vendor" value="IBM" />
+
+	<!-- RTC Server property xxx outdated used before 1.8 <property name="build.compiler" 
+		value="org.eclipse.jdt.core.JDTCompilerAdapter" /> -->
+	<property name="build.debuglevel" value="lines,vars,source" />
+	<property name="build.compiler" value="modern" />
+	<property name="destdir" value="${loadDir}/build" />
+	<property name="destdir.bin" value="${loadDir}/build/bin" />
+	<property name="destdir.distro" value="${loadDir}/build/distro" />
+	<property name="destdir.distro.libs" value="${loadDir}/build/distro/libs" />
+	<property name="compilelog" value="${destdir}/compile.xml" />
+	<property name="target" value="1.6" />
+	<property name="source" value="1.6" />
+	<property name="project.location" value="${loadDir}/${project.name}" />
+
+
+	<property name="build.dir" value="${project.location}/build" />
+	<property name="ws.build.dir" value="${project.location}/ws.build" />
+	<property name="ab.build.dir" value="${project.location}/ab.build" />
+
+
+
+	<!-- define lib, was.runtime should be defined -->
+	<property name="was.runtime" value="/Users/wwwiniew/IBM/SoftwareDeliveryPlatform/runtimes/base_v8_stub" />
+	<property name="was.lib.dir" value="${was.runtime}/lib" />
+	<echo message="property is ${was.lib.dir}" />
+
+	<echo message="loadDir=${loadDir}" />
+
+	<delete dir="${destdir}" />
+	<mkdir dir="${destdir}" />
+	<mkdir dir="${destdir.bin}" />
+	<mkdir dir="${destdir.distro}" />
+	<mkdir dir="${destdir.distro.libs}" />
+
+	<!-- *** Start Classpath *** -->
+	<!-- *** if loaded from rtc this would be ${loadDir}/project... -->
+	<!-- ****** for local build just ${loadDir} -->
+
+	<property name="project.location" value="${loadDir}/${project.name}" />
+
+
+	<path id="Websphere Libraries.libraryclasspath">
+		<fileset dir="${was.runtime}" includes="j2ee.jar" />
+
+	</path>
+
+	<path id="Logback.libraryclasspath">
+		<fileset dir="${shared.jars.dir}" includes="logback*.jar, slf4j*.jar" />
+
+	</path>
+
+	<pathconvert property="classpathProp" refid="Websphere Libraries.libraryclasspath" />
+
+	<!-- for debugging -->
+	<echo>Classpath is ${classpathProp}</echo>
+
+
+
+
+	<path id="master-classpath">
+		<fileset dir="${shared.jars.dir}">
+			<include name="saba.jar" />
+			<include name="sabares.jar" />
+			<include name="sabasecurity.jar" />
+			<include name="SabaSecurityProviders.jar" />
+			<include name="sabaspring.jar" />
+		</fileset>
+		<fileset dir="${was.lib.dir}">
+			<include name="j2ee.jar" />
+		</fileset>
+		<fileset dir="${jaxb.lib.dir}">
+			<include name="javax.j2ee.annotation.jar" />
+			<include name="jaxb-api.jar" />
+			<include name="jaxws-api.jar" />
+		</fileset>
+	</path>
+
+
+	<path id="project.classpath">
+		<pathelement location="${destdir.bin}" />
+		<path refid="Websphere Libraries.libraryclasspath" />
+		<path refid="Logback.libraryclasspath" />
+		<path refid="master-classpath" />
+		<fileset dir="${project.location}/WebContent/WEB-INF/lib" includes="*.jar" />
+
+	</path>
+	<path id="ab-master-classpath">
+		<fileset dir="${saba.lib.dir}">
+			<include name="saba.jar" />
+			<include name="sabares.jar" />
+			<include name="sabasecurity.jar" />
+			<include name="SabaSecurityProviders.jar" />
+			<include name="sabaspring.jar" />
+			<include name="mlms_common.jar" />
+		</fileset>
+		<fileset dir="${was.lib.dir}">
+			<include name="j2ee.jar" />
+		</fileset>
+
+	</path>
+
+	<!-- ================================= target: default ================================= -->
+
+	<target name="build-jar" depends="build-generic-jar, package-generic-jar, cleanUp" description="Ant file to build generic jar file for MMLS">
+
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - target: depends - - - - - - - - - 
+		- - - - - - - - -->
+	<target name="build-generic-war">
+
+		<record name="${destdir}/build-${project.name}.log" action="start" append="false" />
+
+		<echo>startBuildActivity activityIdProperty=build-${project.name}
+			label=Compiling ${project.name} autoComplete=true
+			buildResultUUID=${buildResultUUID}
+			repositoryAddress=${repositoryAddress} userid=${build.user}
+			password=${build.pass}
+		</echo>
+
+		<!--	<startBuildActivity activityIdProperty="build-${project.name}"
+			label="Compiling ${project.name}" autoComplete="true"
+			buildResultUUID="${buildResultUUID}" repositoryAddress="${repositoryAddress}"
+			userid="${build.user}" password="${build.pass}" />
+-->
+
+		<delete dir="${project.location}/build/" />
+
+		<mkdir dir="${project.location}/build/" />
+
+		<mkdir dir="${project.location}/build/classes" />
+		<!-- Note this project needs to standardize and move code to the src directory -->
+
+
+		<javac srcdir="${project.location}/src" destdir="${project.location}/build/classes" debuglevel="${build.debuglevel}" debug="on" nowarn="on" failonerror="false" errorProperty="errors.found" source="${source}" target="${target}">
+			<classpath refid="project.classpath" />
+			<exclude name="**/package-info.java" />
+		</javac>
+
+		<!-- Copying resources xml, properties etc -->
+		<copy todir="${project.location}/build/classes" includeemptydirs="no">
+
+			<fileset dir="${project.location}/src" includes="file.list">
+				<exclude name="**/*.java" />
+			</fileset>
+
+		</copy>
+		<!-- tstamp neede for TODAY -->
+		<!-- <tstamp /> -->
+		<!-- not jarring this project <jar destfile="${destdir.distro.libs}/ABVendorFileService.jar" 
+			basedir="${ABVendorFileService.location}/build/classes"> <manifest> <attribute 
+			name="Codebase" value="gov.cms.ciio" /> <attribute name="Built-By" value="MLMS 
+			Build Server" /> <attribute name="Created-By" value="${vendor}" /> <attribute 
+			name="Built-Date" value="${TODAY}" /> <attribute name="Implementation-Vendor" 
+			value="${vendor}" /> <attribute name="Implementation-Title" value="${title}" 
+			/> <attribute name="Implementation-Version" value="${buildLabel}" /> </manifest> 
+			</jar> -->
+
+		<record name="${destdir}/build-${project.name}.log" action="stop" append="false" />
+		<!-- local testing
+		<jdtCompileLogPublisher buildResultUUID="${buildResultUUID}"
+			repositoryAddress="${repositoryAddress}" filePath="${destdir}/build-${project.name}.log"
+			userid="${build.user}" password="${build.pass}" />
+-->
+		<!-- <artifactPublisher repositoryAddress="${repositoryAddress}" buildResultUUID="${buildResultUUID}" 
+			verbose="true" filePath="${destdir.distro.libs}/ABVendorFileService.jar" 
+			label="ABVendorFileService JAR File" userid="${build.user}" password="${build.pass}" 
+			/> -->
+	</target>
+
+	<target name="package-generic-jar" unless="errors.found">
+
+		<record name="${destdir}/package-${project.name}.log" action="start" append="false" />
+		<!-- local testing
+		<startBuildActivity activityIdProperty="package-${project.name}"
+			label="Packaging ${project.name}" autoComplete="true"
+			buildResultUUID="${buildResultUUID}" repositoryAddress="${repositoryAddress}"
+			userid="${build.user}" password="${build.pass}" />
+-->
+
+		<!-- convert classpath to a flat list/string for use in manifest task -->
+		<!-- manifestpath, not now
+		<pathconvert property="mf.classpath" pathsep=" ">
+			<path refid="war.classpath" />
+			<flattenmapper />
+		</pathconvert>
+		-->
+		<!-- needed for TODAY -->
+		<tstamp />
+
+		<jar destfile="${destdir.distro}/${MLMS_COMMON_JAR}">
+			<fileset dir="${build.dir}/classes">
+				<exclude name="mil/**" />
+				<!--	<exclude name="gov/cms/cciio/interfaces/**"/> -->
+			</fileset>
+			<manifest>
+				<attribute name="Built-By" value="RTC BUILD" />
+				<attribute name="Built-Date" value="${TODAY}" />
+			</manifest>
+		</jar>
+
+
+	
+		<artifactPublisher userId="${build.user}" password="${build.pass}"
+				repositoryAddress="${repositoryAddress}" buildResultUUID="${buildResultUUID}"
+				verbose="true" filePath="${destdir.distro}/${MLMS_COMMON_JAR}" label="MLMS Common JAR" />
+	
+		<jar destfile="${destdir.distro}/${SABASECURITY_JAR}" update="true">
+			<fileset dir="${build.dir}/classes">
+				<include name="com/saba/auth/SabaLoginModule.class" />
+			</fileset>
+			<manifest>
+				<attribute name="Built-By" value="RTC BUILD" />
+				<attribute name="Built-Date" value="${TODAY}" />
+			</manifest>
+		</jar>
+
+		
+			<artifactPublisher userId="${build.user}" password="${build.pass}"
+					repositoryAddress="${repositoryAddress}" buildResultUUID="${buildResultUUID}"
+					verbose="true" filePath="${destdir.distro}/${SABASECURITY_JAR}" label="SABA Security JAR" />
+		
+		<jar destfile="${destdir.distro}/${CLIENT_JAR}">
+			<fileset dir="${build.dir}/classes" includes="gov/**"/> 
+			<manifest>
+				<attribute name="Built-By" value="${user.name}"/>
+			</manifest>
+		</jar>
+
+		
+			<artifactPublisher userId="${build.user}" password="${build.pass}"
+					repositoryAddress="${repositoryAddress}" buildResultUUID="${buildResultUUID}"
+					verbose="true" filePath="${destdir.distro}/${CLIENT_JAR}" label="MLMS Client JAR" />
+		
+
+
+		<!--<war destfile="${destdir.distro}/${jar.filename}" needxmlfile="false">
+			<manifest>
+				<attribute name="Built-By" value="MLMS Build Server" />
+				<attribute name="Created-By" value="${vendor}" />
+				<attribute name="Implementation-Version" value="${buildLabel}" />
+				<attribute name="Built-Date" value="${TODAY}" />
+			</manifest>
+
+			<classes dir="${project.location}/build/classes" />
+		</war>
+-->
+		<record name="${destdir}/package-${project.name}.log" action="stop" append="false" />
+		<!-- local testing
+		<jdtCompileLogPublisher buildResultUUID="${buildResultUUID}"
+			repositoryAddress="${repositoryAddress}" filePath="${destdir}/package-${project.name}.log"
+			userid="${build.user}" password="${build.pass}" />
+
+		<artifactPublisher userId="${build.user}" password="${build.pass}"
+			repositoryAddress="${repositoryAddress}" buildResultUUID="${buildResultUUID}"
+			verbose="true" filePath="${destdir.distro}/${war.filename}" label="${title} WAR file" />
+-->
+
+	</target>
+
+	<target name="cleanUp">
+		<fail if="errors.found" message="Errors occurred in Build" />
+
+
+		<!-- here we want to clean up the old builds etc -->
+
+	</target>
+
+
+	<target name="clean">
+		<delete dir="${build.dir}" />
+		<!--	<delete dir="${ab.build.dir}" />
+		<delete dir="${classes.dir}" />
+		<delete dir="${ws.build.dir}" />-->
+	</target>
+
+	<tstamp>
+		<format property="timestamp" pattern="MM.dd.yyyy.HH.mm.ss" />
+	</tstamp>
+
+
+
+	<target name="prepare">
+		<delete dir="${build.dir}" />
+		<delete dir="${ab.build.dir}" />
+		<!--<delete dir="${classes.dir}" />-->
+		<delete dir="${ws.build.dir}" />
+
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.dir}/classes" />
+
+		<mkdir dir="${ws.build.dir}" />
+		<!--<mkdir dir="${classes.dir}" />-->
+		<!--		<mkdir dir="${build.dir}/sabajar" />
+		<mkdir dir="${ab.build.dir}" />
+		<mkdir dir="${build.dir}/sabasecurityjar" />
+	-->
+	</target>
+
+
+	<target name="build-generic-jar" depends="prepare">
+		<record name="${destdir}/build-${project.name}.log" action="start" append="false" />
+
+		<echo>startBuildActivity activityIdProperty=build-${project.name}
+			label=Compiling ${project.name} autoComplete=true
+			buildResultUUID=${buildResultUUID}
+			repositoryAddress=${repositoryAddress} userid=${build.user}
+			password=${build.pass}
+		</echo>
+		<!-- local testing
+		<startBuildActivity activityIdProperty="build-${project.name}"
+			label="Compiling ${project.name}" autoComplete="true"
+			buildResultUUID="${buildResultUUID}" repositoryAddress="${repositoryAddress}"
+			userid="${build.user}" password="${build.pass}" />
+-->
+
+
+
+		<javac srcdir="${project.location}/src" destdir="${build.dir}/classes" debuglevel="${build.debuglevel}" debug="on" nowarn="on" failonerror="false" errorProperty="errors.found" source="${source}" target="${target}">
+			<classpath refid="project.classpath" />
+			<exclude name="**/package-info.java" />
+
+		</javac>
+
+		<!-- 
+		<javac destdir="${build.dir}" classpathref="master-classpath"
+			debug="on">
+			<src path="${project.location}/src" />
+
+			<include name="com/**" />
+			<include name="gov/**" />
+			<exclude name="mil/**" />
+
+
+		</javac>
+
+		<javac destdir="${ws.build.dir}" classpathref="master-classpath"
+			debug="on">
+			<src path="${ws.src.dir}" />
+			<include name="com/**" />
+			<include name="gov/**" />
+			<exclude name="mil/**" />
+
+
+		</javac>
+
+-->
+
+		<!-- 
+		<javac destdir="${build.dir}/sabajar" classpathref="master-classpath"
+			debug="on">
+			<src path="${project.location}/src" />
+			<include name="com/saba/auth/DBAuthenticationProvider.java" />
+			<exclude name="mil/**" />
+
+		</javac>
+		<javac destdir="${build.dir}/sabasecurityjar" classpathref="master-classpath"
+			debug="on">
+			<src path="${project.location}/src" />
+			<include name="com/saba/auth/SabaLoginModule.java" />
+			<exclude name="mil/**" />
+
+		</javac>
+		<javac destdir="${classes.dir}" classpathref="master-classpath"
+			debug="on">
+			<src path="${project.location}/src" />
+
+			<include name="gov/**" />
+
+		</javac>
+		<javac destdir="${classes.dir}" classpathref="master-classpath"
+			debug="on">
+			<src path="${ws.src.dir}" />
+
+			<include name="gov/**" />
+			<include name="cms/**" />
+
+		</javac>
+
+
+		<javac destdir="${deployed-classes.dir}" classpathref="master-classpath"
+			debug="on">
+			<src path="${project.location}/src" />
+			<include name="com/**" />
+			<include name="gov/**" />
+			<exclude name="mil/**" />
+
+		</javac>
+-->
+		<record name="${destdir}/build-${project.name}.log" action="stop" append="false" />
+		<!-- local testing
+		<jdtCompileLogPublisher buildResultUUID="${buildResultUUID}"
+			repositoryAddress="${repositoryAddress}" filePath="${destdir}/build-${project.name}.log"
+			userid="${build.user}" password="${build.pass}" />
+-->
+	</target>
+	<!--
+	<target name="jar" depends="compile">
+		<delete file="${MLMS_COMMON_JAR}" />
+		<jar destfile="${MLMS_COMMON_JAR}">
+			<fileset dir="${build.dir}">
+				<exclude name="mil/**" />
+			</fileset>
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+			</manifest>
+		</jar>
+		<chmod file="${MLMS_COMMON_JAR}" perm="775" />
+	</target>
+
+	<target name="compile2" depends="copy">
+		<mkdir dir="${ab.build.dir}" />
+
+		<javac destdir="${ab.build.dir}" classpathref="ab-master-classpath"
+			debug="on">
+			<src path="${ab.src.dir}" />
+			<include name="com/**" />
+			<include name="gov/**" />
+			<exclude name="mil/**" />
+
+		</javac>
+	</target>
+	
+	<target name="sabasecurity-jar" depends="compile">
+		<jar destfile="${SABASECURITY_JAR}" update="true" />
+		<fileset dir="${build.dir}/sabasecurityjar" />
+
+	</target>
+
+
+
+	<target name="jar-client" depends="compile">
+		<delete file="${CLIENT_JAR}" />
+		<jar destfile="${CLIENT_JAR}">
+			<fileset dir="${classes.dir}" includes="gov/**" />
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+			</manifest>
+		</jar>
+		<chmod file="${MLMS_CLIENT_JAR}" perm="775" />
+	</target>
+
+	<target name="jar-source" depends="compile">
+		<jar destfile="${archive.dir}/${timestamp}_${SOURCE_JAR}">
+			<fileset dir="${project.location}/src" excludes="mil/**" />
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+			</manifest>
+		</jar>
+		<chmod file="${SOURCE_JAR}" perm="775" />
+	</target>
+
+	<target name="copy" depends="jar">
+		<delete file="${saba.lib.dir}/${MLMS_COMMON_JAR}" />
+		<delete file="${deployed-classes.dir}/${CLIENT_JAR}" />
+		<copy file="${MLMS_COMMON_JAR}" todir="${saba.lib.dir}" />
+		<copy file="${CLIENT_JAR}" todir="${deployed-classes.dir}" />
+		<chmod file="${saba.lib.dir}/${MLMS_COMMON_JAR}" perm="775" />
+		<chmod file="${deployed-classes.dir}/${CLIENT_JAR}" perm="775" />
+		<echo message="${timestamp}" />
+	</target>
+
+
+
+	<target name="main" depends="clean,compile,jar,jar-source,jar-client,copy" />
+-->
+	<!-- These task definitions make the Jazz ant tasks available to this build 
+		file. In order to find these classnames at run time, ant must be invoked 
+		with: -lib <buildsystem-location>/buildtoolkit -->
+	<!-- local testing -->
+	<taskdef name="artifactPublisher"
+		classname="com.ibm.team.build.ant.task.ArtifactFilePublisherTask" />
+
+	<taskdef name="artifactLinkPublisher"
+		classname="com.ibm.team.build.ant.task.ArtifactLinkPublisherTask" />
+
+	<taskdef name="buildResultPublisher"
+		classname="com.ibm.team.build.ant.task.BuildResultPublisherTask" />
+
+	<taskdef name="filePublisher" classname="com.ibm.team.build.ant.task.FilePublisherTask" />
+
+	<taskdef name="jdtCompileLogPublisher"
+		classname="com.ibm.team.build.ant.task.JdtCompileLogPublisherTask" />
+
+	<taskdef name="junitLogPublisher"
+		classname="com.ibm.team.build.ant.task.JUnitLogPublisherTask" />
+
+	<taskdef name="junitResultPublisher"
+		classname="com.ibm.team.build.ant.task.JUnitLogPublisherTask" />
+
+	<taskdef name="linkPublisher" classname="com.ibm.team.build.ant.task.LinkPublisherTask" />
+
+	<taskdef name="logPublisher" classname="com.ibm.team.build.ant.task.LogPublisherTask" />
+
+	<taskdef name="teamAccept" classname="com.ibm.team.build.ant.task.TeamAcceptTask" />
+
+	<taskdef name="teamFetch" classname="com.ibm.team.build.ant.task.TeamFetchTask" />
+
+	<taskdef name="workItemPublisher"
+		classname="com.ibm.team.build.ant.task.WorkItemPublisherTask" />
+
+	<taskdef name="startBuildActivity"
+		classname="com.ibm.team.build.ant.task.StartBuildActivityTask" />
+
+	<taskdef name="completeBuildActivity"
+		classname="com.ibm.team.build.ant.task.CompleteBuildActivityTask" />
+
+
+</project>

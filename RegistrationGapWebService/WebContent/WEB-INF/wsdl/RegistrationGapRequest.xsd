@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://cms.cciio.mlms.gov/RegistrationGapRequest" xmlns:rq="http://cms.cciio.mlms/RegistrationGapRequest" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" elementFormDefault="qualified" xmlns:Q1="http://cms.cciio.mlms.gov/RegistrationGapRequest">
+<xsd:complexType name="RegistrationGapRequestType">
+ <xsd:sequence>
+ <xsd:element name="RequestSystemName">
+ 	<xsd:simpleType>
+ 		<xsd:restriction base="xsd:string">
+ 			<xsd:enumeration value="EIDM"></xsd:enumeration>
+ 			<xsd:minLength value="0"></xsd:minLength>
+ 			<xsd:maxLength value="8"></xsd:maxLength>
+ 		</xsd:restriction>
+ 	</xsd:simpleType>
+ </xsd:element>
+ </xsd:sequence>
+</xsd:complexType>
+
+    <xsd:element name="RegistrationGapRequestElement"
+    	type="Q1:RegistrationGapRequestType">
+    </xsd:element>
+</xsd:schema>

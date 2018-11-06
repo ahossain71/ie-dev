@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.etools.webservice.wscbnd:ClientBinding xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.etools.webservice.wscbnd="http://www.ibm.com/websphere/appserver/schemas/5.0.2/wscbnd.xmi" xmi:id="ClientBinding_1459779166998">
+  <serviceRefs xmi:id="ServiceRef_1459779166998" serviceRefLink="service/WaaSApplicationInfoServiceV6">
+    <portQnameBindings xmi:id="PortQnameBinding_1459779166998" portQnameNamespaceLink="urn:waasaplicationinfov6.api.waas.ws.eidm.cms.hhs.gov" portQnameLocalNameLink="WaaSApplicationInfoServiceV6" overriddenEndpointURI="http://waasaplicationinfov6.api.waas.ws.eidm.cms.hhs.gov"/>
+  </serviceRefs>
+</com.ibm.etools.webservice.wscbnd:ClientBinding>

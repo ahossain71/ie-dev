@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="SmallBusinessHealthOption" targetNamespace="http://cms.cciio.mlms.gov/SmallBusinessHealthOption/" xmlns:rqr="http://cms.cciio.mlms.gov/ShopAgreementStatusRequestType" xmlns:rsp="http://cms.cciio.mlms.gov/ShopAgreementStatusResponseType" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://cms.cciio.mlms.gov/SmallBusinessHealthOption/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema>
+		<xsd:import namespace="http://cms.cciio.mlms.gov/ShopAgreementStatusRequestType" schemaLocation="ShopAgreementStatusRequestType.xsd"/>
+		<xsd:import namespace="http://cms.cciio.mlms.gov/ShopAgreementStatusResponseType" schemaLocation="ShopAgreementStatusResponseType.xsd"/>
+    </xsd:schema>        
+  </wsdl:types>
+  <wsdl:message name="ShopAgreementStatusRequest">
+    <wsdl:part element="rqr:userId" name="userId"/>
+  </wsdl:message>
+  <wsdl:message name="ShopAgreementStatusResponse">
+    <wsdl:part element="rsp:shopAgreementStatusResponse" name="ShopAgreementStatus"/>
+  </wsdl:message>
+  <wsdl:portType name="SmallBusinessHealthOption">
+    <wsdl:operation name="RetrieveShopAgreementStatus">
+      <wsdl:input message="tns:ShopAgreementStatusRequest"/>
+      <wsdl:output message="tns:ShopAgreementStatusResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SmallBusinessHealthOptionSOAP" type="tns:SmallBusinessHealthOption">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="RetrieveShopAgreementStatus">
+      <soap:operation soapAction="http://cms.cciio.mlms.gov/SmallBusinessHealthOption/RetrieveShopAgreementStatus"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SmallBusinessHealthOption">
+    <wsdl:port binding="tns:SmallBusinessHealthOptionSOAP" name="SmallBusinessHealthOptionSOAP">
+      <soap:address location="http://localhost:9082/MLMSShopAgreementStatus/SmallBusinessHealthOption"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
