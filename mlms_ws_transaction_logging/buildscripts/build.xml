@@ -29,6 +29,8 @@
 	<property name="archive.dir" value="${dist.dir}/archive" />
 
 	<property name="classes.dir" value="${build.dir}/classes" />
+	<!--the websphere.base property was added by Azfar on 11/06/2018 based on the location in the server-->
+	<property name="websphere.base" value="/opt/lms/WebSphere" />
 
 	<property name="was.lib.dir" value="${websphere.base}/lib" />
 
