@@ -30,9 +30,13 @@
 
 	<property name="classes.dir" value="${build.dir}/classes" />
 
-	<property name="was.lib.dir" value="${websphere.base}/lib" />
+	<!--<property name="was.lib.dir" value="${websphere.base}/lib" />-->
+        <!--Modified by Azfar to replace websphere.base with hard coded path--> 
 
-	<property name="jaxb.lib.dir" value="${websphere.base}/endorsed_apis" />
+	<property name="was.lib.dir" value="/opt/lms/WebSphere/AppServer90/lib" />
+
+	<!--<property name="jaxb.lib.dir" value="${websphere.base}/endorsed_apis" />-->
+	<property name="jaxb.lib.dir" value="/opt/lms/WebSphere/AppServer90/lib/endorsed_apis" />
 
 	<property name="CLIENT_JAR" value="mlmswslogging.jar"/>
 
