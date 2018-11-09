@@ -86,7 +86,9 @@
 	<target name="compile" depends="clean">
 		<mkdir dir="${build.dir}/classes"/>
 		<mkdir dir="${dist.dir}/lib"/>
-		<javac fork="yes" executable="${compiler.path}/javac" target="1.8" source="1.8" includeantruntime="false" destdir="${build.dir}/classes" classpathref="master-classpath" debug="on" > 
+<!--Modified by Azfar to replace the compiler.path with hard coded path -->
+		<!--<javac fork="yes" executable="${compiler.path}/javac" target="1.8" source="1.8" includeantruntime="false" destdir="${build.dir}/classes" classpathref="master-classpath" debug="on" >--> 
+<javac fork="yes" executable="/opt/lms/WebSphere/AppServer90/java/8.0/bin/javac" target="1.8" source="1.8" includeantruntime="false" destdir="${build.dir}/classes" classpathref="master-classpath" debug="on" > 
 			<!-- compilerarg value="-Xlint"/ -->
 			
 			<src path="${src.dir}"/>
