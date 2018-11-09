@@ -79,6 +79,7 @@
 		<!-- Will need to explicitly pass on the values of the two parameters over -->
 		<ant antfile="${wslogging.project.dir}/buildscripts/build.xml" dir="${wslogging.project.dir}/buildscripts/" target="jar" inheritall="false">
 			<!--<property file="config/subproject/default.properties"/>-->
+   			<property file="${wslogging.project.dir}/build-DEV.properties"/>
 			<property name="websphere.base" value="${websphere.base}"/>
 			<property name="compiler.path" value="${compiler.path}"/>
 		</ant>
